@@ -6,7 +6,7 @@ export const SearchBar = ({ label, name, type }) => {
     return (
         <fieldset className="max-w-md space-y-1">
             <Label htmlFor={name}>{label}</Label>
-            <Input className='border-gray-300' id={name} placeholder={label} type={type} />
+            <Input className='border-gray-400' id={name} placeholder={label} type={type} />
         </fieldset>
     )
 }

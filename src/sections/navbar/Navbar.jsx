@@ -20,14 +20,13 @@ export const NavbarComponent = () => {
                     {/* <NavbarItem>Figma</NavbarItem> */}
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
-                    <NavbarItem active>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-600'>Enroll as Contributor</NavbarItem>
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
-                    <NavbarItem>Figma</NavbarItem>
-                    <NavbarItem>Documentation</NavbarItem>
                     <NavbarItem>Blog</NavbarItem>
-                    <NavbarItem active>Get Started</NavbarItem>
+                    <NavbarItem>Login</NavbarItem>
+                    <NavbarItem active>Enroll as Contributor</NavbarItem>
                 </NavbarCollapse>
             </NavbarContainer>
         </Navbar>
