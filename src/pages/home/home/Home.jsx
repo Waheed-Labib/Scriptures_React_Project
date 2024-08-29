@@ -1,9 +1,11 @@
 // import React from 'react';
 
+import { SearchBar } from "../../../components/search-bar/SearchBar";
+
 const Home = () => {
     return (
-        <div>
-            home page
+        <div className="m-12">
+            <SearchBar name="surah" label="Enter Surah Name" type="text"></SearchBar>
         </div>
     );
 };

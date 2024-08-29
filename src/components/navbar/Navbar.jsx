@@ -11,10 +11,10 @@ import {
 
 export const NavbarComponent = () => {
     return (
-        <Navbar>
+        <Navbar className='px-4 md:px-0'>
             <NavbarContainer>
                 <NavbarBrand>
-                    <h1 className='ml-12 text-lg font-semibold text-gray-500'>Al Quran Translation Project</h1>
+                    <h1 className='md:ml-16 lg:ml-12 text-lg font-semibold text-gray-500'>Al Quran Translation Project</h1>
                 </NavbarBrand>
                 <NavbarList>
                     {/* <NavbarItem>Figma</NavbarItem> */}
