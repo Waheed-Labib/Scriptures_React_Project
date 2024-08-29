@@ -8,7 +8,7 @@ const SurahList = ({ surahList, loading, error }) => {
 
     return (
         <div>
-            <h1 className="text-xl text-gray-700 mb-8">List of the Chapters</h1>
+            <h1 className="text-2xl font-semibold text-gray-600 mb-4">List of the Chapters</h1>
 
             {
                 loading &&
@@ -31,8 +31,10 @@ const SurahList = ({ surahList, loading, error }) => {
             }
 
             {
-                error && <ErrorComponent errorType='Fetching Failed' errorText={error}></ErrorComponent>
-
+                error &&
+                <div className="flex justify-center mt-4">
+                    <ErrorComponent errorType='Fetching Failed' errorText={error}></ErrorComponent>
+                </div>
             }
         </div>
     );
