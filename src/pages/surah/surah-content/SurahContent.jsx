@@ -1,11 +1,11 @@
 // import React from 'react';
 
-const MainContent = () => {
+const SurahContent = () => {
     return (
         <div>
-            main content
+            Surah Content
         </div>
     );
 };
 
-export default MainContent;
+export default SurahContent;

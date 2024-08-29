@@ -2,8 +2,8 @@
 
 const Footer = () => {
     return (
-        <div className="bg-blue-950 h-16">
-
+        <div className="">
+            footer
         </div>
     );
 };
