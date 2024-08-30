@@ -18,7 +18,7 @@ export const NavbarComponent = () => {
         <Navbar className='px-4 md:px-0 shadow-xl sticky top-0 z-50'>
             <NavbarContainer>
                 <NavbarBrand>
-                    <div className='md:ml-16 lg:ml-12 text-2xl text-cyan-600 flex justify-center items-center gap-4'>
+                    <div className='md:ml-16 lg:ml-12 text-xl text-cyan-600 flex justify-center items-center gap-4'>
                         <div className=''>
                             <FaBookOpen></FaBookOpen>
                         </div>
