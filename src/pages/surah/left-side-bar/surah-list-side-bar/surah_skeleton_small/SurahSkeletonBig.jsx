@@ -1,8 +1,8 @@
 import { Skeleton, SkeletonLine } from 'keep-react'
 
-export const SurahSkeleton = () => {
+export const SurahSkeletonSmall = () => {
     return (
-        <Skeleton className="w-48 h-12">
+        <Skeleton className="w-full h-8">
             <SkeletonLine className="w-full h-full bg-slate-300" />
         </Skeleton>
     )

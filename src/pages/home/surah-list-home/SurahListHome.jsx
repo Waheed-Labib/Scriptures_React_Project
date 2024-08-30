@@ -1,10 +1,10 @@
 
-import ErrorComponent from "../error-component/ErrorComponent";
-import { SurahSkeleton } from "../surah_skeleton/SurahSkeleton";
-import SurahLink from "./SurahLink";
+import ErrorComponent from "../../../components/error-component/ErrorComponent";
+import { SurahSkeletonBig } from "./surah_skeleton_big/SurahSkeletonBig";
+import SurahLinkDetailed from "./SurahLinkDetailed";
 
 // eslint-disable-next-line react/prop-types
-const SurahList = ({ surahList, loading, error }) => {
+const SurahListHome = ({ surahList, loading, error }) => {
 
     return (
         <div>
@@ -14,7 +14,7 @@ const SurahList = ({ surahList, loading, error }) => {
                 loading &&
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {
-                        Array.from({ length: 114 }).map((_, index) => <SurahSkeleton key={index}></SurahSkeleton>)
+                        Array.from({ length: 114 }).map((_, index) => <SurahSkeletonBig key={index}></SurahSkeletonBig>)
                     }
                 </div>
             }
@@ -25,7 +25,7 @@ const SurahList = ({ surahList, loading, error }) => {
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {
                         // eslint-disable-next-line react/prop-types
-                        surahList.map((surah, index) => <SurahLink key={index} surah={surah}></SurahLink>)
+                        surahList.map((surah, index) => <SurahLinkDetailed key={index} surah={surah}></SurahLinkDetailed>)
                     }
                 </div>
             }
@@ -40,4 +40,4 @@ const SurahList = ({ surahList, loading, error }) => {
     );
 };
 
-export default SurahList;
+export default SurahListHome;

@@ -2,8 +2,8 @@
 
 import { useContext } from "react";
 import { SearchBar } from "../../../components/search-bar/SearchBar";
-import SurahList from "../../../components/surah-list/SurahList";
 import { SurahContext } from "../../../contexts/SurahProvider";
+import SurahListHome from "../surah-list-home/SurahListHome";
 
 const Home = () => {
     const { surahList, loading, error } = useContext(SurahContext)
@@ -13,11 +13,11 @@ const Home = () => {
             <SearchBar name="surah" label="Search by Chapter Name" type="text"></SearchBar>
 
             <div className="mt-12">
-                <SurahList
+                <SurahListHome
                     surahList={surahList}
                     loading={loading}
                     error={error}
-                ></SurahList>
+                ></SurahListHome>
             </div>
         </div>
     );

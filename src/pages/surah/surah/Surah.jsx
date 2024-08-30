@@ -1,6 +1,7 @@
 // import React from 'react';
 
-import LeftSideBar from "../left-side-bar/LeftSideBar";
+
+import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import RightSideBar from "../right-side-bar/RightSideBar";
 import SurahContent from "../surah-content/SurahContent";
 

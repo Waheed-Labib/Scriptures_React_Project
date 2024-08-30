@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-const SurahLink = ({ surah }) => {
+const SurahLinkDetailed = ({ surah }) => {
 
     const { id, name_simple, name_arabic, verses_count, translated_name } = surah;
 
@@ -26,4 +26,4 @@ const SurahLink = ({ surah }) => {
     );
 };
 
-export default SurahLink;
+export default SurahLinkDetailed;
