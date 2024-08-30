@@ -18,7 +18,7 @@ export const NavbarComponent = () => {
         <Navbar className='px-4 md:px-0 shadow-xl sticky top-0 z-50'>
             <NavbarContainer>
                 <NavbarBrand>
-                    <div className='md:ml-16 lg:ml-12 text-lg text-cyan-600 flex justify-center items-center gap-4'>
+                    <div className='md:ml-16 lg:ml-12 text-lg text-cyan-700 flex justify-center items-center gap-4'>
                         <div className=''>
                             <FaBookOpen></FaBookOpen>
                         </div>
@@ -43,7 +43,7 @@ export const NavbarComponent = () => {
 
                     <NavbarItem>Login</NavbarItem>
 
-                    <NavbarItem active className='bg-cyan-600 hover:bg-slate-800'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-800'>Enroll as Contributor</NavbarItem>
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
