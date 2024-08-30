@@ -8,7 +8,9 @@ import {
     NavbarList,
 } from 'keep-react'
 
+import { FaHome } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 export const NavbarComponent = () => {
     return (
@@ -25,16 +27,25 @@ export const NavbarComponent = () => {
 
                 </NavbarBrand>
                 <NavbarList>
-                    {/* <NavbarItem>Figma</NavbarItem> */}
+                    <NavbarItem className='text-xl'>
+                        <Link to='/home'>
+                            <FaHome></FaHome>
+                        </Link>
+                    </NavbarItem>
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
-                    <NavbarItem active className='bg-cyan-600'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-600 hover:bg-slate-800'>Enroll as Contributor</NavbarItem>
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
+                    <NavbarItem className='text-xl'>
+                        <Link to='/home'>
+                            <FaHome></FaHome>
+                        </Link>
+                    </NavbarItem>
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
-                    <NavbarItem active className='bg-cyan-600'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-600 hover:bg-slate-800'>Enroll as Contributor</NavbarItem>
                 </NavbarCollapse>
             </NavbarContainer>
         </Navbar >
