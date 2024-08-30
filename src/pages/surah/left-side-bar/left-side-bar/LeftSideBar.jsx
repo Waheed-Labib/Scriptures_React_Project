@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import { useContext } from "react";
-import SurahListSideBar from "../surah-list-side-bar/SurahListSideBar";
+import SurahListSideBar from "../surah-list-side-bar/surah-list-side-bar/SurahListSideBar";
 import { SurahContext } from "../../../../contexts/SurahProvider";
 
 

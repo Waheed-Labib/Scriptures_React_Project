@@ -1,14 +1,14 @@
 
-import ErrorComponent from "../../../../components/error-component/ErrorComponent";
-import { SurahSkeletonSmall } from "./surah_skeleton_small/SurahSkeletonBig";
-import SurahLinkSmall from "./SurahLinkSmall";
+import ErrorComponent from "../../../../../components/error-component/ErrorComponent";
+import { SurahSkeletonSmall } from "../surah-skeleton-small/SurahSkeletonSmall";
+import SurahLinkSmall from "../surah-link-small/SurahLinkSmall";
 
 // eslint-disable-next-line react/prop-types
 const SurahListSideBar = ({ surahList, loading, error }) => {
 
     return (
         <div className="h-[80vh] overflow-scroll overflow-x-hidden">
-            <h1 className="text-lg font-semibold text-gray-600 mb-4">List of the Chapters</h1>
+            <h1 className="text-lg font-semibold text-gray-600 mb-4">Chapters</h1>
 
             {
                 loading &&
@@ -22,7 +22,7 @@ const SurahListSideBar = ({ surahList, loading, error }) => {
             {
                 // eslint-disable-next-line react/prop-types
                 surahList.length > 0 &&
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-1">
                     {
                         // eslint-disable-next-line react/prop-types
                         surahList.map((surah, index) => <SurahLinkSmall key={index} surah={surah}></SurahLinkSmall>)

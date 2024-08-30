@@ -7,7 +7,7 @@ import Footer from "../sections/footer/Footer";
 
 const Main = () => {
     return (
-        <div className="">
+        <div className="relative">
             <NavbarComponent></NavbarComponent>
             <div className="px-4 md:px-0 md:mx-16 lg:mx-12 my-12">
                 <Outlet></Outlet>

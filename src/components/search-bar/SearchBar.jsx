@@ -1,17 +1,17 @@
-import { Input, Label } from 'keep-react'
-import { FaSearch } from "react-icons/fa";
+/* eslint-disable react/prop-types */
+'use client'
+import { MagnifyingGlass } from 'phosphor-react'
+import { InputIcon, Input } from 'keep-react'
 
-// eslint-disable-next-line react/prop-types
-export const SearchBar = ({ label, name, type }) => {
+export const SearchBar = ({ placeholder }) => {
     return (
-        <fieldset className="">
-            <Label className='flex items-center gap-2 mb-2 text-md' htmlFor={name}>
-                <div>
-                    <FaSearch></FaSearch>
-                </div>
-                <p>{label}</p>
-            </Label>
-            <Input className='border-gray-400' id={name} placeholder={label} type={type} />
+        <fieldset className="relative">
+
+            <Input placeholder={placeholder} className="ps-11 bg-gray-200" />
+            <InputIcon>
+                <MagnifyingGlass size={25} color="#78350f" />
+            </InputIcon>
+
         </fieldset>
     )
 }

@@ -1,18 +1,20 @@
 // import React from 'react';
 
 import { useContext } from "react";
-import { SearchBar } from "../../../components/search-bar/SearchBar";
 import { SurahContext } from "../../../contexts/SurahProvider";
-import SurahListHome from "../surah-list-home/SurahListHome";
+import SurahListHome from "../surah-list-home/surah-list-home/SurahListHome";
+import Hero from "../hero/Hero";
+
 
 const Home = () => {
     const { surahList, loading, error } = useContext(SurahContext)
 
     return (
         <div className="">
-            <SearchBar name="surah" label="Search by Chapter Name" type="text"></SearchBar>
 
-            <div className="mt-12">
+            <Hero></Hero>
+
+            <div className="">
                 <SurahListHome
                     surahList={surahList}
                     loading={loading}

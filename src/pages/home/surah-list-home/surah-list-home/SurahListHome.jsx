@@ -1,14 +1,15 @@
 
-import ErrorComponent from "../../../components/error-component/ErrorComponent";
-import { SurahSkeletonBig } from "./surah_skeleton_big/SurahSkeletonBig";
-import SurahLinkDetailed from "./SurahLinkDetailed";
+import ErrorComponent from "../../../../components/error-component/ErrorComponent";
+import { SurahSkeletonBig } from "../surah_skeleton_big/SurahSkeletonBig";
+import SurahLinkDetailed from "../surah-link-detailed/SurahLinkDetailed";
 
 // eslint-disable-next-line react/prop-types
 const SurahListHome = ({ surahList, loading, error }) => {
 
     return (
-        <div>
-            <h1 className="text-2xl font-semibold text-gray-600 mb-4">List of the Chapters</h1>
+        <div className="mt-16">
+
+            <h1 className="text-5xl text-center font-bold text-gray-400 mb-12">Chapters</h1>
 
             {
                 loading &&
@@ -33,7 +34,7 @@ const SurahListHome = ({ surahList, loading, error }) => {
             {
                 error &&
                 <div className="flex justify-center mt-4">
-                    <ErrorComponent errorType='Fetching Failed' errorText={error}></ErrorComponent>
+                    <ErrorComponent errorType='Chapters Fetching Failed' errorText={error}></ErrorComponent>
                 </div>
             }
         </div>
