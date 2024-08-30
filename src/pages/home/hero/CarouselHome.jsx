@@ -20,8 +20,8 @@ export const CarouselHome = () => {
             <CarouselSlides>
                 {data.map((slide) => (
                     <CarouselItem key={slide}>
-                        <div className="flex items-center justify-center h-48">
-                            <h1 className="text-5xl font-light text-amber-950">{slide}</h1>
+                        <div className="flex items-center justify-center h-48 border-y border-cyan-950 pl-4">
+                            <h1 className="text-4xl font-light text-cyan-950">{slide}</h1>
                         </div>
                     </CarouselItem>
                 ))}

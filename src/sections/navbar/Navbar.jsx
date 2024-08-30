@@ -18,12 +18,12 @@ export const NavbarComponent = () => {
         <Navbar className='px-4 md:px-0 shadow-xl sticky top-0 z-50'>
             <NavbarContainer>
                 <NavbarBrand>
-                    <div className='md:ml-16 lg:ml-12 text-xl text-cyan-600 flex justify-center items-center gap-4'>
+                    <div className='md:ml-16 lg:ml-12 text-lg text-cyan-600 flex justify-center items-center gap-4'>
                         <div className=''>
                             <FaBookOpen></FaBookOpen>
                         </div>
 
-                        <h1 className='font-semibold'>Al Quran Translation Project</h1>
+                        <Link to='/home' className='font-medium'>Al Quran Translation Project</Link>
                     </div>
 
                 </NavbarBrand>
@@ -47,6 +47,10 @@ export const NavbarComponent = () => {
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
+                    <NavbarItem className='text-xl'>
+                        <FaSearch></FaSearch>
+                    </NavbarItem>
+
                     <NavbarItem className='text-xl'>
                         <Link to='/home'>
                             <FaHome></FaHome>
