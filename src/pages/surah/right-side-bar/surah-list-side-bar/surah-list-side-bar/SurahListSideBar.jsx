@@ -2,9 +2,12 @@
 import ErrorComponent from "../../../../../components/error-component/ErrorComponent";
 import { SurahSkeletonSmall } from "../surah-skeleton-small/SurahSkeletonSmall";
 import SurahLinkSmall from "../surah-link-small/SurahLinkSmall";
+import { useSurahList } from "../../../../../hooks/useSurahList";
 
 // eslint-disable-next-line react/prop-types
-const SurahListSideBar = ({ surahList, loading, error }) => {
+const SurahListSideBar = () => {
+
+    const { surahList, loading, error } = useSurahList();
 
     return (
         <div className="">

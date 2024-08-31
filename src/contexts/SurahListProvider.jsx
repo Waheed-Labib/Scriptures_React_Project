@@ -1,14 +1,14 @@
 import { createContext, useEffect, useReducer } from "react";
-import { initialState, SurahReducer } from "../states/reducers/SurahReducer";
+import { initialSurahListState, SurahListReducer } from "../states/reducers/SurahListReducer";
 import { FETCHING_SURAH_LIST_FAILED, FETCHING_SURAH_LIST_START, FETCHING_SURAH_LIST_SUCCESS } from "../states/action-types/ActionTypes";
 
-export const SurahContext = createContext();
+export const SurahListContext = createContext();
 
 // eslint-disable-next-line react/prop-types
-const SurahProvider = ({ children }) => {
+const SurahListProvider = ({ children }) => {
 
 
-    const [state, dispatch] = useReducer(SurahReducer, initialState)
+    const [state, dispatch] = useReducer(SurahListReducer, initialSurahListState)
 
     useEffect(() => {
         dispatch({ type: FETCHING_SURAH_LIST_START })
@@ -20,10 +20,10 @@ const SurahProvider = ({ children }) => {
     }, [])
 
     return (
-        <SurahContext.Provider value={state}>
+        <SurahListContext.Provider value={state}>
             {children}
-        </SurahContext.Provider>
+        </SurahListContext.Provider>
     );
 };
 
-export default SurahProvider;
+export default SurahListProvider;

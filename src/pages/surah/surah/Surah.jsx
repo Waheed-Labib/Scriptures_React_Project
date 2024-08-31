@@ -1,7 +1,7 @@
 // import React from 'react';
 
-
 import { useScroll } from "../../../hooks/useScroll";
+import { useSurahId } from "../../../hooks/useSurahId";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import RightSideBar from "../right-side-bar/right-side-bar/RightSideBar";
 import SurahContent from "../surah-content/SurahContent";
@@ -9,6 +9,8 @@ import SurahContent from "../surah-content/SurahContent";
 const Surah = () => {
 
     useScroll();
+
+    const surahId = useSurahId();
 
     return (
         <div className="flex">
@@ -21,7 +23,7 @@ const Surah = () => {
             </div>
 
             <div className="w-1/5">
-                <RightSideBar></RightSideBar>
+                <RightSideBar surahId={surahId}></RightSideBar>
             </div>
         </div>
     );

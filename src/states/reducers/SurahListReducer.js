@@ -1,12 +1,12 @@
-import { FETCHING_SURAH_LIST_FAILED, FETCHING_SURAH_LIST_START, FETCHING_SURAH_LIST_SUCCESS } from "../action-types/ActionTypes"
+import { FETCHING_SURAH_LIST_FAILED, FETCHING_SURAH_LIST_SUCCESS, FETCHING_SURAH_LIST_START } from "../action-types/ActionTypes"
 
-export const initialState = {
+export const initialSurahListState = {
     surahList: [],
     loading: false,
     error: ""
 }
 
-export const SurahReducer = (state, action) => {
+export const SurahListReducer = (state, action) => {
     switch (action.type) {
 
         case FETCHING_SURAH_LIST_START:
@@ -29,7 +29,6 @@ export const SurahReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                surahList: [],
                 error: action.payload.error
             }
 

@@ -2,9 +2,12 @@
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import { SurahSkeletonBig } from "../surah_skeleton_big/SurahSkeletonBig";
 import SurahLinkDetailed from "../surah-link-detailed/SurahLinkDetailed";
+import { useSurahList } from "../../../../hooks/useSurahList";
 
 // eslint-disable-next-line react/prop-types
-const SurahListHome = ({ surahList, loading, error }) => {
+const SurahListHome = () => {
+
+    const { surahList, loading, error } = useSurahList();
 
     return (
         <div className="mt-16">

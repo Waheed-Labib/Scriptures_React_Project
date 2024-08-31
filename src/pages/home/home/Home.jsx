@@ -1,14 +1,10 @@
 import SurahListHome from "../surah-list-home/surah-list-home/SurahListHome";
 import Hero from "../hero/Hero";
 import { useScroll } from "../../../hooks/useScroll";
-import { useSurah } from "../../../hooks/useSurah";
-
 
 const Home = () => {
 
     useScroll();
-
-    const { surahList, loading, error } = useSurah();
 
     return (
         <div className="">
@@ -16,11 +12,7 @@ const Home = () => {
             <Hero></Hero>
 
             <div className="">
-                <SurahListHome
-                    surahList={surahList}
-                    loading={loading}
-                    error={error}
-                ></SurahListHome>
+                <SurahListHome></SurahListHome>
             </div>
         </div>
     );
