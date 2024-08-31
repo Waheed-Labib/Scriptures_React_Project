@@ -1,13 +1,14 @@
-// import React from 'react';
-
-import { useContext } from "react";
-import { SurahContext } from "../../../contexts/SurahProvider";
 import SurahListHome from "../surah-list-home/surah-list-home/SurahListHome";
 import Hero from "../hero/Hero";
+import { useScroll } from "../../../hooks/useScroll";
+import { useSurah } from "../../../hooks/useSurah";
 
 
 const Home = () => {
-    const { surahList, loading, error } = useContext(SurahContext)
+
+    useScroll();
+
+    const { surahList, loading, error } = useSurah();
 
     return (
         <div className="">

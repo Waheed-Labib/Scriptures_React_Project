@@ -1,11 +1,15 @@
 // import React from 'react';
 
 
+import { useScroll } from "../../../hooks/useScroll";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import RightSideBar from "../right-side-bar/RightSideBar";
 import SurahContent from "../surah-content/SurahContent";
 
 const Surah = () => {
+
+    useScroll();
+
     return (
         <div className="flex">
             <div className="w-1/5">
