@@ -2,7 +2,7 @@ import { FETCHING_VERSES_FAILED, FETCHING_VERSES_START, FETCHING_VERSES_SUCCESS 
 
 export const initialVersesState = {
     verses: [],
-    loading: false,
+    loading: true,
     error: ""
 }
 

@@ -2,7 +2,7 @@ import { FETCHING_SURAH_LIST_FAILED, FETCHING_SURAH_LIST_SUCCESS, FETCHING_SURAH
 
 export const initialSurahListState = {
     surahList: [],
-    loading: false,
+    loading: true,
     error: ""
 }
 
