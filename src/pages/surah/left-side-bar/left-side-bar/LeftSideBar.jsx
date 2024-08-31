@@ -1,6 +1,8 @@
 // import React from 'react';
 
-import SelectFont from "../select-font/SelectFont";
+import { SelectFont } from "../select-font/SelectFont";
+
+
 
 const LeftSideBar = () => {
     return (

@@ -7,7 +7,7 @@ import SurahLinkSmall from "../surah-link-small/SurahLinkSmall";
 const SurahListSideBar = ({ surahList, loading, error }) => {
 
     return (
-        <div className="h-[80vh] overflow-scroll overflow-x-hidden">
+        <div className="">
             <h1 className="text-lg font-semibold text-gray-600 mb-4">Chapters</h1>
 
             {

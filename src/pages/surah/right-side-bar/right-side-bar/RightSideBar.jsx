@@ -7,7 +7,7 @@ const RightSideBar = () => {
     const { surahList, loading, error } = useSurah();
 
     return (
-        <div className="">
+        <div className="h-[85vh] overflow-scroll overflow-x-hidden">
             <SurahListSideBar
                 surahList={surahList}
                 loading={loading}
