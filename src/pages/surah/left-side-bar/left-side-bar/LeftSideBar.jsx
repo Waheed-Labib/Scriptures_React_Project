@@ -1,18 +1,11 @@
-import SurahListSideBar from "../surah-list-side-bar/surah-list-side-bar/SurahListSideBar";
-import { useSurah } from "../../../../hooks/useSurah";
+// import React from 'react';
 
+import SelectFont from "../select-font/SelectFont";
 
 const LeftSideBar = () => {
-
-    const { surahList, loading, error } = useSurah();
-
     return (
-        <div className="">
-            <SurahListSideBar
-                surahList={surahList}
-                loading={loading}
-                error={error}
-            ></SurahListSideBar>
+        <div>
+            <SelectFont></SelectFont>
         </div>
     );
 };
