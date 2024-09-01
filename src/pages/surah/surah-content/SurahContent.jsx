@@ -2,7 +2,7 @@
 const SurahContent = () => {
 
     return (
-        <div>
+        <div className="px-12">
             Surah Content
         </div>
     );

@@ -1,17 +1,29 @@
-import { Label, Radio } from 'keep-react'
-
 export const SelectFont = () => {
     return (
-        <form className="flex flex-col gap-2">
-            <legend className="mb-1 text-lg font-semibold text-gray-600">Quran Font</legend>
-            <fieldset className="flex items-center gap-2">
-                <Radio defaultChecked id="uthmani" name="font" />
-                <Label htmlFor="uthmani">Uthmani</Label>
-            </fieldset>
-            <fieldset className="flex items-center gap-2">
-                <Radio id="indopak" name="font" />
-                <Label htmlFor="indopak">IndoPak</Label>
-            </fieldset>
+        <form className="mt-6 bg-slate-100 rounded p-3 pb-4">
+            <h3 className="mb-2 text-sm font-semibold text-gray-600">Arabic Font</h3>
+            <div className="flex items-center justify-between w-full">
+                <div>
+                    <label className="flex items-center gap-2 text-cyan-700">
+                        <input
+                            type="radio"
+                            value="Uthmani"
+                        // style={{ accentColor: "#025858" }}
+                        />
+                        <p className="text-sm font-medium">Uthmani</p>
+                    </label>
+                </div>
+                <div>
+                    <label className="flex items-center gap-2 text-cyan-700">
+                        <input
+                            type="radio"
+                            value="IndoPak"
+                        // style={{ accentColor: "#025858" }}
+                        />
+                        <p className="text-sm font-medium">IndoPak</p>
+                    </label>
+                </div>
+            </div>
         </form>
     )
 }

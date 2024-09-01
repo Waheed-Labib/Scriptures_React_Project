@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { SelectFont } from "../select-font/SelectFont";
+import SuraInfo from "../sura-info/SuraInfo";
 
 const LeftSideBar = ({ surahId }) => {
 
-    console.log(surahId)
-
     return (
-        <div>
+        <div className="">
+            <SuraInfo surahId={surahId}></SuraInfo>
             <SelectFont></SelectFont>
         </div>
     );

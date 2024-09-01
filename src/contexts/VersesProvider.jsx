@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import { FETCHING_VERSES_START, FETCHING_VERSES_SUCCESS } from "../states/action-types/ActionTypes";
+import { FETCHING_VERSES_FAILED, FETCHING_VERSES_START, FETCHING_VERSES_SUCCESS } from "../states/action-types/ActionTypes";
 import { initialVersesState, VersesReducer } from "../states/reducers/VersesReducer";
 import { useSurahId } from "../hooks/useSurahId";
 import { getVersesByVersesInfo } from "../utilities/getVersesByVersesInfo";
@@ -22,6 +22,7 @@ const VersesProvider = ({ children }) => {
                 const verses = getVersesByVersesInfo(data.verses, 'indopak')
                 dispatch({ type: FETCHING_VERSES_SUCCESS, payload: { verses: verses } })
             })
+            .catch(err => dispatch({ type: FETCHING_VERSES_FAILED, payload: { error: err.message } }))
     }, [surahId])
 
     return (
