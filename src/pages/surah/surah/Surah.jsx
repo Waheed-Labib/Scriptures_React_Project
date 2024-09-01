@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import { useScroll } from "../../../hooks/useScroll";
 import { useSurahId } from "../../../hooks/useSurahId";
 import { useVerses } from "../../../hooks/useVerses";
@@ -12,23 +10,25 @@ const Surah = () => {
     useScroll();
 
     const surahId = useSurahId();
-    const { verses, loading, error } = useVerses()
-    console.log(verses, loading, error)
+    const { verses, loading, error } = useVerses();
 
     return (
         <div className="flex">
             <div className="w-1/5">
-                <LeftSideBar></LeftSideBar>
+                <LeftSideBar surahId={surahId}></LeftSideBar>
             </div>
 
             <div className="w-3/5">
                 <SurahContent
                     surahId={surahId}
+                    verses={verses}
+                    loading={loading}
+                    error={error}
                 ></SurahContent>
             </div>
 
             <div className="w-1/5">
-                <RightSideBar surahId={surahId}></RightSideBar>
+                <RightSideBar></RightSideBar>
             </div>
         </div>
     );
