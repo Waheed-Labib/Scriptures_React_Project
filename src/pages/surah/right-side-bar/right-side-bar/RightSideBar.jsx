@@ -4,7 +4,9 @@ const RightSideBar = () => {
 
     return (
         <div className="h-[85vh] overflow-scroll overflow-x-hidden">
-            <SurahListSideBar></SurahListSideBar>
+            <div className="pr-2">
+                <SurahListSideBar></SurahListSideBar>
+            </div>
         </div>
     );
 };

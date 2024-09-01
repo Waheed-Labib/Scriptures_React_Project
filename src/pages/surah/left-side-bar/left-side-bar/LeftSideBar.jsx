@@ -2,11 +2,11 @@
 import { SelectFont } from "../select-font/SelectFont";
 import SuraInfo from "../sura-info/SuraInfo";
 
-const LeftSideBar = ({ surahId }) => {
+const LeftSideBar = () => {
 
     return (
         <div className="">
-            <SuraInfo surahId={surahId}></SuraInfo>
+            <SuraInfo></SuraInfo>
             <SelectFont></SelectFont>
         </div>
     );

@@ -19,14 +19,19 @@ const VersesProvider = ({ children }) => {
         fetch(`https://api.quran.com/api/v4/verses/by_chapter/${surahId}`)
             .then(res => res.json())
             .then(data => {
-                const verses = getVersesByVersesInfo(data.verses, 'indopak')
+                const verses = getVersesByVersesInfo(data.verses, state.font)
                 dispatch({ type: FETCHING_VERSES_SUCCESS, payload: { verses: verses } })
             })
             .catch(err => dispatch({ type: FETCHING_VERSES_FAILED, payload: { error: err.message } }))
-    }, [surahId])
+    }, [surahId, state.font])
+
+    const value = {
+        state,
+        dispatch
+    }
 
     return (
-        <VersesContext.Provider value={state}>
+        <VersesContext.Provider value={value}>
             {children}
         </VersesContext.Provider>
     );
