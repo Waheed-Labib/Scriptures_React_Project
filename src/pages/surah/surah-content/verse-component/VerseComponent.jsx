@@ -1,9 +1,19 @@
+import { useVersesInfo } from "../../../../hooks/useVersesInfo";
+import { useArabicVerse } from "../../../../hooks/useArabicVerse";
+
 /* eslint-disable react/prop-types */
 const VerseComponent = ({ verseData }) => {
-    console.log(verseData)
-    return (
-        <div className="h-10 border">
 
+    const { state } = useVersesInfo();
+    const { font } = state;
+
+    const { verse_key } = verseData;
+
+    const arabicVerse = useArabicVerse(verse_key, font)
+
+    return (
+        <div className="h-10 border text-end">
+            {arabicVerse}
         </div>
     );
 };

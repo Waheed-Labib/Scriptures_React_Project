@@ -1,9 +1,14 @@
+import { useVersesInfo } from "../../../../hooks/useVersesInfo"
+import { SET_ARABIC_FONT } from "../../../../states/action-types/ActionTypes";
 
 
 export const SelectFont = () => {
 
-    const handleFontChange = () => {
+    const { state, dispatch } = useVersesInfo();
+    const { font } = state;
 
+    const handleFontChange = (event) => {
+        dispatch({ type: SET_ARABIC_FONT, payload: { font: event.target.value } })
     }
 
     return (
@@ -15,7 +20,7 @@ export const SelectFont = () => {
                         <input
                             type="radio"
                             value="uthmani"
-                            // checked={font === 'uthmani'}
+                            checked={font === 'uthmani'}
                             onChange={handleFontChange}
                         />
                         <p className="text-xs font-medium">Uthmani</p>
@@ -26,7 +31,7 @@ export const SelectFont = () => {
                         <input
                             type="radio"
                             value="indopak"
-                            // checked={font === 'indopak'}
+                            checked={font === 'indopak'}
                             onChange={handleFontChange}
                         />
                         <p className="text-xs font-medium">IndoPak</p>
