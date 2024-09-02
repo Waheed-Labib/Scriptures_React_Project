@@ -3,7 +3,7 @@ import { FETCHING_VERSES_FAILED, FETCHING_VERSES_START, FETCHING_VERSES_SUCCESS,
 export const initialVersesState = {
     verses: [],
     font: 'uthmani',
-    loading: true,
+    loading: false,
     error: ""
 }
 

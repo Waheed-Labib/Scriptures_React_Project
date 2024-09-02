@@ -4,7 +4,8 @@ import { useVerses } from "../../../hooks/useVerses";
 const SurahContent = () => {
 
     const { state } = useVerses();
-    console.log(state.font)
+    const { verses, loading, error } = state;
+    console.log('verses', verses, 'loading', loading, 'error', error)
 
     return (
         <div className="px-12">

@@ -1,8 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
-import { FETCHING_VERSES_FAILED, FETCHING_VERSES_START, FETCHING_VERSES_SUCCESS } from "../states/action-types/ActionTypes";
+import { FETCHING_VERSES_FAILED, FETCHING_VERSES_START } from "../states/action-types/ActionTypes";
 import { initialVersesState, VersesReducer } from "../states/reducers/VersesReducer";
 import { useSurahId } from "../hooks/useSurahId";
-import { getVersesByVersesInfo } from "../utilities/getVersesByVersesInfo";
 
 export const VersesContext = createContext();
 
@@ -19,8 +18,7 @@ const VersesProvider = ({ children }) => {
         fetch(`https://api.quran.com/api/v4/verses/by_chapter/${surahId}`)
             .then(res => res.json())
             .then(data => {
-                const verses = getVersesByVersesInfo(data.verses, state.font)
-                dispatch({ type: FETCHING_VERSES_SUCCESS, payload: { verses: verses } })
+                console.log(data)
             })
             .catch(err => dispatch({ type: FETCHING_VERSES_FAILED, payload: { error: err.message } }))
     }, [surahId, state.font])

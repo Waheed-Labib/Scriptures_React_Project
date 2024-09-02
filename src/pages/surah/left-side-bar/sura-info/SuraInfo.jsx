@@ -11,28 +11,28 @@ const SuraInfo = () => {
 
     return (
         <div>
-            <h3 className="pl-2 text-sm font-semibold text-gray-500">Chapter {id}</h3>
-            <h1 className="pl-2 text-3xl font-bold text-cyan-700"> {name_simple}</h1>
+            <h3 className="pl-2 text-sm font-semibold text-gray-500 mb-2">Chapter {id}</h3>
+            <h1 className="pl-2 text-3xl font-bold text-cyan-600"> {name_simple}</h1>
 
-            <table className="mt-4 border-collapse w-full">
+            <table className="mt-6 border-collapse w-full">
                 <tbody>
                     <tr>
-                        <td className="border border-gray-200 pl-2">
-                            <div className="font-semibold text-gray-500">Verses</div>
+                        <td className="border border-gray-100 p-2">
+                            <div className="text-sm font-semibold text-gray-600">Verses :</div>
                         </td>
-                        <td className="pl-2 text-lg font-medium text-cyan-700 border border-gray-200"> {verses_count}</td>
+                        <td className="font-medium text-cyan-600 border border-gray-100 p-2"> {verses_count}</td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-200 pl-2">
-                            <div className="text-xs font-semibold text-gray-500">Revelation Place</div>
+                        <td className="border border-gray-100 p-2">
+                            <div className="text-xs font-semibold text-gray-500">Revelation Place :</div>
                         </td>
-                        <td className="pl-2 text-sm text-cyan-700 border border-gray-200"> {capitalizeFirstLetter(revelation_place)}</td>
+                        <td className="text-sm text-cyan-700 border border-gray-100 p-2"> {capitalizeFirstLetter(revelation_place)}</td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-200 pl-2">
-                            <div className="text-xs font-semibold text-gray-500">Revelation Order</div>
+                        <td className="border border-gray-100 p-2">
+                            <div className="text-xs font-semibold text-gray-500">Revelation Order :</div>
                         </td>
-                        <td className="pl-2 text-sm text-cyan-700 border border-gray-200"> {revelation_order}</td>
+                        <td className="text-sm text-cyan-700 border border-gray-100 p-2"> {revelation_order}</td>
                     </tr>
                 </tbody>
             </table>
