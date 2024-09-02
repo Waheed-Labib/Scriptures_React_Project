@@ -15,10 +15,10 @@ import { Link } from 'react-router-dom';
 
 export const NavbarComponent = () => {
     return (
-        <Navbar className='px-4 md:px-0 py-3 shadow-lg sticky top-0 z-50'>
-            <NavbarContainer>
+        <Navbar className='px-4 md:px-0 flex justify-center py-3 shadow-lg sticky top-0 z-50'>
+            <NavbarContainer className=''>
                 <NavbarBrand>
-                    <div className='md:ml-16 lg:ml-12 text-cyan-800 flex justify-center items-center gap-4'>
+                    <div className='text-cyan-800 flex justify-center items-center gap-4'>
                         <div className=''>
                             <FaBookOpen></FaBookOpen>
                         </div>
@@ -45,7 +45,7 @@ export const NavbarComponent = () => {
 
                     <NavbarItem>Login</NavbarItem>
 
-                    <NavbarItem active className='bg-cyan-800 hover:bg-slate-800 h-8 flex items-center'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center'>Enroll as Contributor</NavbarItem>
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
@@ -61,7 +61,7 @@ export const NavbarComponent = () => {
                     <NavbarItem className=''>Chapters</NavbarItem>
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
-                    <NavbarItem active className='bg-cyan-800 hover:bg-slate-800 h-8 flex items-center'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center'>Enroll as Contributor</NavbarItem>
                 </NavbarCollapse>
             </NavbarContainer>
         </Navbar >
