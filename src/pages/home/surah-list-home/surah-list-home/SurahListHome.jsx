@@ -6,7 +6,8 @@ import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleto
 
 const SurahListHome = () => {
 
-    const { surahList, loading, error } = useSurahList()
+    const { state } = useSurahList();
+    const { surahList, loading, error } = state;
 
     return (
         <div className="mt-16">
