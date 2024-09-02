@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 import { useSurahId } from "../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLetter";
@@ -6,8 +7,17 @@ import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLett
 const SuraInfo = () => {
 
     const surahId = useSurahId();
-    const surahInfo = useSurahInfo(surahId);
+    const { loading, surahInfo } = useSurahInfo(surahId);
     const { id, revelation_place, revelation_order, name_simple, verses_count } = surahInfo;
+
+    if (loading) return (
+        <div className="flex flex-col gap-2">
+            {
+                Array.from({ length: 5 }).map((_, index) => <SimpleSkeleton key={index}></SimpleSkeleton>)
+            }
+        </div>
+
+    )
 
     return (
         <div>

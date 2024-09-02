@@ -1,13 +1,12 @@
-
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
-import { SurahSkeletonBig } from "../surah_skeleton_big/SurahSkeletonBig";
 import SurahLinkDetailed from "../surah-link-detailed/SurahLinkDetailed";
 import { useSurahList } from "../../../../hooks/useSurahList";
+import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 
-// eslint-disable-next-line react/prop-types
+
 const SurahListHome = () => {
 
-    const { surahList, loading, error } = useSurahList();
+    const { surahList, loading, error } = useSurahList()
 
     return (
         <div className="mt-16">
@@ -18,17 +17,16 @@ const SurahListHome = () => {
                 loading &&
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {
-                        Array.from({ length: 114 }).map((_, index) => <SurahSkeletonBig key={index}></SurahSkeletonBig>)
+                        Array.from({ length: 114 }).map((_, index) => <SimpleSkeleton key={index}></SimpleSkeleton>)
                     }
                 </div>
             }
 
             {
-                // eslint-disable-next-line react/prop-types
+
                 surahList.length > 0 &&
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {
-                        // eslint-disable-next-line react/prop-types
                         surahList.map((surah, index) => <SurahLinkDetailed key={index} surah={surah}></SurahLinkDetailed>)
                     }
                 </div>
