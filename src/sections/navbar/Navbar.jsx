@@ -39,6 +39,8 @@ export const NavbarComponent = () => {
                         </NavbarItem>
                     </Link>
 
+                    <NavbarItem className=''>Chapters</NavbarItem>
+
                     <NavbarItem className=''>Blog</NavbarItem>
 
                     <NavbarItem>Login</NavbarItem>
@@ -56,6 +58,7 @@ export const NavbarComponent = () => {
                             <FaHome></FaHome>
                         </Link>
                     </NavbarItem>
+                    <NavbarItem className=''>Chapters</NavbarItem>
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
                     <NavbarItem active className='bg-cyan-800 hover:bg-slate-800 h-8 flex items-center'>Enroll as Contributor</NavbarItem>

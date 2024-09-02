@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import SurahListProvider from './contexts/SurahListProvider.jsx'
-import VersesProvider from './contexts/VersesProvider.jsx'
+import VersesInfoProvider from './contexts/VersesInfoProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <SurahListProvider>
-      <VersesProvider>
+      <VersesInfoProvider>
         <App />
-      </VersesProvider>
+      </VersesInfoProvider>
     </SurahListProvider>
   </StrictMode>,
 )

@@ -1,15 +1,21 @@
-import { useVerses } from "../../../hooks/useVerses";
+import { useVersesInfo } from "../../../hooks/useVersesInfo";
+import VerseComponent from "./verse-component/VerseComponent";
 
 /* eslint-disable react/prop-types */
 const SurahContent = () => {
 
-    const { state } = useVerses();
-    const { verses, loading, error } = state;
-    console.log('verses', verses, 'loading', loading, 'error', error)
+    const { state } = useVersesInfo();
+    const { versesInfo } = state;
+    const { verses: versesData } = versesInfo;
 
     return (
-        <div className="px-12">
-            Surah Content
+        <div className="">
+            {
+                versesData?.map((verseData, index) => <VerseComponent
+                    key={index}
+                    verseData={verseData}
+                ></VerseComponent>)
+            }
         </div>
     );
 };
