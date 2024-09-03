@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export const useArabicVerse = (verse_key, font) => {
     const [arabicVerse, setArabicVerse] = useState('');
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
 
     useEffect(() => {
 

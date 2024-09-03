@@ -2,12 +2,15 @@
 import { SelectFont } from "../select-font/SelectFont";
 import SuraInfo from "../sura-info/SuraInfo";
 
-const LeftSideBar = () => {
+const LeftSideBar = ({ arabicFont, setArabicFont }) => {
 
     return (
         <div className="">
             <SuraInfo></SuraInfo>
-            <SelectFont></SelectFont>
+            <SelectFont
+                arabicFont={arabicFont}
+                setArabicFont={setArabicFont}
+            ></SelectFont>
         </div>
     );
 };

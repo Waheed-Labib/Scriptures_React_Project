@@ -1,14 +1,10 @@
-import { useVersesInfo } from "../../../../hooks/useVersesInfo"
-import { SET_ARABIC_FONT } from "../../../../states/action-types/ActionTypes";
+/* eslint-disable react/prop-types */
 
-
-export const SelectFont = () => {
-
-    const { state, dispatch } = useVersesInfo();
-    const { font } = state;
+export const SelectFont = ({ arabicFont, setArabicFont }) => {
 
     const handleFontChange = (event) => {
-        dispatch({ type: SET_ARABIC_FONT, payload: { font: event.target.value } })
+        setArabicFont(event.target.value);
+        localStorage.setItem('aqtp-font', event.target.value);
     }
 
     return (
@@ -20,7 +16,7 @@ export const SelectFont = () => {
                         <input
                             type="radio"
                             value="uthmani"
-                            checked={font === 'uthmani'}
+                            checked={arabicFont === 'uthmani'}
                             onChange={handleFontChange}
                         />
                         <p className="text-xs font-medium">Uthmani</p>
@@ -31,7 +27,7 @@ export const SelectFont = () => {
                         <input
                             type="radio"
                             value="indopak"
-                            checked={font === 'indopak'}
+                            checked={arabicFont === 'indopak'}
                             onChange={handleFontChange}
                         />
                         <p className="text-xs font-medium">IndoPak</p>

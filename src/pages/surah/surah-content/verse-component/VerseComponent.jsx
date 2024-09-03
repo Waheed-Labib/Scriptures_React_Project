@@ -3,14 +3,14 @@ import { useArabicVerse } from "../../../../hooks/useArabicVerse";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 
 /* eslint-disable react/prop-types */
-const VerseComponent = ({ verseData }) => {
+const VerseComponent = ({ verseData, arabicFont }) => {
 
     const { state } = useVersesInfo();
-    const { loading: loadingVerses, font } = state;
+    const { loading: loadingVerses } = state;
 
     const { verse_key } = verseData;
 
-    const { arabicVerse, loading: loadingVerse, error } = useArabicVerse(verse_key, font)
+    const { arabicVerse, loading: loadingVerse, error } = useArabicVerse(verse_key, arabicFont)
 
     if (loadingVerses || loadingVerse) return (
         <SimpleSkeleton></SimpleSkeleton>

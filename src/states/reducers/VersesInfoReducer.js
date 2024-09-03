@@ -1,13 +1,13 @@
-import { FETCHING_VERSES_INFO_FAILED, FETCHING_VERSES_INFO_START, FETCHING_VERSES_INFO_SUCCESS, SET_ARABIC_FONT } from "../action-types/ActionTypes"
+import { FETCHING_VERSES_INFO_FAILED, FETCHING_VERSES_INFO_START, FETCHING_VERSES_INFO_SUCCESS } from "../action-types/ActionTypes"
 
 export const initialVersesInfoState = {
     versesInfo: {},
     loading: false,
-    error: "",
-    font: 'uthmani'
+    error: ""
 }
 
 export const VersesInfoReducer = (state, action) => {
+
     switch (action.type) {
 
         case FETCHING_VERSES_INFO_START:
@@ -30,12 +30,6 @@ export const VersesInfoReducer = (state, action) => {
                 ...state,
                 loading: false,
                 error: action.payload.error
-            }
-
-        case SET_ARABIC_FONT:
-            return {
-                ...state,
-                font: action.payload.font
             }
 
         default:
