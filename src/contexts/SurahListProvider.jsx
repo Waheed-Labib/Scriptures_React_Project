@@ -1,6 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 import { initialSurahListState, SurahListReducer } from "../states/reducers/SurahListReducer";
 import { FETCHING_SURAH_LIST_FAILED, FETCHING_SURAH_LIST_START, FETCHING_SURAH_LIST_SUCCESS } from "../states/action-types/ActionTypes";
+import axios from "axios";
 
 export const SurahListContext = createContext();
 
@@ -12,10 +13,14 @@ const SurahListProvider = ({ children }) => {
     useEffect(() => {
         dispatch({ type: FETCHING_SURAH_LIST_START })
 
-        fetch("https://api.quran.com/api/v4/chapters")
-            .then(res => res.json())
-            .then(data => dispatch({ type: FETCHING_SURAH_LIST_SUCCESS, payload: { surahList: data.chapters } }))
-            .catch(err => dispatch({ type: FETCHING_SURAH_LIST_FAILED, payload: { error: err.message } }))
+        axios.get('https://api.quran.com/api/v4/chapters')
+            .then(function (response) {
+                dispatch({ type: FETCHING_SURAH_LIST_SUCCESS, payload: { surahList: response.data.chapters } })
+            })
+            .catch(function (error) {
+                dispatch({ type: FETCHING_SURAH_LIST_FAILED, payload: { error: error.message } })
+            })
+
     }, [])
 
     const value = { state, dispatch }
