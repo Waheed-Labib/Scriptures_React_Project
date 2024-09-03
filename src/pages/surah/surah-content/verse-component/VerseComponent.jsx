@@ -6,14 +6,20 @@ import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleto
 const VerseComponent = ({ verseData }) => {
 
     const { state } = useVersesInfo();
-    const { loading, font } = state;
+    const { loading: loadingVerses, font } = state;
 
     const { verse_key } = verseData;
 
-    const arabicVerse = useArabicVerse(verse_key, font)
+    const { arabicVerse, loading: loadingVerse, error } = useArabicVerse(verse_key, font)
 
-    if (loading) return (
+    if (loadingVerses || loadingVerse) return (
         <SimpleSkeleton></SimpleSkeleton>
+    )
+
+    if (error) return (
+        <div className="p-1 w-8 h-8 rounded-full flex justify-center items-center bg-rose-300 border border-gray-200">
+            <h1 className="text-2xl font-bold text-gray-200">!</h1>
+        </div>
     )
 
     return (

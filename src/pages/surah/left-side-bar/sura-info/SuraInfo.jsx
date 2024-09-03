@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 import { useSurahId } from "../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
@@ -7,7 +8,7 @@ import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLett
 const SuraInfo = () => {
 
     const surahId = useSurahId();
-    const { loading, surahInfo } = useSurahInfo(surahId);
+    const { loading, surahInfo, error } = useSurahInfo(surahId);
     const { id, revelation_place, revelation_order, name_simple, verses_count } = surahInfo;
 
     if (loading) return (
@@ -18,6 +19,8 @@ const SuraInfo = () => {
         </div>
 
     )
+
+    if (error) return <ErrorComponent errorType={'Feetching Chapter Info Failed'} errorText={error}></ErrorComponent>
 
     return (
         <div>

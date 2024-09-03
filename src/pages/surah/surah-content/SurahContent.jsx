@@ -1,3 +1,4 @@
+import ErrorComponent from "../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../components/simple-skeleton/SimpleSkeleton";
 import { useVersesInfo } from "../../../hooks/useVersesInfo";
 import VerseComponent from "./verse-component/VerseComponent";
@@ -6,7 +7,7 @@ import VerseComponent from "./verse-component/VerseComponent";
 const SurahContent = () => {
 
     const { state } = useVersesInfo();
-    const { versesInfo, loading } = state;
+    const { versesInfo, loading, error } = state;
     const { verses: versesData } = versesInfo;
 
     if (loading) return (
@@ -18,7 +19,10 @@ const SurahContent = () => {
 
     )
 
-    console.log(loading, versesData)
+    if (error) return <ErrorComponent
+        errorType={'Verses Fetching Failed'}
+        errorText={error}
+    ></ErrorComponent>
 
     return (
         <div className="">
