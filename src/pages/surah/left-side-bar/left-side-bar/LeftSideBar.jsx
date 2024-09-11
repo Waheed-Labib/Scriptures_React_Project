@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { SelectFont } from "../select-font/SelectFont";
+import SelectTranslation from "../select-translation/SelectTranslation";
 import SuraInfo from "../sura-info/SuraInfo";
 
 const LeftSideBar = ({ arabicFont, setArabicFont }) => {
@@ -11,6 +12,7 @@ const LeftSideBar = ({ arabicFont, setArabicFont }) => {
                 arabicFont={arabicFont}
                 setArabicFont={setArabicFont}
             ></SelectFont>
+            <SelectTranslation></SelectTranslation>
         </div>
     );
 };
