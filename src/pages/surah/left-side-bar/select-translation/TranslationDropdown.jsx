@@ -1,17 +1,34 @@
-'use client'
-import { Button, Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from 'keep-react'
+import { Button, Dropdown, DropdownAction, DropdownContent, DropdownList } from 'keep-react'
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { useLanguages } from '../../../../hooks/useLanguages';
+import Language from './Language';
 
 export const TranslationDropdown = () => {
+
+    const { languages, loading: languagesLoading, error: languagesError } = useLanguages();
+
     return (
-        <Dropdown trigger="hover">
+        <Dropdown>
             <DropdownAction asChild>
-                <Button>Open Dropdown</Button>
+                <Button className='justify-between w-full bg-cyan-700 hover:bg-slate-700 rounded h-8'>
+                    <p>3 selected</p>
+                    <div className='text-3xl'>
+                        <RiArrowDropDownLine></RiArrowDropDownLine>
+                    </div>
+                </Button>
             </DropdownAction>
-            <DropdownContent>
+            <DropdownContent className='border'>
                 <DropdownList>
-                    <DropdownItem>
-                        Phone
-                    </DropdownItem>
+                    <div className='h-64 overflow-y-scroll'>
+                        {
+                            languages?.map((language, index) => <Language
+                                key={index}
+                                language={language}
+                                languagesLoading={languagesLoading}
+                                languagesError={languagesError}
+                            ></Language>)
+                        }
+                    </div>
                 </DropdownList>
             </DropdownContent>
         </Dropdown>
