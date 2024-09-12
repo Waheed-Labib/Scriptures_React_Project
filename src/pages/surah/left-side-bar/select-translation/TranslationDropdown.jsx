@@ -5,16 +5,19 @@ import { useLanguages } from '../../../../hooks/useLanguages';
 import Language from './Language';
 import SimpleSkeleton from '../../../../components/simple-skeleton/SimpleSkeleton';
 import ErrorComponent from '../../../../components/error-component/ErrorComponent';
+import { useSelectedTranslationsIds } from '../../../../hooks/useSelectedTranslationsIds';
 
 export const TranslationDropdown = () => {
 
     const { languages, loading: languagesLoading, error: languagesError } = useLanguages();
 
+    const { selectedTranslationsIds } = useSelectedTranslationsIds();
+
     return (
         <Dropdown>
             <DropdownAction asChild>
                 <Button className='justify-between w-full bg-cyan-700 hover:bg-slate-700 rounded h-8'>
-                    <p className='text-xs text-cyan-100'>3 selected</p>
+                    <p className='text-xs text-cyan-100'>{selectedTranslationsIds?.length} selected</p>
                     <div className='text-3xl text-cyan-100'>
                         <RiArrowDropDownLine></RiArrowDropDownLine>
                     </div>
