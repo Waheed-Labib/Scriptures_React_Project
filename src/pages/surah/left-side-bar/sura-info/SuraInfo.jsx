@@ -6,7 +6,7 @@ import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLetter";
 import Links from "../links/Links";
 
-const SuraInfo = ({ chapterChange, setChapterChange }) => {
+const SuraInfo = ({ chapterNum, setChapterNum }) => {
 
     const surahId = useSurahId();
     const { loading, surahInfo, error } = useSurahInfo(surahId);
@@ -29,8 +29,8 @@ const SuraInfo = ({ chapterChange, setChapterChange }) => {
             <h1 className="pl-2 text-3xl font-bold text-cyan-600"> {name_simple}</h1>
 
             <Links
-                chapterChange={chapterChange}
-                setChapterChange={setChapterChange}
+                chapterNum={chapterNum}
+                setChapterNum={setChapterNum}
             ></Links>
 
             <table className="mt-6 border-collapse w-full">

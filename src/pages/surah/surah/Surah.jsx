@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useScroll } from "../../../hooks/useScroll";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import SurahContent from "../surah-content/SurahContent";
+import { useSurahId } from "../../../hooks/useSurahId";
 
 const Surah = () => {
 
     useScroll();
 
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
-    const [chapterChange, setChapterChange] = useState(false)
+    const [chapterNum, setChapterNum] = useState(useSurahId())
 
     return (
         <div className="flex gap-8">
@@ -16,8 +17,8 @@ const Surah = () => {
                 <LeftSideBar
                     arabicFont={arabicFont}
                     setArabicFont={setArabicFont}
-                    chapterChange={chapterChange}
-                    setChapterChange={setChapterChange}
+                    chapterNum={chapterNum}
+                    setChapterNum={setChapterNum}
                 ></LeftSideBar>
             </div>
 

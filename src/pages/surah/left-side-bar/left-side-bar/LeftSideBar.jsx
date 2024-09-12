@@ -3,13 +3,13 @@ import { SelectFont } from "../select-font/SelectFont";
 import SelectTranslation from "../select-translation/SelectTranslation";
 import SuraInfo from "../sura-info/SuraInfo";
 
-const LeftSideBar = ({ arabicFont, setArabicFont, chapterChange, setChapterChange }) => {
+const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) => {
 
     return (
         <div className="">
             <SuraInfo
-                chapterChange={chapterChange}
-                setChapterChange={setChapterChange}
+                chapterNum={chapterNum}
+                setChapterNum={setChapterNum}
             ></SuraInfo>
             <SelectFont
                 arabicFont={arabicFont}
