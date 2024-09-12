@@ -4,8 +4,9 @@ import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleto
 import { useSurahId } from "../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLetter";
+import Links from "../links/Links";
 
-const SuraInfo = () => {
+const SuraInfo = ({ chapterChange, setChapterChange }) => {
 
     const surahId = useSurahId();
     const { loading, surahInfo, error } = useSurahInfo(surahId);
@@ -26,6 +27,11 @@ const SuraInfo = () => {
         <div>
             <h3 className="pl-2 text-sm font-semibold text-gray-500 mb-2">Chapter {id}</h3>
             <h1 className="pl-2 text-3xl font-bold text-cyan-600"> {name_simple}</h1>
+
+            <Links
+                chapterChange={chapterChange}
+                setChapterChange={setChapterChange}
+            ></Links>
 
             <table className="mt-6 border-collapse w-full">
                 <tbody>

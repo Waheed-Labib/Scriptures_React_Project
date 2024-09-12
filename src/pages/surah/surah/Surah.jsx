@@ -8,6 +8,7 @@ const Surah = () => {
     useScroll();
 
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
+    const [chapterChange, setChapterChange] = useState(false)
 
     return (
         <div className="flex gap-8">
@@ -15,6 +16,8 @@ const Surah = () => {
                 <LeftSideBar
                     arabicFont={arabicFont}
                     setArabicFont={setArabicFont}
+                    chapterChange={chapterChange}
+                    setChapterChange={setChapterChange}
                 ></LeftSideBar>
             </div>
 
