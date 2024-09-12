@@ -23,8 +23,10 @@ const VerseComponent = ({ verseData, arabicFont }) => {
     )
 
     return (
-        <div className="h-10 border text-end">
-            {arabicVerse}
+        <div className="">
+            <p className="text-end text-xl font-medium text-slate-600">
+                {arabicVerse}
+            </p>
         </div>
     );
 };
