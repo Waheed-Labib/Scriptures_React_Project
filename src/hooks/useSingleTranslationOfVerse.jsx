@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 export const useSingleTranslationOfVerse = (translationId, verse_key) => {
 
     const [translation, setTranslation] = useState('');
+    const [translationName, setTranslationName] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
@@ -12,6 +13,7 @@ export const useSingleTranslationOfVerse = (translationId, verse_key) => {
 
             .then(function (response) {
                 setTranslation(response.data.translations[0].text)
+                setTranslationName(response.data.meta.translation_name)
                 setLoading(false)
             })
 
@@ -22,5 +24,5 @@ export const useSingleTranslationOfVerse = (translationId, verse_key) => {
 
     }, [translationId, verse_key])
 
-    return { translation, loading, error }
+    return { translation, translationName, loading, error }
 }

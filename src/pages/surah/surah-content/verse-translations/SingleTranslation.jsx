@@ -4,14 +4,15 @@ import { useSingleTranslationOfVerse } from "../../../../hooks/useSingleTranslat
 
 const SingleTranslation = ({ translationId, verse_key }) => {
 
-    const { translation, loading, error } = useSingleTranslationOfVerse(translationId, verse_key)
+    const { translation, translationName, loading, error } = useSingleTranslationOfVerse(translationId, verse_key)
 
     if (loading) return <SimpleSkeleton></SimpleSkeleton>
     if (error) return <p><span className="text-red-600">Error !</span> {error}</p>
 
     return (
-        <div>
-            <p>{translation}</p>
+        <div className="mb-8">
+            <p className="">{translation.replace(/<sup[^>]*>.*?<\/sup>/g, "")}</p>
+            <p className="text-xs">- {translationName}</p>
         </div>
     );
 };

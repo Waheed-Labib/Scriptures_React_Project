@@ -22,15 +22,13 @@ const SurahStarting = () => {
     if (error) return <ErrorComponent errorType='Surah Name Fetching Failed' errorText={error}></ErrorComponent>
 
     return (
-        <div className="flex flex-col gap-2 items-center justify-center">
-            <div className="rounded-full w-48 h-48 bg-slate-600 flex items-center justify-center">
-                <div className="w-44 h-44 border-2 border-dotted rounded-full border-cyan-100 flex items-center justify-center">
-                    <p className="text-5xl font-extrabold text-cyan-100">{surahInfo?.name_arabic}</p>
-                </div>
-            </div>
+        <div className="flex flex-col gap-2 items-center justify-center bg-slate-200 rounded px-8">
 
             {
-                surahInfo?.bismillah_pre && <p className="mt-2 text-2xl font-bold text-cyan-700">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+                surahInfo?.bismillah_pre && <div className="my-8 text-center">
+                    <p className="text-2xl mb-4 font-bold text-cyan-950">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+                    <p className="text-sm">In the Name of Allah—the Most Compassionate, Most Merciful.</p>
+                </div>
             }
         </div>
     );
