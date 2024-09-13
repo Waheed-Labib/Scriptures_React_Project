@@ -2,7 +2,7 @@
 import ErrorComponent from "../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../components/simple-skeleton/SimpleSkeleton";
 import { useVersesInfo } from "../../../hooks/useVersesInfo";
-import SurahStarting from "./surah-starting/SurahStarting";
+// import SurahStarting from "./surah-starting/SurahStarting";
 import VerseComponent from "./verse-component/VerseComponent";
 
 
@@ -14,7 +14,7 @@ const SurahContent = ({ arabicFont }) => {
 
     return (
         <div>
-            <SurahStarting></SurahStarting>
+            {/* <SurahStarting></SurahStarting> */}
             {
                 loading && <div className="flex flex-col gap-2">
                     {

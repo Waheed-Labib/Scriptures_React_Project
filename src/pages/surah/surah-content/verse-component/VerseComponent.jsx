@@ -1,6 +1,7 @@
 import { useVersesInfo } from "../../../../hooks/useVersesInfo";
 import { useArabicVerse } from "../../../../hooks/useArabicVerse";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
+import VerseTranslations from "../verse-translations/VerseTranslations";
 
 /* eslint-disable react/prop-types */
 const VerseComponent = ({ verseData, arabicFont }) => {
@@ -27,6 +28,7 @@ const VerseComponent = ({ verseData, arabicFont }) => {
             <p className="text-end text-xl font-medium text-slate-600">
                 {arabicVerse}
             </p>
+            <VerseTranslations verse_key={verse_key}></VerseTranslations>
         </div>
     );
 };
