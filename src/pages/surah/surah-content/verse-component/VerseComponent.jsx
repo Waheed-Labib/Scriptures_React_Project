@@ -3,6 +3,7 @@ import { useArabicVerse } from "../../../../hooks/useArabicVerse";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 import VerseTranslations from "../verse-translations/VerseTranslations";
 import VerseComponentSideBar from "./VerseComponentSideBar";
+import TranslationInputBox from "../translation-input-box/TranslationInputBox";
 
 /* eslint-disable react/prop-types */
 const VerseComponent = ({ verseData, arabicFont }) => {
@@ -25,7 +26,7 @@ const VerseComponent = ({ verseData, arabicFont }) => {
     )
 
     return (
-        <div className="my-12">
+        <div className="my-8">
             <div className="flex gap-8">
                 <div>
                     <VerseComponentSideBar verse_key={verse_key}></VerseComponentSideBar>
@@ -34,8 +35,11 @@ const VerseComponent = ({ verseData, arabicFont }) => {
                     <p className="mb-12 text-end text-2xl font-medium text-slate-800">
                         {arabicVerse}
                     </p>
-                    <div className="mb-12 text-start">
+                    <div className="text-start">
                         <VerseTranslations verse_key={verse_key}></VerseTranslations>
+                    </div>
+                    <div className="mb-8">
+                        <TranslationInputBox></TranslationInputBox>
                     </div>
                 </div>
             </div>

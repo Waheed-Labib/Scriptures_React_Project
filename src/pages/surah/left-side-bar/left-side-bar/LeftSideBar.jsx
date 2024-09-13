@@ -6,7 +6,7 @@ import SuraInfo from "../sura-info/SuraInfo";
 const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) => {
 
     return (
-        <div className="">
+        <div className="mt-4">
             <SuraInfo
                 chapterNum={chapterNum}
                 setChapterNum={setChapterNum}

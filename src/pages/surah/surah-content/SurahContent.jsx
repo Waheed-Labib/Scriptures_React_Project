@@ -13,10 +13,10 @@ const SurahContent = ({ arabicFont }) => {
     const { verses: versesData } = versesInfo;
 
     return (
-        <div className="p-8 bg-slate-100">
+        <div className="p-2 bg-slate-100">
             <div className="h-[80vh] overflow-y-scroll">
                 <SurahStarting></SurahStarting>
-                <div className="border rounded p-8 bg-slate-200">
+                <div className="border rounded p-8 pt-0 bg-slate-200">
                     {
                         loading && <div className="flex flex-col gap-2">
                             {
