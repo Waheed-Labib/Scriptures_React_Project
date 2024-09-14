@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 import { useVersesInfo } from "../../../../hooks/useVersesInfo";
@@ -8,7 +8,7 @@ import SurahStarting from "../surah-starting/SurahStarting";
 import VerseComponent from "../verse-component/verse-component/VerseComponent";
 
 
-const SurahContent = ({ arabicFont }) => {
+const SurahContent = ({ arabicFont, page, setPage }) => {
 
     const scrollComponentRef = useRef(null);
 
@@ -16,10 +16,8 @@ const SurahContent = ({ arabicFont }) => {
         scrollComponentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    const [page, setPage] = useState(1)
-
     useEffect(() => {
-        if (page) scrollComponent()
+        scrollComponent()
     }, [page])
 
     const { state } = useVersesInfo(page);

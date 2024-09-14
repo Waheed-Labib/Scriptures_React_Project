@@ -7,11 +7,16 @@ const SurahContentPagination = ({ page, setPage }) => {
     return (
         <div className="flex items-center justify-between">
             <VersesPerPage></VersesPerPage>
+
             <VersesPageNavigation
                 page={page}
                 setPage={setPage}
             ></VersesPageNavigation>
-            <GoToOtherPage></GoToOtherPage>
+
+            <GoToOtherPage
+                page={page}
+                setPage={setPage}
+            ></GoToOtherPage>
         </div>
     );
 };

@@ -23,20 +23,20 @@ const VersesPageNavigation = ({ page, setPage }) => {
     }
 
     return (
-        <div className="flex items-center gap-4 text-slate-700">
+        <div className="flex items-center gap-6 text-slate-700">
 
             {
                 page !== 1 &&
-                <div onClick={handlePrevPageClick} className="text-2xl hover:text-slate-800">
+                <div onClick={handlePrevPageClick} className="text-3xl hover:text-slate-800">
                     <FaChevronCircleLeft></FaChevronCircleLeft>
                 </div>
             }
 
-            <p className="text-sm">Page {page}</p>
+            <p className="text-sm font-medium">Page {page}</p>
 
             {
                 page !== totalPages &&
-                <div onClick={handleNextPageClick} className="text-2xl hover:text-slate-800">
+                <div onClick={handleNextPageClick} className="text-3xl hover:text-slate-800">
                     <FaChevronCircleRight></FaChevronCircleRight>
                 </div>
             }
