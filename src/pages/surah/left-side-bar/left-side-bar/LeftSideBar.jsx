@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import GoToAnotherChapter from "../go-to-another-chapter/GoToAnotherChapter";
 import { SelectFont } from "../select-font/SelectFont";
 import SelectTranslation from "../select-translation/SelectTranslation";
 import SuraInfo from "../sura-info/SuraInfo";
@@ -6,7 +7,7 @@ import SuraInfo from "../sura-info/SuraInfo";
 const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) => {
 
     return (
-        <div className="mt-4">
+        <div className="">
             <SuraInfo
                 chapterNum={chapterNum}
                 setChapterNum={setChapterNum}
@@ -16,6 +17,7 @@ const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) =
                 setArabicFont={setArabicFont}
             ></SelectFont>
             <SelectTranslation></SelectTranslation>
+            <GoToAnotherChapter></GoToAnotherChapter>
         </div>
     );
 };

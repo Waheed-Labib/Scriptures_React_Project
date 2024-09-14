@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
-import { useSingleTranslationOfVerse } from "../../../../hooks/useSingleTranslationOfVerse";
+import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkeleton";
+import { useSingleTranslationOfVerse } from "../../../../../hooks/useSingleTranslationOfVerse";
 
 const SingleTranslation = ({ translationId, verse_key }) => {
 

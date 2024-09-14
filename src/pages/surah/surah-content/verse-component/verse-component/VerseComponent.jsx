@@ -1,9 +1,9 @@
-import { useVersesInfo } from "../../../../hooks/useVersesInfo";
-import { useArabicVerse } from "../../../../hooks/useArabicVerse";
-import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
+import { useVersesInfo } from "../../../../../hooks/useVersesInfo";
+import { useArabicVerse } from "../../../../../hooks/useArabicVerse";
+import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkeleton";
 import VerseTranslations from "../verse-translations/VerseTranslations";
-import VerseComponentSideBar from "./VerseComponentSideBar";
 import TranslationInputBox from "../translation-input-box/TranslationInputBox";
+import VerseComponentSideBar from "./VerseComponentSideBar";
 
 /* eslint-disable react/prop-types */
 const VerseComponent = ({ verseData, arabicFont }) => {

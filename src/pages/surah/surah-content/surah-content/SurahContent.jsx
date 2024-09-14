@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import ErrorComponent from "../../../components/error-component/ErrorComponent";
-import SimpleSkeleton from "../../../components/simple-skeleton/SimpleSkeleton";
-import { useVersesInfo } from "../../../hooks/useVersesInfo";
-import SurahStarting from "./surah-starting/SurahStarting";
-import VerseComponent from "./verse-component/VerseComponent";
+import ErrorComponent from "../../../../components/error-component/ErrorComponent";
+import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
+import { useVersesInfo } from "../../../../hooks/useVersesInfo";
+import SurahContentPagination from "../surah-content-pagination/surah-content-pagination/SurahContentPagination";
+import SurahStarting from "../surah-starting/SurahStarting";
+import VerseComponent from "../verse-component/verse-component/VerseComponent";
 
 
 const SurahContent = ({ arabicFont }) => {
@@ -41,6 +42,7 @@ const SurahContent = ({ arabicFont }) => {
                             }
                         </>
                     }
+                    <SurahContentPagination></SurahContentPagination>
                 </div>
             </div>
         </div>

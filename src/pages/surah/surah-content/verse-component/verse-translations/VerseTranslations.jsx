@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useSelectedTranslationsIds } from "../../../../hooks/useSelectedTranslationsIds";
+import { useSelectedTranslationsIds } from "../../../../../hooks/useSelectedTranslationsIds";
 import SingleTranslation from "./SingleTranslation";
 
 const VerseTranslations = ({ verse_key }) => {

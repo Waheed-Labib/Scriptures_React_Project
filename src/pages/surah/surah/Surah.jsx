@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useScroll } from "../../../hooks/useScroll";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
-import SurahContent from "../surah-content/SurahContent";
 import { useSurahId } from "../../../hooks/useSurahId";
+import SurahContent from "../surah-content/surah-content/SurahContent";
 
 const Surah = () => {
 
