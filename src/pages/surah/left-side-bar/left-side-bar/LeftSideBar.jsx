@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import GoToAnotherChapter from "../go-to-another-chapter/GoToAnotherChapter";
 import { SelectFont } from "../select-font/SelectFont";
 import SelectTranslation from "../select-translation/SelectTranslation";
 import SuraInfo from "../sura-info/SuraInfo";
+import SurahPageSearchBox from "../surah-page-search-box/SurahPageSearchBox";
 
 const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) => {
 
@@ -16,8 +16,8 @@ const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) =
                 arabicFont={arabicFont}
                 setArabicFont={setArabicFont}
             ></SelectFont>
+            <SurahPageSearchBox></SurahPageSearchBox>
             <SelectTranslation></SelectTranslation>
-            <GoToAnotherChapter></GoToAnotherChapter>
         </div>
     );
 };
