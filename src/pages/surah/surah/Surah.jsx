@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useScroll } from "../../../hooks/useScroll";
+import { useScrollToTop } from "../../../hooks/useScrollToTop";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import { useSurahId } from "../../../hooks/useSurahId";
 import SurahContent from "../surah-content/surah-content/SurahContent";
 
 const Surah = () => {
 
-    useScroll();
+    useScrollToTop();
 
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
     const [chapterNum, setChapterNum] = useState(useSurahId())

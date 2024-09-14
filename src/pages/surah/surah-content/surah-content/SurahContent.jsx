@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
 import { useVersesInfo } from "../../../../hooks/useVersesInfo";
@@ -9,7 +10,9 @@ import VerseComponent from "../verse-component/verse-component/VerseComponent";
 
 const SurahContent = ({ arabicFont }) => {
 
-    const { state } = useVersesInfo();
+    const [page, setPage] = useState(1)
+
+    const { state } = useVersesInfo(page);
     const { versesInfo, loading, error } = state;
     const { verses: versesData } = versesInfo;
 
@@ -36,13 +39,17 @@ const SurahContent = ({ arabicFont }) => {
                             {
                                 versesData?.map((verseData, index) => <VerseComponent
                                     key={index}
+                                    page={page}
                                     verseData={verseData}
                                     arabicFont={arabicFont}
                                 ></VerseComponent>)
                             }
                         </>
                     }
-                    <SurahContentPagination></SurahContentPagination>
+                    <SurahContentPagination
+                        page={page}
+                        setPage={setPage}
+                    ></SurahContentPagination>
                 </div>
             </div>
         </div>

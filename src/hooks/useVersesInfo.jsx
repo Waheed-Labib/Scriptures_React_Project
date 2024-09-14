@@ -4,7 +4,7 @@ import { useSurahId } from "./useSurahId";
 import { FETCHING_VERSES_INFO_FAILED, FETCHING_VERSES_INFO_START, FETCHING_VERSES_INFO_SUCCESS } from "../states/action-types/ActionTypes";
 import axios from "axios";
 
-export const useVersesInfo = () => {
+export const useVersesInfo = (page) => {
     const [state, dispatch] = useReducer(VersesInfoReducer, initialVersesInfoState)
 
     const surahId = useSurahId();
@@ -12,7 +12,7 @@ export const useVersesInfo = () => {
     useEffect(() => {
         dispatch({ type: FETCHING_VERSES_INFO_START })
 
-        axios.get(`https://api.quran.com/api/v4/verses/by_chapter/${surahId}`)
+        axios.get(`https://api.quran.com/api/v4/verses/by_chapter/${surahId}?page=${page}`)
             .then(function (response) {
                 dispatch({ type: FETCHING_VERSES_INFO_SUCCESS, payload: { versesInfo: response.data } })
             })
@@ -20,7 +20,7 @@ export const useVersesInfo = () => {
                 dispatch({ type: FETCHING_VERSES_INFO_FAILED, payload: { error: error.message } })
             })
 
-    }, [surahId, state.font])
+    }, [surahId, state.font, page])
 
     return {
         state,

@@ -6,9 +6,9 @@ import TranslationInputBox from "../translation-input-box/TranslationInputBox";
 import VerseComponentSideBar from "./VerseComponentSideBar";
 
 /* eslint-disable react/prop-types */
-const VerseComponent = ({ verseData, arabicFont }) => {
+const VerseComponent = ({ verseData, arabicFont, page }) => {
 
-    const { state } = useVersesInfo();
+    const { state } = useVersesInfo(page);
     const { loading: loadingVerses } = state;
 
     const { verse_key } = verseData;

@@ -1,20 +1,48 @@
+/* eslint-disable react/prop-types */
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import { useVersesInfo } from "../../../../../hooks/useVersesInfo";
 
-const VersesPageNavigation = () => {
+const VersesPageNavigation = ({ page, setPage }) => {
+
+    const { state } = useVersesInfo(page);
+    const { versesInfo } = state;
+
+    // const currentPage = versesInfo?.pagination?.current_page;
+    // const nextPage = versesInfo?.pagination?.next_page;
+    // const perPage = versesInfo?.pagination?.per_page;
+    const totalPages = versesInfo?.pagination?.total_pages;
+
+    // const totalVerses = versesInfo?.pagination?.total_records;
+
+    const handlePrevPageClick = () => {
+        setPage(page - 1)
+    }
+
+    const handleNextPageClick = () => {
+        setPage(page + 1)
+    }
+
     return (
-        <div className="flex items-center gap-2 text-slate-700">
+        <div className="flex items-center gap-4 text-slate-700">
 
-            <div className="text-2xl hover:text-slate-800">
-                <FaChevronCircleLeft></FaChevronCircleLeft>
-            </div>
+            {
+                page !== 1 &&
+                <div onClick={handlePrevPageClick} className="text-2xl hover:text-slate-800">
+                    <FaChevronCircleLeft></FaChevronCircleLeft>
+                </div>
+            }
 
-            <p>Page 1</p>
+            <p className="text-sm">Page {page}</p>
 
-            <div className="text-2xl hover:text-slate-800">
-                <FaChevronCircleRight></FaChevronCircleRight>
-            </div>
+            {
+                page !== totalPages &&
+                <div onClick={handleNextPageClick} className="text-2xl hover:text-slate-800">
+                    <FaChevronCircleRight></FaChevronCircleRight>
+                </div>
+            }
 
-        </div>
+
+        </div >
     );
 };
 
