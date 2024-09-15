@@ -9,7 +9,7 @@ const SurahStarting = () => {
     const { loading, surahInfo, error } = useSurahInfo(surahId);
 
     if (loading) return (
-        <div>
+        <div className="w-full flex flex-col gap-4 justify-center items-center mb-8">
             <div className="w-28">
                 <SimpleSkeleton></SimpleSkeleton>
             </div>

@@ -6,6 +6,8 @@ import ChapterDropdownItem from "./ChapterDropdownItem";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useSurahId } from "../../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../../hooks/useSurahInfo";
+import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkeleton";
+import ErrorComponent from "../../../../../components/error-component/ErrorComponent";
 
 const ChaptersDropdownMenu = ({ setChapterNum }) => {
 
@@ -44,15 +46,23 @@ const ChaptersDropdownMenu = ({ setChapterNum }) => {
                         <input placeholder="Search" className="w-full h-8 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
                     </DropdownItem>
 
-                    <div className="h-[60vh] overflow-y-scroll">
+                    <div className="h-72 overflow-y-scroll">
+                        {
+                            loading && <div className="flex flex-col gap-2">
+                                {
+                                    Array.from({ length: 10 }).map((_, index) => <SimpleSkeleton key={index}></SimpleSkeleton>)
+                                }
+                            </div>
+                        }
                         {
                             surahList?.map(surah => <ChapterDropdownItem
                                 key={surah?.id}
                                 surah={surah}
-                                loading={loading}
-                                error={error}
                                 setChapterNum={setChapterNum}
                             ></ChapterDropdownItem>)
+                        }
+                        {
+                            error && <ErrorComponent errorType='Chapter List Fetching Failed' errorText={error}></ErrorComponent>
                         }
                     </div>
                 </DropdownList>

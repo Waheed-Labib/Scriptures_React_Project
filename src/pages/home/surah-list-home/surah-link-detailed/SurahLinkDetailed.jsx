@@ -8,7 +8,7 @@ const SurahLinkDetailed = ({ surah }) => {
     return (
         <Link to={`/surah/${id}`} className="flex items-center justify-between border border-slate-500 rounded shadow shadow-slate-400 hover:shadow-md hover:shadow-slate-500 p-4">
             <div className="flex justify-start items-center gap-4">
-                <div className="h-10 w-8 rounded flex justify-center items-center bg-slate-600 text-cyan-50">
+                <div className="h-10 w-8 rounded flex justify-center items-center bg-slate-200 text-slate-800 font-medium">
                     <p>{id}</p>
                 </div>
 
@@ -19,7 +19,7 @@ const SurahLinkDetailed = ({ surah }) => {
             </div>
 
             <div>
-                <p className="text-lg">{name_arabic}</p>
+                <p className="text-xl mb-1">{name_arabic}</p>
                 <p className="text-xs">{verses_count} Ayahs</p>
             </div>
         </Link>
