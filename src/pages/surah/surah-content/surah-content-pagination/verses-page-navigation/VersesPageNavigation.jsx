@@ -27,7 +27,7 @@ const VersesPageNavigation = ({ page, setPage }) => {
 
             {
                 page !== 1 &&
-                <div onClick={handlePrevPageClick} className="text-2xl text-slate-400 hover:text-slate-600">
+                <div onClick={handlePrevPageClick} className="text-2xl text-slate-500 hover:text-slate-600">
                     <FaChevronCircleLeft></FaChevronCircleLeft>
                 </div>
             }
@@ -36,7 +36,7 @@ const VersesPageNavigation = ({ page, setPage }) => {
 
             {
                 page !== totalPages &&
-                <div onClick={handleNextPageClick} className="text-2xl text-slate-400  hover:text-slate-600">
+                <div onClick={handleNextPageClick} className="text-2xl text-slate-500  hover:text-slate-600">
                     <FaChevronCircleRight></FaChevronCircleRight>
                 </div>
             }

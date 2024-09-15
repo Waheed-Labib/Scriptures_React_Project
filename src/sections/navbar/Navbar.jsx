@@ -12,6 +12,7 @@ import { FaBookOpen } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import ChaptersDropdownMenu from './chapters-dropdown-menu/ChaptersDropdownMenu';
 
 export const NavbarComponent = () => {
     return (
@@ -39,7 +40,7 @@ export const NavbarComponent = () => {
                         </NavbarItem>
                     </Link>
 
-                    <NavbarItem className=''>Chapters</NavbarItem>
+                    <ChaptersDropdownMenu></ChaptersDropdownMenu>
 
                     <NavbarItem className=''>Blog</NavbarItem>
 
@@ -58,7 +59,7 @@ export const NavbarComponent = () => {
                             <FaHome></FaHome>
                         </Link>
                     </NavbarItem>
-                    <NavbarItem className=''>Chapters</NavbarItem>
+                    <ChaptersDropdownMenu></ChaptersDropdownMenu>
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
                     <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center'>Enroll as Contributor</NavbarItem>

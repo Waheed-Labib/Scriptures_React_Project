@@ -22,7 +22,7 @@ const SurahStarting = () => {
     if (error) return <ErrorComponent errorType='Surah Name Fetching Failed' errorText={error}></ErrorComponent>
 
     return (
-        <div className="flex flex-col gap-2 items-center justify-center bg-slate-100 rounded px-8">
+        <div className="flex flex-col gap-2 items-center justify-center bg-slate-100 rounded px-8 pt-4">
 
             {
                 surahInfo?.bismillah_pre && <div className="my-8 text-center">
