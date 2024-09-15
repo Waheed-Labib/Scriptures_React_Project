@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Button, Dropdown, DropdownAction, DropdownContent, DropdownList } from 'keep-react'
+import { Button, Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from 'keep-react'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useLanguages } from '../../../../hooks/useLanguages';
 import Language from './Language';
@@ -14,7 +14,7 @@ export const TranslationDropdown = () => {
     const { selectedTranslationsIds } = useSelectedTranslationsIds();
 
     return (
-        <Dropdown>
+        <Dropdown trigger='hover'>
             <DropdownAction asChild>
                 <Button className='justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
                     <p className='text-xs text-cyan-700'>{selectedTranslationsIds?.length} selected</p>
@@ -25,6 +25,9 @@ export const TranslationDropdown = () => {
             </DropdownAction>
             <DropdownContent className='border'>
                 <DropdownList>
+                    <DropdownItem className="p-0 mb-2">
+                        <input placeholder="Search" className="w-full h-8 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
+                    </DropdownItem>
                     <div className='h-72 overflow-y-scroll'>
                         {
                             languagesLoading &&

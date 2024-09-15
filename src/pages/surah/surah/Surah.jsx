@@ -13,7 +13,6 @@ const Surah = () => {
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
 
     const [chapterNum, setChapterNum] = useState(useSurahId())
-
     const [page, setPage] = useState(1)
 
     useEffect(() => {
