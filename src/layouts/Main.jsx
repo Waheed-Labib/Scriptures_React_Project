@@ -4,8 +4,8 @@ import { Outlet } from "react-router-dom";
 import { NavbarComponent } from "../sections/navbar/Navbar";
 import Footer from "../sections/footer/Footer";
 
-
 const Main = () => {
+
     return (
         <div className="relative">
             <NavbarComponent></NavbarComponent>

@@ -12,7 +12,7 @@ import { FaBookOpen } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import ChaptersDropdownMenu from './chapters-dropdown-menu/ChaptersDropdownMenu';
+import ChaptersDropdownMenu from './ChaptersDropdownMenu.jsx/ChaptersDropdownMenu';
 
 export const NavbarComponent = () => {
     return (
