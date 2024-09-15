@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <div className="relative">
             <NavbarComponent></NavbarComponent>
-            <div className="px-4 md:px-0 md:mx-12 lg:mx-8 my-8">
+            <div className="px-4 md:px-0 md:mx-12 lg:mx-8 mt-4">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

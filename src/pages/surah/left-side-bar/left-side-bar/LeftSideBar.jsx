@@ -7,7 +7,7 @@ import SurahPageSearchBox from "../surah-page-search-box/SurahPageSearchBox";
 const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) => {
 
     return (
-        <div className="">
+        <div className="flex flex-col gap-4">
             <SuraInfo
                 chapterNum={chapterNum}
                 setChapterNum={setChapterNum}
@@ -16,8 +16,8 @@ const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) =
                 arabicFont={arabicFont}
                 setArabicFont={setArabicFont}
             ></SelectFont>
-            <SurahPageSearchBox></SurahPageSearchBox>
             <SelectTranslation></SelectTranslation>
+            <SurahPageSearchBox></SurahPageSearchBox>
         </div>
     );
 };

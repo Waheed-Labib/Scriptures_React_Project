@@ -26,15 +26,17 @@ const SuraInfo = ({ chapterNum, setChapterNum }) => {
     return (
         <div>
             <h3 className="pl-2 text-sm font-semibold text-gray-500 mb-2">Chapter {id}</h3>
-            <h2 className="pl-2 text-xl my-2">{name_arabic}</h2>
+            <h2 className="pl-2 text-xl my-1">{name_arabic}</h2>
             <h1 className="pl-2 text-3xl font-bold text-cyan-600"> {name_simple}</h1>
 
-            <Links
-                chapterNum={chapterNum}
-                setChapterNum={setChapterNum}
-            ></Links>
+            <div className="mt-4">
+                <Links
+                    chapterNum={chapterNum}
+                    setChapterNum={setChapterNum}
+                ></Links>
+            </div>
 
-            <table className="mt-6 border-collapse w-full">
+            <table className="mt-4 border-collapse w-full">
                 <tbody>
                     <tr>
                         <td className="border border-gray-100 p-2">

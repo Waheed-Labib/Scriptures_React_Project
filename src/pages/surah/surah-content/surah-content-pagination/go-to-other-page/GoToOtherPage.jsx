@@ -19,7 +19,7 @@ const GoToAnotherChapter = ({ page, setPage }) => {
     return (
         <Dropdown trigger="hover">
             <DropdownAction asChild>
-                <Button className='bg-slate-500 hover:bg-slate-600 gap-2 h-8'>
+                <Button className='bg-slate-200 hover:bg-slate-200 text-slate-600 hover:text-slate-600 gap-2 h-8'>
                     <p>{currentVerses}</p>
                     <FaAngleDown></FaAngleDown>
                 </Button>

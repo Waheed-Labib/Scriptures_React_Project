@@ -5,7 +5,7 @@ import VersesPerPage from "../verses-per-page/VersesPerPage";
 
 const SurahContentPagination = ({ page, setPage }) => {
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-4">
             <VersesPerPage></VersesPerPage>
 
             <VersesPageNavigation

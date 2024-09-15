@@ -19,7 +19,7 @@ const Links = ({ chapterNum, setChapterNum }) => {
     }
 
     return (
-        <div className="mt-4 flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full">
             {
                 surahId !== 1 && <div onClick={handlePrevClick} className="flex items-center gap-1 text-xs text-slate-500 hover:text-slate-800 cursor-pointer">
                     <FaAngleLeft></FaAngleLeft>

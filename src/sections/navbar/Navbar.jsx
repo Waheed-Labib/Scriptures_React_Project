@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 export const NavbarComponent = () => {
     return (
-        <Navbar className='px-4 md:px-0 flex justify-center py-3 shadow-lg sticky top-0 z-50'>
+        <Navbar className='h-[10vh] px-4 md:px-0 flex justify-center items-center shadow-lg sticky top-0 z-50'>
             <NavbarContainer className=''>
                 <NavbarBrand>
                     <div className='text-cyan-800 hover:text-slate-700 flex justify-center items-center gap-4'>

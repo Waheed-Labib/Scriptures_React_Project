@@ -16,9 +16,9 @@ export const TranslationDropdown = () => {
     return (
         <Dropdown>
             <DropdownAction asChild>
-                <Button className='justify-between w-full bg-cyan-700 hover:bg-slate-700 rounded h-8'>
-                    <p className='text-xs text-cyan-100'>{selectedTranslationsIds?.length} selected</p>
-                    <div className='text-3xl text-cyan-100'>
+                <Button className='justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
+                    <p className='text-xs text-cyan-700'>{selectedTranslationsIds?.length} selected</p>
+                    <div className='text-3xl text-cyan-700'>
                         <RiArrowDropDownLine></RiArrowDropDownLine>
                     </div>
                 </Button>

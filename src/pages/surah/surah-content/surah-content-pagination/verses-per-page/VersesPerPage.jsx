@@ -8,7 +8,7 @@ const VersesPerPage = () => {
 
     return (
         <div className="text-xs text-slate-600">
-            Per Page : <span className="border border-slate-400 rounded-sm p-1">{perPage} Verses</span>
+            Per Page : <span className="">{perPage} Verses</span>
         </div>
     );
 };

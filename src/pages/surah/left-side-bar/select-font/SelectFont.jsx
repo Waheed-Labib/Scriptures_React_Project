@@ -8,7 +8,7 @@ export const SelectFont = ({ arabicFont, setArabicFont }) => {
     }
 
     return (
-        <form className="mt-6 bg-slate-100 rounded p-3 pb-4">
+        <form className="bg-slate-100 rounded p-3 pb-4">
             <h3 className="mb-2 text-sm font-semibold text-gray-500">Arabic Font</h3>
             <div className="flex items-center justify-between w-full">
                 <div>
