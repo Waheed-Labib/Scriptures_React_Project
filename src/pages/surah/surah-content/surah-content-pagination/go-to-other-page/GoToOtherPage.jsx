@@ -28,8 +28,8 @@ const GoToAnotherChapter = ({ page, setPage }) => {
                 <DropdownList>
                     <div className='h-64 overflow-y-scroll'>
                         {
-                            Array.from({ length: totalPages }, (_, i) => i + 1).map(pageItem => <PagesDropdownItem
-                                key={page}
+                            Array.from({ length: totalPages }, (_, i) => i + 1).map((pageItem, index) => <PagesDropdownItem
+                                key={index}
                                 pageItem={pageItem}
                                 perPage={perPage}
                                 setPage={setPage}

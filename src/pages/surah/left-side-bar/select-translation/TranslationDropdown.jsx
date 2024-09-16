@@ -14,7 +14,7 @@ export const TranslationDropdown = () => {
     const { selectedTranslationsIds } = useSelectedTranslationsIds();
 
     return (
-        <Dropdown trigger='hover'>
+        <Dropdown>
             <DropdownAction asChild>
                 <Button className='text-xs text-cyan-700 justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
                     <p className=''>{selectedTranslationsIds?.length} selected</p>
@@ -26,7 +26,7 @@ export const TranslationDropdown = () => {
             <DropdownContent className='border'>
                 <DropdownList>
                     <DropdownItem className="p-0 mb-2">
-                        <input placeholder="Search" className="w-full h-8 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
+                        <input placeholder="Search" className="w-full h-8 rounded ring-1 ring-inset ring-slate-400 placeholder:text-gray-400 pl-4"></input>
                     </DropdownItem>
                     <div className='h-72 overflow-y-scroll'>
                         {

@@ -7,7 +7,7 @@ import SuraInfo from "../sura-info/SuraInfo";
 const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum }) => {
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mt-2">
             <SuraInfo
                 chapterNum={chapterNum}
                 setChapterNum={setChapterNum}

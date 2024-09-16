@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import ChaptersDropdownMenu from "./chapters-dropdown-menu/ChaptersDropdownMenu";
+import ChaptersDropdownMenu from "./chapters-dropdown-menu/chapters-dropdown-menu/ChaptersDropdownMenu";
 
 const SelectChapter = ({ setChapterNum }) => {
     return (
