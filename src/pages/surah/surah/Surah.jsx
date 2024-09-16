@@ -20,8 +20,8 @@ const Surah = () => {
     }, [chapterNum])
 
     return (
-        <div className="flex gap-8 h-[86vh]">
-            <div className="w-1/5 h-full pt-4">
+        <div className="flex gap-8 mt-2 h-[87vh]">
+            <div className="w-1/5 pt-4 h-full">
                 <LeftSideBar
                     arabicFont={arabicFont}
                     setArabicFont={setArabicFont}
@@ -30,9 +30,9 @@ const Surah = () => {
                 ></LeftSideBar>
             </div>
 
-            <div className="rounded-sm h-full p-1 pb-0 w-4/5 bg-slate-50">
-                <div className="w-full h-full flex flex-col">
-                    <div className="w-full overflow-y-scroll scrollbar scrollbar-thumb-gray-400 scrollbar-track-slate-50">
+            <div className="rounded-sm p-1 pb-0 w-4/5 h-full bg-slate-50">
+                <div className="w-full h-full flex  flex-col">
+                    <div className="w-full h-full overflow-y-scroll scrollbar scrollbar-thumb-gray-400 scrollbar-track-slate-50">
                         <SurahContent
                             page={page}
                             setPage={setPage}
@@ -52,6 +52,7 @@ const Surah = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

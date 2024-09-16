@@ -15,7 +15,7 @@ const ChapterDropdownItem = ({ surah, setChapterNum }) => {
 
     return (
         <div onClick={navigateToSurahPage}>
-            <DropdownItem className="flex items-center gap-2">
+            <DropdownItem className="">
                 <p>{surahId}</p>
                 <p>{surah?.name_simple}</p>
             </DropdownItem>

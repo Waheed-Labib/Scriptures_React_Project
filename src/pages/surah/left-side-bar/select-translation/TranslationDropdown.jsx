@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Button, Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from 'keep-react'
-import { RiArrowDropDownLine } from "react-icons/ri";
+import { FaBars } from "react-icons/fa";
 import { useLanguages } from '../../../../hooks/useLanguages';
 import Language from './Language';
 import SimpleSkeleton from '../../../../components/simple-skeleton/SimpleSkeleton';
@@ -16,10 +16,10 @@ export const TranslationDropdown = () => {
     return (
         <Dropdown trigger='hover'>
             <DropdownAction asChild>
-                <Button className='justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
-                    <p className='text-xs text-cyan-700'>{selectedTranslationsIds?.length} selected</p>
-                    <div className='text-3xl text-cyan-700'>
-                        <RiArrowDropDownLine></RiArrowDropDownLine>
+                <Button className='text-xs text-cyan-700 justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
+                    <p className=''>{selectedTranslationsIds?.length} selected</p>
+                    <div className=''>
+                        <FaBars></FaBars>
                     </div>
                 </Button>
             </DropdownAction>
