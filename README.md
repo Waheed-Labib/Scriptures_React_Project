@@ -1,4 +1,4 @@
-<h1>* Translate verses of Quran * Explore others' translations.</h1>
+<h1>* Translate verses of Quran <br/> * Explore others' translations.</h1>
 
 <h4>Uses Quran.com's API</h4>
 
