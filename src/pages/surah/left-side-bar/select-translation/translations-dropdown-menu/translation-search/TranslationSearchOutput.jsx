@@ -29,7 +29,7 @@ const TranslationSearchOutput = ({ searchText, setSearchText }) => {
 
     return (
         <div className="h-72 overflow-y-scroll">
-            <Button onClick={() => setSearchText('')} size="xs" className="gap-1 bg-red-200 text-slate-600 hover:bg-red-300 hover:text-slate-800">
+            <Button onClick={() => setSearchText('')} size="xs" className="w-full my-1 gap-1 bg-transparent text-red-800 border border-red-800 hover:text-red-700 hover:border-red-700 hover:bg-transparent">
                 <p>Cancel Search Result</p>
                 <p>X</p>
             </Button>
