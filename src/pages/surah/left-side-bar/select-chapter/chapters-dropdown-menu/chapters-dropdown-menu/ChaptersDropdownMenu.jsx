@@ -23,6 +23,7 @@ const ChaptersDropdownMenu = ({ setChapterNum }) => {
 
                     <DropdownItem className="p-0 mb-2">
                         <ChapterSearchInput
+                            searchText={searchText}
                             setSearchText={setSearchText}
                         ></ChapterSearchInput>
                     </DropdownItem>
@@ -31,6 +32,7 @@ const ChaptersDropdownMenu = ({ setChapterNum }) => {
                         searchText ?
                             <ChapterSearchOutput
                                 searchText={searchText}
+                                setSearchText={setSearchText}
                                 setChapterNum={setChapterNum}
                             ></ChapterSearchOutput>
                             :

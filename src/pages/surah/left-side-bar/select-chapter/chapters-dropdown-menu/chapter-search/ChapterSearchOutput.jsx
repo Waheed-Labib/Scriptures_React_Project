@@ -4,8 +4,9 @@ import ErrorComponent from "../../../../../../components/error-component/ErrorCo
 import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleSkeleton";
 import { useSurahList } from "../../../../../../hooks/useSurahList";
 import ChapterDropdownItem from "../chapters-dropdown-menu/ChapterDropdownItem";
+import { Button } from "keep-react";
 
-const ChapterSearchOutput = ({ searchText, setChapterNum }) => {
+const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
 
     const { state } = useSurahList();
     const { surahList, loading: surahListLoading, error: surahListError } = state;
@@ -28,6 +29,10 @@ const ChapterSearchOutput = ({ searchText, setChapterNum }) => {
 
     return (
         <div className="h-72 overflow-y-scroll">
+            <Button onClick={() => setSearchText('')} size="xs" className="gap-1 bg-red-200 text-slate-600 hover:bg-red-300 hover:text-slate-800">
+                <p>Cancel Search Result</p>
+                <p>X</p>
+            </Button>
             {
                 surahListLoading && <div className="flex flex-col gap-2">
                     {

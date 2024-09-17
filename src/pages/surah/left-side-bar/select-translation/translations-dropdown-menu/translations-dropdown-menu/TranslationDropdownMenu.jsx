@@ -20,11 +20,16 @@ export const TranslationDropdownMenu = () => {
             <DropdownContent className='border'>
                 <DropdownList>
                     <DropdownItem className="p-0 mb-2">
-                        <TranslationSearchInput setSearchText={setSearchText}></TranslationSearchInput>
+                        <TranslationSearchInput
+                            searchText={searchText}
+                            setSearchText={setSearchText}></TranslationSearchInput>
                     </DropdownItem>
                     {
                         searchText ?
-                            <TranslationSearchOutput searchText={searchText}></TranslationSearchOutput>
+                            <TranslationSearchOutput
+                                searchText={searchText}
+                                setSearchText={setSearchText}
+                            ></TranslationSearchOutput>
                             :
                             <TranslationsList></TranslationsList>
                     }
