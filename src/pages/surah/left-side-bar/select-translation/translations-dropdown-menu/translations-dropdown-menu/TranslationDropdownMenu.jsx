@@ -8,7 +8,7 @@ import TranslationSearchOutput from '../translation-search/TranslationSearchOutp
 
 export const TranslationDropdownMenu = () => {
 
-    const { searchText, setSearchText } = useState('');
+    const [searchText, setSearchText] = useState('');
 
     return (
         <Dropdown>

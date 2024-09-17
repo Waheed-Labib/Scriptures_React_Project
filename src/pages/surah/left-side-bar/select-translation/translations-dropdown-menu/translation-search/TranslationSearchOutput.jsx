@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "../../../../../../hooks/useTranslations";
 import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleSkeleton";
 import TranslationDropdownItem from "../translations-dropdown-item/TranslationDropdownItem";
@@ -7,13 +7,27 @@ import ErrorComponent from "../../../../../../components/error-component/ErrorCo
 
 const TranslationSearchOutput = ({ searchText }) => {
 
-    const { translations, loading: translationsLoading, error: translationsError } = useTranslations;
+    const { translations, loading: translationsLoading, error: translationsError } = useTranslations();
+    console.log('translations', translations)
 
     const [searchResult, setSearchResult] = useState([]);
 
+    useEffect(() => {
+        setSearchResult([])
+
+        translations?.map(translation => {
+
+            if (translation.language_name.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, translation]);
+
+            else if (translation.author_name.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, translation]);
+
+            else if (translation.name.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, translation]);
+        })
+
+    }, [searchText, translations])
+
     return (
         <div className="h-72 overflow-y-scroll">
-            searching
             {
                 translationsLoading && <div className="flex flex-col gap-2">
                     {
@@ -25,6 +39,7 @@ const TranslationSearchOutput = ({ searchText }) => {
                 searchResult?.map(translation => <TranslationDropdownItem
                     key={translation?.id}
                     translation={translation}
+                    search={true}
                 ></TranslationDropdownItem>)
             }
             {

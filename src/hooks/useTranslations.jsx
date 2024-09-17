@@ -10,7 +10,8 @@ export const useTranslations = (languageName) => {
     useEffect(() => {
         axios.get(`https://api.quran.com/api/v4/resources/translations`)
             .then(function (response) {
-                setTranslations(response.data.translations.filter(translation => translation.language_name === languageName))
+                if (languageName) setTranslations(response.data.translations.filter(translation => translation.language_name === languageName))
+                else setTranslations(response.data.translations)
                 setLoading(false)
             })
             .catch(function (err) {

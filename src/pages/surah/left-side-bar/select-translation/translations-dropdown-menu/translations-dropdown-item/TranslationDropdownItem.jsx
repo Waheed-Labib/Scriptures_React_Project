@@ -2,8 +2,9 @@
 import { DropdownItem } from "keep-react";
 import { useSelectedTranslationsIds } from "../../../../../../hooks/useSelectedTranslationsIds";
 import { setSelectedTranslationsIdsToLS } from "../../../../../../utilities/setSelectedTranslationsIdsToLS"
+import { capitalizeFirstLetter } from "../../../../../../utilities/capitalizeFirstLetter";
 
-const TranslationDropdownItem = ({ translation }) => {
+const TranslationDropdownItem = ({ translation, search }) => {
 
     const { selectedTranslationsIds, setSelectedTranslationsIds } = useSelectedTranslationsIds();
     const isSelected = selectedTranslationsIds.includes(translation.id);
@@ -24,9 +25,15 @@ const TranslationDropdownItem = ({ translation }) => {
     }
 
     return (
-        <DropdownItem>
-            <input onChange={handleTranslationChange} type='checkbox' checked={isSelected}></input>
-            <p>{translation.name}</p>
+        <DropdownItem className="justify-between">
+            <div className="flex items-center gap-2">
+                <input onChange={handleTranslationChange} type='checkbox' checked={isSelected}></input>
+                <p>{translation.name}</p>
+            </div>
+
+            {
+                search && <p className="text-xs text-gray-400">{capitalizeFirstLetter(translation.language_name)}</p>
+            }
         </DropdownItem>
     );
 };
