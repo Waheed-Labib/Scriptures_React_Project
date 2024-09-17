@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { DropdownItem } from "keep-react";
-import { useSelectedTranslationsIds } from "../../../../hooks/useSelectedTranslationsIds";
-import { setSelectedTranslationsIdsToLS } from "../../../../utilities/setSelectedTranslationsIdsToLS";
+import { useSelectedTranslationsIds } from "../../../../../../hooks/useSelectedTranslationsIds";
+import { setSelectedTranslationsIdsToLS } from "../../../../../../utilities/setSelectedTranslationsIdsToLS"
 
 const TranslationDropdownItem = ({ translation }) => {
 

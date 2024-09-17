@@ -1,8 +1,8 @@
 import { Divider } from "keep-react";
-import { useTranslations } from "../../../../hooks/useTranslations";
-import TranslationDropdownItem from "./TranslationDropdownItem";
-import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
-import ErrorComponent from "../../../../components/error-component/ErrorComponent";
+import { useTranslations } from "../../../../../../hooks/useTranslations";
+import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleSkeleton";
+import ErrorComponent from "../../../../../../components/error-component/ErrorComponent";
+import TranslationDropdownItem from "../translations-dropdown-item/TranslationDropdownItem";
 
 /* eslint-disable react/prop-types */
 const Language = ({ language }) => {
