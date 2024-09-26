@@ -18,9 +18,8 @@ const ChaptersDropdownMenu = ({ setChapterNum }) => {
                     <ChaptersDropdownButtonText></ChaptersDropdownButtonText>
                 </Button>
             </DropdownAction>
-            <DropdownContent>
-                <DropdownList className="">
-
+            <DropdownContent className='h-96 border border-gray-500 shadow-xl'>
+                <DropdownList>
                     <DropdownItem className="p-0 mb-2">
                         <ChapterSearchInput
                             searchText={searchText}
@@ -36,7 +35,9 @@ const ChaptersDropdownMenu = ({ setChapterNum }) => {
                                 setChapterNum={setChapterNum}
                             ></ChapterSearchOutput>
                             :
-                            <ChaptersList setChapterNum={setChapterNum}></ChaptersList>
+                            <ChaptersList
+                                setChapterNum={setChapterNum}
+                            ></ChaptersList>
                     }
 
                 </DropdownList>

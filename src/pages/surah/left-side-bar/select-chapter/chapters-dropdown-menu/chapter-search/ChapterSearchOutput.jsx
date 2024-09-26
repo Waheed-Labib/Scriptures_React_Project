@@ -5,6 +5,7 @@ import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleS
 import { useSurahList } from "../../../../../../hooks/useSurahList";
 import ChapterDropdownItem from "../chapters-dropdown-menu/ChapterDropdownItem";
 import { Button } from "keep-react";
+import { searchChapterWithNewSearchText } from "../../../../../../utilities/searchChapterWithNewSearchText";
 
 const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
 
@@ -14,24 +15,15 @@ const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
     const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
-        setSearchResult([])
 
-        surahList?.map(surah => {
-
-            if (parseInt(surah.id) === parseInt(searchText)) return setSearchResult(prevResult => [...prevResult, surah]);
-
-            else if (surah.name_simple.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, surah]);
-
-            else if (surah.name_arabic.includes(searchText)) return setSearchResult(prevResult => [...prevResult, surah]);
-        })
+        searchChapterWithNewSearchText(setSearchResult, surahList, searchText)
 
     }, [searchText, surahList])
 
     return (
-        <div className="h-72 overflow-y-scroll">
-            <Button onClick={() => setSearchText('')} size="xs" className="w-full my-1 gap-1 bg-transparent text-red-800 border border-red-800 hover:text-red-700 hover:border-red-700 hover:bg-transparent">
-                <p>Cancel Search Result</p>
-                <p>X</p>
+        <div className="h-full overflow-y-scroll">
+            <Button onClick={() => setSearchText('')} size="xs" className="w-full my-1 bg-transparent text-red-800 border border-red-800 hover:text-red-700 hover:border-red-700 hover:bg-transparent">
+                Cancel Search
             </Button>
             {
                 surahListLoading && <div className="flex flex-col gap-2">

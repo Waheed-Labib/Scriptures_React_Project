@@ -8,7 +8,7 @@ const TranslationsList = () => {
     const { languages, loading: languagesLoading, error: languagesError } = useLanguages();
 
     return (
-        <div className='h-72 overflow-y-scroll'>
+        <div className='h-full overflow-y-scroll'>
             {
                 languagesLoading &&
 

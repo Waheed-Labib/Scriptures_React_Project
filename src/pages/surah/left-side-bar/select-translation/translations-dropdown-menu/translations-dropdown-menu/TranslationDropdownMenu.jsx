@@ -17,12 +17,13 @@ export const TranslationDropdownMenu = () => {
                     <TranslationsDropdownButtonText></TranslationsDropdownButtonText>
                 </Button>
             </DropdownAction>
-            <DropdownContent className='border'>
+            <DropdownContent className='h-96 border border-gray-500 shadow-xl'>
                 <DropdownList>
                     <DropdownItem className="p-0 mb-2">
                         <TranslationSearchInput
                             searchText={searchText}
-                            setSearchText={setSearchText}></TranslationSearchInput>
+                            setSearchText={setSearchText}>
+                        </TranslationSearchInput>
                     </DropdownItem>
                     {
                         searchText ?

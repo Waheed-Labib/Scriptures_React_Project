@@ -10,7 +10,7 @@ const ChaptersList = ({ setChapterNum }) => {
     const { surahList, loading, error } = state;
 
     return (
-        <div className="h-72 overflow-y-scroll">
+        <div className="h-full overflow-y-scroll">
             {
                 loading && <div className="flex flex-col gap-2">
                     {

@@ -5,6 +5,7 @@ import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleS
 import TranslationDropdownItem from "../translations-dropdown-item/TranslationDropdownItem";
 import ErrorComponent from "../../../../../../components/error-component/ErrorComponent";
 import { Button } from "keep-react";
+import { searchTranslationWithNewSearchText } from "../../../../../../utilities/searchTranslationWithNewSearchText";
 
 const TranslationSearchOutput = ({ searchText, setSearchText }) => {
 
@@ -14,24 +15,15 @@ const TranslationSearchOutput = ({ searchText, setSearchText }) => {
     const [searchResult, setSearchResult] = useState([]);
 
     useEffect(() => {
-        setSearchResult([])
 
-        translations?.map(translation => {
-
-            if (translation.language_name.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, translation]);
-
-            else if (translation.author_name.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, translation]);
-
-            else if (translation.name.toLowerCase().includes(searchText.toLowerCase())) return setSearchResult(prevResult => [...prevResult, translation]);
-        })
+        searchTranslationWithNewSearchText(setSearchResult, translations, searchText)
 
     }, [searchText, translations])
 
     return (
-        <div className="h-72 overflow-y-scroll">
-            <Button onClick={() => setSearchText('')} size="xs" className="w-full my-1 gap-1 bg-transparent text-red-800 border border-red-800 hover:text-red-700 hover:border-red-700 hover:bg-transparent">
-                <p>Cancel Search Result</p>
-                <p>X</p>
+        <div className="h-full overflow-y-scroll">
+            <Button onClick={() => setSearchText('')} size="xs" className="w-full my-1 bg-transparent text-red-800 border border-red-800 hover:text-red-700 hover:border-red-700 hover:bg-transparent">
+                Cancel Search
             </Button>
             {
                 translationsLoading && <div className="flex flex-col gap-2">
