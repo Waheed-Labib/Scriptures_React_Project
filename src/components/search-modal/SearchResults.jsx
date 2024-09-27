@@ -1,7 +1,7 @@
 const SearchResults = () => {
     return (
         <div>
-            search results
+
         </div>
     );
 };

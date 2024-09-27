@@ -5,7 +5,7 @@ import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleS
 import { useSurahList } from "../../../../../../hooks/useSurahList";
 import ChapterDropdownItem from "../chapters-dropdown-menu/ChapterDropdownItem";
 import { Button } from "keep-react";
-import { searchChapterWithNewSearchText } from "../../../../../../utilities/searchChapterWithNewSearchText";
+import { searchChapterWithNewSearchText } from "../../../../../../utilities/search-methods/searchChapterWithNewSearchText";
 
 const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
 
