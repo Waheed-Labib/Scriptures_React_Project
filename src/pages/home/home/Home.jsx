@@ -1,6 +1,6 @@
 import SurahListHome from "../surah-list-home/surah-list-home/SurahListHome";
-import Hero from "../hero/Hero";
 import { useScrollToTop } from "../../../hooks/useScrollToTop";
+import HomePageHeroSection from "../home-page-hero-section/HomePageHeroSection";
 
 const Home = () => {
 
@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div className="">
 
-            <Hero></Hero>
+            <HomePageHeroSection></HomePageHeroSection>
 
             <div className="my-8">
                 <SurahListHome></SurahListHome>

@@ -9,7 +9,7 @@ import {
 } from 'keep-react'
 import { carouselData } from '../../../data/CarouselData'
 
-export const CarouselHome = () => {
+export const HomePageCarousel = () => {
 
     return (
         <Carousel options={{ loop: true }} plugins={[autoPlay()]}>
