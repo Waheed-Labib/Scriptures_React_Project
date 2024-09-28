@@ -5,7 +5,7 @@ import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleS
 import { useSurahList } from "../../../../../../hooks/useSurahList";
 import ChapterDropdownItem from "../chapters-dropdown-menu/ChapterDropdownItem";
 import { Button } from "keep-react";
-import { searchChapterWithNewSearchText } from "../../../../../../utilities/search-methods/searchChapterWithNewSearchText";
+import { searchChapter } from "../../../../../../utilities/search-methods/searchChapter";
 
 const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
 
@@ -16,7 +16,7 @@ const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
 
     useEffect(() => {
 
-        searchChapterWithNewSearchText(setSearchResult, surahList, searchText)
+        searchChapter(setSearchResult, surahList, searchText)
 
     }, [searchText, surahList])
 

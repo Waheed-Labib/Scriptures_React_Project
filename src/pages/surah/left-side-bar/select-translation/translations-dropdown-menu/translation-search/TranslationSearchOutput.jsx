@@ -5,7 +5,7 @@ import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleS
 import TranslationDropdownItem from "../translations-dropdown-item/TranslationDropdownItem";
 import ErrorComponent from "../../../../../../components/error-component/ErrorComponent";
 import { Button } from "keep-react";
-import { searchTranslationWithNewSearchText } from "../../../../../../utilities/search-methods/searchTranslationWithNewSearchText";
+import { searchTranslation } from "../../../../../../utilities/search-methods/searchTranslation";
 
 const TranslationSearchOutput = ({ searchText, setSearchText }) => {
 
@@ -16,7 +16,7 @@ const TranslationSearchOutput = ({ searchText, setSearchText }) => {
 
     useEffect(() => {
 
-        searchTranslationWithNewSearchText(setSearchResult, translations, searchText)
+        searchTranslation(setSearchResult, translations, searchText)
 
     }, [searchText, translations])
 

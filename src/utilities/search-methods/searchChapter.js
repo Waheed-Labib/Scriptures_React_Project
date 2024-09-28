@@ -1,4 +1,4 @@
-export const searchChapterWithNewSearchText = (setSearchResult, surahList, searchText) => {
+export const searchChapter = (setSearchResult, surahList, searchText) => {
     //cancel previous result
     setSearchResult([])
 

@@ -11,7 +11,8 @@ const CommonSearchBox = ({ setIsSearchModalOpen, setSearchResults }) => {
     const handleSearchTextChange = (e) => {
         const searchText = e.target.value;
         const result = commonSearch(searchText);
-        console.log(result)
+        console.log(result);
+        // setSearchResults(result)
     }
 
     return (

@@ -1,4 +1,4 @@
-export const searchTranslationWithNewSearchText = (setSearchResult, translations, searchText) => {
+export const searchTranslation = (setSearchResult, translations, searchText) => {
     setSearchResult([])
 
     translations?.map(translation => {

@@ -9,8 +9,11 @@ const searchWithChapterNumber = (number) => {
         searchType: 'error'
     }
 
+    const chapter = {};
+
     return {
         searchType: 'chapter',
-        searchResult: ''
+        searchResult: chapter
     }
 }
+
