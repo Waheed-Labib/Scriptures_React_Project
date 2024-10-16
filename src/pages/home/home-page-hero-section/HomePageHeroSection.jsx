@@ -1,7 +1,7 @@
 import { HomePageCarousel } from './HomePageCarousel';
 import { SearchModal } from '../../../components/search-modal/SearchModal';
 import { useState } from 'react';
-import CommonSearchBox from '../../../components/common-search-box/CommonSearchBox';
+import DummySearchBox from '../../../components/dummy-search-box/DummySearchBox';
 
 const HomePageHeroSection = () => {
 
@@ -13,9 +13,9 @@ const HomePageHeroSection = () => {
                 <HomePageCarousel></HomePageCarousel>
                 <div className='w-full'>
                     <div className='mb-2'>
-                        <CommonSearchBox
+                        <DummySearchBox
                             setIsSearchModalOpen={setIsSearchModalOpen}
-                        ></CommonSearchBox>
+                        ></DummySearchBox>
 
                         {
                             isSearchModalOpen &&
