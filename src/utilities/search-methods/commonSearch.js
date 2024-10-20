@@ -1,15 +1,18 @@
-export const commonSearch = (searchText, setSearchResults) => {
-    // check if it is a surah number
-    if (!isNaN(searchText)) {
-        const surahNum = parseInt(searchText)
-        if (surahNum < 1 || surahNum > 114) {
-            setSearchResults([
-                {
-                    searchType: 'invalid'
-                }
-            ])
+import { isNumber } from "../isNumberr";
+import { isValidSurahNumber } from "../isValidSurahNumber"
+import { setSearchResultInvalid } from "./setSearchResultInvalid";
+import { setSearchResultWithSurahNumber } from "./setSearchResultWithSurahNumber";
 
-            return
-        }
+export const commonSearch = (searchText, setSearchResults) => {
+
+    if (isNumber(searchText) && !isValidSurahNumber(parseInt(searchText))) {
+        setSearchResultInvalid(setSearchResults);
+        return;
     }
+
+    if (isNumber(searchText) && isValidSurahNumber(parseInt(searchText))) {
+        setSearchResultWithSurahNumber(parseInt(searchText), setSearchResults);
+        return;
+    }
+
 }
