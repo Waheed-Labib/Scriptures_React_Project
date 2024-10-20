@@ -1,20 +1,19 @@
 /* eslint-disable react/prop-types */
 import { FaSearch } from "react-icons/fa";
-import { commonSearch } from "../../utilities/search-methods/commonSearch";
+import { commonSearch } from "../../utilities/search-methods/common-search/commonSearch";
 
 const CommonSearchBox = ({ setSearchResults }) => {
 
-    const handleSearchTextChange = (e) => {
+    const handleSearchInputChange = e => {
         const searchText = e.target.value;
         const result = commonSearch(searchText);
-        console.log(result);
-        // setSearchResults(result)
+        setSearchResults(result);
     }
 
     return (
         <div>
             <div>
-                <input onChange={handleSearchTextChange} placeholder="Search Quran" className="w-full h-10 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
+                <input onChange={handleSearchInputChange} placeholder="Search Quran" className="w-full h-10 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
             </div>
 
             <div className="pl-1 text-xs text-cyan-950 flex items-center gap-2 mt-2">

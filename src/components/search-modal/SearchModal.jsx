@@ -6,6 +6,7 @@ import SearchResults from "./SearchResults";
 export const SearchModal = ({ isSearchModalOpen, setIsSearchModalOpen }) => {
 
     const [searchResults, setSearchResults] = useState([]);
+    console.log('searchResults', searchResults)
 
     return (
         <div onClick={() => setIsSearchModalOpen(false)} className={`fixed z-[100] w-screen ${isSearchModalOpen ? 'visible opacity-100' : 'invisible opacity-0'} inset-0 grid place-items-center bg-black/20 backdrop-blur-sm duration-100 dark:bg-transparent`}>

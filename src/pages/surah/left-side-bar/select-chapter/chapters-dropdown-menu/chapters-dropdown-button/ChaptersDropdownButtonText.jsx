@@ -1,6 +1,6 @@
 import { FaBars } from "react-icons/fa";
-import { useSurahInfo } from "../../../../../../hooks/useSurahInfo";
 import { useSurahId } from "../../../../../../hooks/useSurahId";
+import { useSurahInfo } from "../../../../../../hooks/useSurahInfo";
 
 const ChaptersDropdownButtonText = () => {
 

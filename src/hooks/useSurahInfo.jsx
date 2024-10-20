@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 export const useSurahInfo = (surahId) => {
+
     const [surahInfo, setSurahInfo] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
