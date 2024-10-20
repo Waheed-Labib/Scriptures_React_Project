@@ -1,7 +1,9 @@
 import { isNumber } from "../isNumberr";
 import { isValidSurahNumber } from "../isValidSurahNumber"
+import { isVerseKeyFormat } from "../isVerseKeyFormat";
 import { setSearchResultInvalid } from "./setSearchResultInvalid";
 import { setSearchResultWithSurahNumber } from "./setSearchResultWithSurahNumber";
+import { setSearchResultWithVerseKey } from "./setSearchResultWithVerseKey";
 
 export const commonSearch = (searchText, setSearchResults) => {
 
@@ -15,4 +17,8 @@ export const commonSearch = (searchText, setSearchResults) => {
         return;
     }
 
+    if (isVerseKeyFormat(searchText)) {
+        setSearchResultWithVerseKey(searchText, setSearchResults)
+        return
+    }
 }
