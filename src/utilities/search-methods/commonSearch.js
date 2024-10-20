@@ -1,24 +1,23 @@
-import { isNumber } from "../isNumberr";
-import { isValidSurahNumber } from "../isValidSurahNumber"
-import { isVerseKeyFormat } from "../isVerseKeyFormat";
-import { setSearchResultInvalid } from "./setSearchResultInvalid";
+import { isOneWord } from "../isOneWord";
+import { isSurahNumber } from "../isSurahNumber";
+import { isVerseKey } from "../isVerseKey";
+import { setSearchResultWithSurahName } from "./setSearchResultWithSurahName";
 import { setSearchResultWithSurahNumber } from "./setSearchResultWithSurahNumber";
 import { setSearchResultWithVerseKey } from "./setSearchResultWithVerseKey";
 
 export const commonSearch = (searchText, setSearchResults) => {
 
-    if (isNumber(searchText) && !isValidSurahNumber(parseInt(searchText))) {
-        setSearchResultInvalid(setSearchResults);
+    if (isSurahNumber(searchText)) {
+        setSearchResultWithSurahNumber(searchText, setSearchResults);
         return;
     }
 
-    if (isNumber(searchText) && isValidSurahNumber(parseInt(searchText))) {
-        setSearchResultWithSurahNumber(parseInt(searchText), setSearchResults);
-        return;
-    }
-
-    if (isVerseKeyFormat(searchText)) {
+    if (isVerseKey(searchText)) {
         setSearchResultWithVerseKey(searchText, setSearchResults)
         return
+    }
+
+    if (isOneWord(searchText)) {
+        setSearchResultWithSurahName(searchText, setSearchResults)
     }
 }
