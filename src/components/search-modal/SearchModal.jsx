@@ -13,6 +13,7 @@ export const SearchModal = ({ isSearchModalOpen, setIsSearchModalOpen }) => {
             <div onClick={(e_) => e_.stopPropagation()} className={`absolute rounded-lg w-[80vw] h-[80vh] bg-white p-8 drop-shadow-lg dark:bg-zinc-900 dark:text-white ${isSearchModalOpen ? 'opacity-1 duration-300' : 'scale-110 opacity-0 duration-150'}`}>
 
                 <CommonSearchBox
+                    searchResults={searchResults}
                     setSearchResults={setSearchResults}
                 ></CommonSearchBox>
 

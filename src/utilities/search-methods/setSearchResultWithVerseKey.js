@@ -13,13 +13,13 @@ export const setSearchResultWithVerseKey = (verseKey, setSearchResults) => {
 
                     setSearchResults([
                         {
-                            searchType: 'verse',
-                            searchResult: {
+                            searchType: 'verse key',
+                            searchResult: [{
                                 verseKey: verseKey,
                                 arabicVerse: responseVerse.data.verses[0].text_uthmani,
                                 translation: responseTranslation.data.translations[0].text,
                                 translationName: responseTranslation.data.meta.translation_name
-                            }
+                            }]
                         }
                     ])
                 })

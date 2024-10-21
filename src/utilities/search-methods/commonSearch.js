@@ -1,11 +1,14 @@
 import { isOneWord } from "../isOneWord";
 import { isSurahNumber } from "../isSurahNumber";
 import { isVerseKey } from "../isVerseKey";
-import { setSearchResultWithSurahName } from "./setSearchResultWithSurahName";
+import { setSearchResultWithSurahNameAndVerse } from "./setSearchResultWithSurahNameAndVerse";
 import { setSearchResultWithSurahNumber } from "./setSearchResultWithSurahNumber";
+import { setSearchResultWithVerse } from "./setSearchResultWithVerse";
 import { setSearchResultWithVerseKey } from "./setSearchResultWithVerseKey";
 
-export const commonSearch = (searchText, setSearchResults) => {
+export const commonSearch = (searchText, searchResults, setSearchResults) => {
+
+    if (!searchText) return
 
     if (isSurahNumber(searchText)) {
         setSearchResultWithSurahNumber(searchText, setSearchResults);
@@ -17,7 +20,13 @@ export const commonSearch = (searchText, setSearchResults) => {
         return
     }
 
-    if (isOneWord(searchText)) {
-        setSearchResultWithSurahName(searchText, setSearchResults)
+    if (!isOneWord(searchText)) {
+        setSearchResultWithVerse(searchText, setSearchResults)
+        return
     }
+
+    if (isOneWord(searchText)) {
+        setSearchResultWithSurahNameAndVerse(searchText, setSearchResults)
+    }
+
 }

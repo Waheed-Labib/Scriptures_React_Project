@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
 import { commonSearch } from "../../utilities/search-methods/commonSearch";
 
-const CommonSearchBox = ({ setSearchResults }) => {
+const CommonSearchBox = ({ searchResults, setSearchResults }) => {
 
     const handleSearchTextChange = e => {
         const searchText = e.target.value;
-        commonSearch(searchText, setSearchResults)
+        commonSearch(searchText, searchResults, setSearchResults)
     }
 
     return (

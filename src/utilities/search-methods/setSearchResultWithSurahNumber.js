@@ -6,7 +6,7 @@ export const setSearchResultWithSurahNumber = (surahId, setSearchResults) => {
             setSearchResults([
                 {
                     searchType: 'chapter',
-                    searchResult: response.data.chapter
+                    searchResult: [response.data.chapter]
                 }
             ])
         })
