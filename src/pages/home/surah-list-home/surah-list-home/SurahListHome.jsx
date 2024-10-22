@@ -1,7 +1,7 @@
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import { useSurahList } from "../../../../hooks/useSurahList";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
-import SurahLinkDetailed from "../surah-link-detailed/SurahLinkDetailed";
+import SurahLinkDetailed from "../../../../components/surah-link-detailed/SurahLinkDetailed";
 
 
 const SurahListHome = () => {

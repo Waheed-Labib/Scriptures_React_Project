@@ -1,4 +1,4 @@
-import SurahLinkDetailed from "../../../pages/home/surah-list-home/surah-link-detailed/SurahLinkDetailed";
+import SurahLinkDetailed from "../../surah-link-detailed/SurahLinkDetailed";
 
 /* eslint-disable react/prop-types */
 const ChapterResults = ({ searchResult }) => {
