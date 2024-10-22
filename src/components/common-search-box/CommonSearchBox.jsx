@@ -3,11 +3,11 @@ import { FaSearch } from "react-icons/fa";
 import { commonSearch } from "../../utilities/search-methods/commonSearch";
 import { useEffect } from "react";
 
-const CommonSearchBox = ({ searchText, setSearchText, searchResults, setSearchResults }) => {
+const CommonSearchBox = ({ searchText, setSearchText, setSearchResults }) => {
 
     useEffect(() => {
-        commonSearch(searchText, searchResults, setSearchResults)
-    }, [searchText])
+        commonSearch(searchText, setSearchResults)
+    }, [searchText, setSearchResults])
 
     return (
         <div>

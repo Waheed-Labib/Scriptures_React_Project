@@ -6,7 +6,7 @@ import { setSearchResultWithSurahNumber } from "./setSearchResultWithSurahNumber
 import { setSearchResultWithVerse } from "./setSearchResultWithVerse";
 import { setSearchResultWithVerseKey } from "./setSearchResultWithVerseKey";
 
-export const commonSearch = (searchText, searchResults, setSearchResults) => {
+export const commonSearch = (searchText, setSearchResults) => {
 
     if (!searchText) return
 
@@ -28,5 +28,4 @@ export const commonSearch = (searchText, searchResults, setSearchResults) => {
     if (isOneWord(searchText)) {
         setSearchResultWithSurahNameAndVerse(searchText, setSearchResults)
     }
-
 }
