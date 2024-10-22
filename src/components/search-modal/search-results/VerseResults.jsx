@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const Verses = ({ searchResult }) => {
+const VerseResults = ({ searchResult }) => {
 
     console.log('searchResult', searchResult)
 
@@ -10,4 +10,4 @@ const Verses = ({ searchResult }) => {
     );
 };
 
-export default Verses;
+export default VerseResults;

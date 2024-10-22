@@ -1,7 +1,7 @@
 import SurahLinkDetailed from "../../../pages/home/surah-list-home/surah-link-detailed/SurahLinkDetailed";
 
 /* eslint-disable react/prop-types */
-const Chapters = ({ searchResult }) => {
+const ChapterResults = ({ searchResult }) => {
     return (
         <div className="flex flex-col gap-2">
             {
@@ -14,4 +14,4 @@ const Chapters = ({ searchResult }) => {
     );
 };
 
-export default Chapters;
+export default ChapterResults;

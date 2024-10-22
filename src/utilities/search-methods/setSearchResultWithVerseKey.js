@@ -11,6 +11,11 @@ export const setSearchResultWithVerseKey = (verseKey, setSearchResults) => {
 
                 .then(function (responseTranslation) {
 
+                    if (responseTranslation.data.translations.length === 0) {
+                        setSearchResults([])
+                        return
+                    }
+
                     setSearchResults([
                         {
                             searchType: 'verse key',

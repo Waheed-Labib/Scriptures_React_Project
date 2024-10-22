@@ -1,47 +1,26 @@
-import Chapters from "./Chapters";
-import Verses from "./Verses";
-import VersesWithVerseKey from "./VersesWithVerseKey";
+import ChapterResults from "./ChapterResults";
+import VerseResults from "./VerseResults";
+import VerseWithVerseKeyResults from "./VersesWithVerseKeyResult";
 
 /* eslint-disable react/prop-types */
 const Element = ({ element }) => {
 
     const { searchType, searchResult } = element;
 
-    return (
-        <div className="h-full">
-            {
-                searchType === 'chapter' && <Chapters
-                    searchResult={searchResult}
-                ></Chapters>
-            }
-
-            {
-                searchType === 'verse key' && <VersesWithVerseKey
-                    searchResult={searchResult}
-                ></VersesWithVerseKey>
-            }
-
-            {
-                searchType === 'verse' && <Verses
-                    searchResult={searchResult}
-                ></Verses>
-            }
-        </div>
-    )
     if (searchType === 'chapter')
-        return <Chapters
+        return <ChapterResults
             searchResult={searchResult}
-        ></Chapters>
+        ></ChapterResults>
 
     if (searchType === 'verse key')
-        return <VersesWithVerseKey
+        return <VerseWithVerseKeyResults
             searchResult={searchResult}
-        ></VersesWithVerseKey>
+        ></VerseWithVerseKeyResults>
 
     if (searchType === 'verse')
-        return <Verses
+        return <VerseResults
             searchResult={searchResult}
-        ></Verses>
+        ></VerseResults>
 };
 
 export default Element;

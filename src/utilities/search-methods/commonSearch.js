@@ -1,3 +1,4 @@
+import { isNumber } from "../isNumber";
 import { isOneWord } from "../isOneWord";
 import { isSurahNumber } from "../isSurahNumber";
 import { isVerseKey } from "../isVerseKey";
@@ -8,11 +9,19 @@ import { setSearchResultWithVerseKey } from "./setSearchResultWithVerseKey";
 
 export const commonSearch = (searchText, setSearchResults) => {
 
-    if (!searchText) return
+    if (!searchText) {
+        setSearchResults([])
+        return
+    }
 
     if (isSurahNumber(searchText)) {
         setSearchResultWithSurahNumber(searchText, setSearchResults);
         return;
+    }
+
+    if (isNumber(searchText) && !isSurahNumber(searchText)) {
+        setSearchResults([])
+        return
     }
 
     if (isVerseKey(searchText)) {
