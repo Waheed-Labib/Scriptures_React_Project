@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
-import ResultType from "./ResultType";
+
+import Element from "./Element";
 
 const SearchResults = ({ searchResults }) => {
+
     return (
         <div>
             {
-                searchResults?.map((resultType, idx) => <ResultType
+                searchResults.map((element, idx) => <Element
                     key={idx}
-                    resultType={resultType}
-                ></ResultType>)
+                    element={element}
+                ></Element>)
             }
-        </div>
+        </div >
     );
 };
 
