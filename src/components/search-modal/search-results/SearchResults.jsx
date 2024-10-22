@@ -5,7 +5,7 @@ import Element from "./Element";
 const SearchResults = ({ searchResults }) => {
 
     return (
-        <div className="my-8">
+        <div className="">
             {
                 searchResults.map((element, idx) => <Element
                     key={idx}

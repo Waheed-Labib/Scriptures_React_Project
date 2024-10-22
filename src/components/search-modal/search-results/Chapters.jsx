@@ -3,7 +3,7 @@ import SurahLinkDetailed from "../../../pages/home/surah-list-home/surah-link-de
 /* eslint-disable react/prop-types */
 const Chapters = ({ searchResult }) => {
     return (
-        <div className="">
+        <div className="flex flex-col gap-2">
             {
                 searchResult.map((surah, idx) => <SurahLinkDetailed
                     key={idx}
