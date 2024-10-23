@@ -6,6 +6,7 @@
 
 <ol>
 <li>The chapters and verses form the Quran.</li>
+<li>Search By Chapter Name, Chapter Number, Verse Key or Part of a Verse.</li>
 <li>Pagination for the verses.</li>
 <li>Translations for each verses.</li>
 <li>User can choose which translation(s) to show</li>
@@ -15,7 +16,6 @@
 <h2>Working On</h2>
 
 <ol>
-<li>Search Options</li>
 <li>User Authentication, Authorization</li>
 <li>User's Translation Inputs</li>
 <li>Creating Database to store users' translations</li>
