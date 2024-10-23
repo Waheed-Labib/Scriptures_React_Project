@@ -2,15 +2,16 @@
 import { DropdownItem } from "keep-react";
 import { useNavigate } from "react-router-dom";
 
-const ChapterDropdownItem = ({ surah, setChapterNum }) => {
+const ChapterDropdownItem = ({ surah, setChapterNum, setPage }) => {
 
     const surahId = surah?.id;
 
     const navigate = useNavigate();
 
     const navigateToSurahPage = () => {
-        navigate(`/surah/${surahId}`)
+        navigate(`/surah/${surahId}/page/1`)
         setChapterNum(surahId)
+        setPage(1)
     }
 
     return (

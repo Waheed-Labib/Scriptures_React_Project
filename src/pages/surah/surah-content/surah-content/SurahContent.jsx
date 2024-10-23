@@ -17,7 +17,7 @@ const SurahContent = ({ arabicFont, page }) => {
 
     useEffect(() => {
         scrollComponent()
-    }, [page])
+    }, [])
 
     const { state } = useVersesInfo(page);
     const { versesInfo, loading, error } = state;

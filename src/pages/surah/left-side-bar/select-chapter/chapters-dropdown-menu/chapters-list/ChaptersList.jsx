@@ -4,7 +4,7 @@ import SimpleSkeleton from "../../../../../../components/simple-skeleton/SimpleS
 import { useSurahList } from "../../../../../../hooks/useSurahList";
 import ChapterDropdownItem from "../chapters-dropdown-menu/ChapterDropdownItem";
 
-const ChaptersList = ({ setChapterNum }) => {
+const ChaptersList = ({ setChapterNum, setPage }) => {
 
     const { state } = useSurahList();
     const { surahList, loading, error } = state;
@@ -23,6 +23,7 @@ const ChaptersList = ({ setChapterNum }) => {
                     key={surah?.id}
                     surah={surah}
                     setChapterNum={setChapterNum}
+                    setPage={setPage}
                 ></ChapterDropdownItem>)
             }
             {

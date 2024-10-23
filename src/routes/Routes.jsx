@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/surah/:id',
+                path: '/surah/:id/page/:page',
                 element: <Surah></Surah>
             }
         ]

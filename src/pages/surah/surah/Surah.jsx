@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useScrollToTop } from "../../../hooks/useScrollToTop";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import SurahContent from "../surah-content/surah-content/SurahContent";
 import SurahContentPagination from "../surah-content/surah-content-pagination/surah-content-pagination/SurahContentPagination";
 import { useSurahId } from "../../../hooks/useSurahId";
+import { usePageNumber } from "../../../hooks/usePageNumber";
 
 const Surah = () => {
 
@@ -13,11 +14,7 @@ const Surah = () => {
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
 
     const [chapterNum, setChapterNum] = useState(useSurahId())
-    const [page, setPage] = useState(1)
-
-    useEffect(() => {
-        setPage(1)
-    }, [chapterNum])
+    const [page, setPage] = useState(usePageNumber())
 
     return (
         <div className="flex gap-8 mt-2 h-[87vh]">
@@ -27,6 +24,7 @@ const Surah = () => {
                     setArabicFont={setArabicFont}
                     chapterNum={chapterNum}
                     setChapterNum={setChapterNum}
+                    setPage={setPage}
                 ></LeftSideBar>
             </div>
 

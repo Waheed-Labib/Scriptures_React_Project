@@ -7,7 +7,7 @@ import ChapterDropdownItem from "../chapters-dropdown-menu/ChapterDropdownItem";
 import { Button } from "keep-react";
 import { searchChapter } from "../../../../../../utilities/search-methods/searchChapter";
 
-const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
+const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum, setPage }) => {
 
     const { state } = useSurahList();
     const { surahList, loading: surahListLoading, error: surahListError } = state;
@@ -37,6 +37,7 @@ const ChapterSearchOutput = ({ searchText, setSearchText, setChapterNum }) => {
                     key={surah?.id}
                     surah={surah}
                     setChapterNum={setChapterNum}
+                    setPage={setPage}
                 ></ChapterDropdownItem>)
             }
             {

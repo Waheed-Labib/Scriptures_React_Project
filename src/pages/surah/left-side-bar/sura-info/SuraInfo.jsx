@@ -6,7 +6,7 @@ import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLetter";
 import Links from "../links/Links";
 
-const SuraInfo = ({ chapterNum, setChapterNum }) => {
+const SuraInfo = ({ chapterNum, setChapterNum, setPage }) => {
 
     const surahId = useSurahId();
     const { loading, surahInfo, error } = useSurahInfo(surahId);
@@ -33,6 +33,7 @@ const SuraInfo = ({ chapterNum, setChapterNum }) => {
                 <Links
                     chapterNum={chapterNum}
                     setChapterNum={setChapterNum}
+                    setPage={setPage}
                 ></Links>
             </div>
 

@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { useVersesInfo } from "../../../../../hooks/useVersesInfo";
+import { useNavigate } from "react-router-dom";
+import { useSurahId } from "../../../../../hooks/useSurahId";
 
 const VersesPageNavigation = ({ page, setPage }) => {
 
@@ -14,11 +16,16 @@ const VersesPageNavigation = ({ page, setPage }) => {
 
     // const totalVerses = versesInfo?.pagination?.total_records;
 
+    const navigate = useNavigate();
+    const surahId = useSurahId();
+
     const handlePrevPageClick = () => {
+        navigate(`/surah/${surahId}/page/${page - 1}`);
         setPage(page - 1)
     }
 
     const handleNextPageClick = () => {
+        navigate(`/surah/${surahId}/page/${page + 1}`);
         setPage(page + 1)
     }
 

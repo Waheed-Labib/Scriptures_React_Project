@@ -7,7 +7,7 @@ import ChaptersDropdownButtonText from '../chapters-dropdown-button/ChaptersDrop
 import ChapterSearchInput from '../chapter-search/ChapterSearchInput';
 import ChapterSearchOutput from '../chapter-search/ChapterSearchOutput';
 
-const ChaptersDropdownMenu = ({ setChapterNum }) => {
+const ChaptersDropdownMenu = ({ setChapterNum, setPage }) => {
 
     const [searchText, setSearchText] = useState('');
 
@@ -33,10 +33,12 @@ const ChaptersDropdownMenu = ({ setChapterNum }) => {
                                 searchText={searchText}
                                 setSearchText={setSearchText}
                                 setChapterNum={setChapterNum}
+                                setPage={setPage}
                             ></ChapterSearchOutput>
                             :
                             <ChaptersList
                                 setChapterNum={setChapterNum}
+                                setPage={setPage}
                             ></ChaptersList>
                     }
 

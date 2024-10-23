@@ -3,19 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { useSurahId } from "../../../../hooks/useSurahId";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const Links = ({ chapterNum, setChapterNum }) => {
+const Links = ({ chapterNum, setChapterNum, setPage }) => {
 
     const surahId = useSurahId()
     const navigate = useNavigate()
 
     const handlePrevClick = () => {
-        navigate(`/surah/${surahId - 1}`)
+        navigate(`/surah/${surahId - 1}/page/1`)
         setChapterNum(chapterNum - 1)
+        setPage(1)
     }
 
     const handleNextClick = () => {
-        navigate(`/surah/${surahId + 1}`)
+        navigate(`/surah/${surahId + 1}/page/1`)
         setChapterNum(chapterNum + 1)
+        setPage(1)
     }
 
     return (

@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 import ChaptersDropdownMenu from "./chapters-dropdown-menu/chapters-dropdown-menu/ChaptersDropdownMenu";
 
-const SelectChapter = ({ setChapterNum }) => {
+const SelectChapter = ({ setChapterNum, setPage }) => {
     return (
         <div className="">
             <h3 className="pl-2 mb-2 font-semibold text-gray-500">Chapters</h3>
-            <ChaptersDropdownMenu setChapterNum={setChapterNum}></ChaptersDropdownMenu>
+            <ChaptersDropdownMenu
+                setChapterNum={setChapterNum}
+                setPage={setPage}
+            ></ChaptersDropdownMenu>
         </div>
     );
 };
