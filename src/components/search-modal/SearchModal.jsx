@@ -30,6 +30,7 @@ export const SearchModal = ({ isSearchModalOpen, setIsSearchModalOpen }) => {
 
                             <SearchResults
                                 searchResults={searchResults}
+                                setIsSearchModalOpen={setIsSearchModalOpen}
                             ></SearchResults>
 
                             :

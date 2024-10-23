@@ -1,5 +1,7 @@
+import GoToChapterButton from "./GoToChapterButton";
+
 /* eslint-disable react/prop-types */
-const VerseResults = ({ searchResult }) => {
+const VerseResults = ({ searchResult, setIsSearchModalOpen }) => {
 
     const results = searchResult[0].results
 
@@ -41,7 +43,11 @@ const VerseResults = ({ searchResult }) => {
 
                             </div>
                         </div>
-                        <button className="bg-gray-300 h-8 px-2 rounded-md text-cyan-900 mt-2 w-48 hover:bg-gray-200 hover:font-medium">Go to Chapter</button>
+
+                        <GoToChapterButton
+                            verseKey={result.verse_key}
+                            setIsSearchModalOpen={setIsSearchModalOpen}
+                        ></GoToChapterButton>
                     </div>)
             }
         </div>

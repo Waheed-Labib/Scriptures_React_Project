@@ -2,7 +2,7 @@
 
 import Element from "./Element";
 
-const SearchResults = ({ searchResults }) => {
+const SearchResults = ({ searchResults, setIsSearchModalOpen }) => {
 
     return (
         <div className="">
@@ -10,6 +10,7 @@ const SearchResults = ({ searchResults }) => {
                 searchResults.map((element, idx) => <Element
                     key={idx}
                     element={element}
+                    setIsSearchModalOpen={setIsSearchModalOpen}
                 ></Element>)
             }
         </div >

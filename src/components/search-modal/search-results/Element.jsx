@@ -3,7 +3,7 @@ import VerseResults from "./VerseResults";
 import VerseWithVerseKeyResults from "./VersesWithVerseKeyResult";
 
 /* eslint-disable react/prop-types */
-const Element = ({ element }) => {
+const Element = ({ element, setIsSearchModalOpen }) => {
 
     const { searchType, searchResult } = element;
 
@@ -15,11 +15,13 @@ const Element = ({ element }) => {
     if (searchType === 'verse key')
         return <VerseWithVerseKeyResults
             searchResult={searchResult}
+            setIsSearchModalOpen={setIsSearchModalOpen}
         ></VerseWithVerseKeyResults>
 
     if (searchType === 'verse')
         return <VerseResults
             searchResult={searchResult}
+            setIsSearchModalOpen={setIsSearchModalOpen}
         ></VerseResults>
 };
 
