@@ -11,6 +11,7 @@
 <li>Translations for each verses.</li>
 <li>User can choose which translation(s) to show</li>
 <li>Under each verse, an input field for the user to add his/her own translation</li>
+<li>Used react-helmet for Title and SEO</li>
 </ol>
 
 <h2>Working On</h2>
