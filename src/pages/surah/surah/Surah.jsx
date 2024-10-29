@@ -6,6 +6,8 @@ import SurahContent from "../surah-content/surah-content/SurahContent";
 import SurahContentPagination from "../surah-content/surah-content-pagination/surah-content-pagination/SurahContentPagination";
 import { useSurahId } from "../../../hooks/useSurahId";
 import { usePageNumber } from "../../../hooks/usePageNumber";
+import { Helmet } from "react-helmet";
+import { useSurahInfo } from "../../../hooks/useSurahInfo";
 
 const Surah = () => {
 
@@ -16,8 +18,20 @@ const Surah = () => {
     const [chapterNum, setChapterNum] = useState(useSurahId())
     const [page, setPage] = useState(usePageNumber())
 
+    const { surahInfo } = useSurahInfo(chapterNum);
+    const { name_arabic, name_simple } = surahInfo;
+
     return (
         <div className="flex gap-8 mt-2 h-[87vh]">
+
+            <Helmet>
+                <title>{`${name_simple} ~ Translate Quran`}</title>
+
+                <meta name="description" content={`Chapter ${name_simple} with translation`} />
+
+                <meta name="keyword" content={`${name_arabic}, ${name_simple}, surah ${name_simple}, chapter ${name_simple}, ${name_simple} translation`} />
+            </Helmet>
+
             <div className="w-1/5 pt-4 h-full">
                 <LeftSideBar
                     arabicFont={arabicFont}
