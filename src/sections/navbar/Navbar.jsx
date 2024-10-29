@@ -9,7 +9,7 @@ import {
     NavbarList,
 } from 'keep-react'
 
-import { FaBookOpen } from "react-icons/fa6";
+import { FaBookOpenReader } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -21,15 +21,15 @@ export const NavbarComponent = () => {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
     return (
-        <Navbar className='h-[10vh] px-4 md:px-0 flex justify-center items-center shadow-lg sticky top-0 z-10'>
+        <Navbar style={{ fontFamily: '"Roboto", sans-serif' }} className='h-[10vh] px-4 md:px-0 flex justify-center items-center shadow-lg sticky top-0 z-10'>
             <NavbarContainer className=''>
                 <NavbarBrand>
-                    <div className='text-cyan-800 hover:text-slate-700 flex justify-center items-center gap-4 text-xl'>
-                        <div className='mt-1'>
-                            <FaBookOpen></FaBookOpen>
+                    <div className='text-cyan-800 hover:text-slate-700 flex justify-center items-center gap-4'>
+                        <div className='text-lg'>
+                            <FaBookOpenReader></FaBookOpenReader>
                         </div>
 
-                        <Link to='/home' className='font-semibold'>Translate Quran</Link>
+                        <Link to='/home' className='tracking-wider text-xl'>Translate Quran</Link>
                     </div>
 
                 </NavbarBrand>
@@ -51,7 +51,7 @@ export const NavbarComponent = () => {
 
                     <NavbarItem>Login</NavbarItem>
 
-                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
@@ -69,7 +69,7 @@ export const NavbarComponent = () => {
 
                     <NavbarItem>Blog</NavbarItem>
                     <NavbarItem>Login</NavbarItem>
-                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center'>Enroll as Contributor</NavbarItem>
+                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
                 </NavbarCollapse>
             </NavbarContainer>
 
