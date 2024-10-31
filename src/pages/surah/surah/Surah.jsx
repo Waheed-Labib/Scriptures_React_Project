@@ -25,7 +25,7 @@ const Surah = () => {
         <div className="flex gap-8 mt-2 h-[87vh]">
 
             <Helmet>
-                <title>{`${name_simple} ~ Translate Quran`}</title>
+                <title>{`${chapterNum}. ${name_simple} - ${name_arabic} ~ Translate Quran`}</title>
 
                 <meta name="description" content={`Chapter ${name_simple} with translation`} />
 
