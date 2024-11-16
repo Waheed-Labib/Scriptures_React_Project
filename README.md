@@ -5,12 +5,13 @@
 <h2>Added features</h3>
 
 <ol>
-<li>The chapters and verses form the Quran.</li>
+<li>All the chapters and verses form the Quran.</li>
 <li>Search By Chapter Name, Chapter Number, Verse Key or Part of a Verse.</li>
-<li>Pagination for the verses.</li>
-<li>Translations for each verses.</li>
+<li>Hundreds of translations for each verses.</li>
 <li>User can choose which translation(s) to show</li>
 <li>Under each verse, an input field for the user to add his/her own translation</li>
+<li>Pagination for the verses.</li>
+<li>Responsive for all sized devices.</li>
 <li>Used react-helmet for Title and SEO</li>
 </ol>
 
