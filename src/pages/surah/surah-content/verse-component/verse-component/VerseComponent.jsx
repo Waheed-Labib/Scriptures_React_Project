@@ -26,12 +26,12 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
     )
 
     return (
-        <div className="py-8">
-            <div className="flex gap-8">
+        <div className="py-4">
+            <div className="flex gap-4 lg:gap-8">
                 <div>
                     <VerseComponentSideBar verse_key={verse_key}></VerseComponentSideBar>
                 </div>
-                <div className="w-full">
+                <div className="w-full py-4">
                     <p className="mb-12 text-end text-2xl font-medium text-slate-800">
                         {arabicVerse}
                     </p>

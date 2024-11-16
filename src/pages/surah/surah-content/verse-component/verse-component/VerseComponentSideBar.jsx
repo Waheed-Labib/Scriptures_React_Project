@@ -2,7 +2,7 @@
 const VerseComponentSideBar = ({ verse_key }) => {
     return (
         <div>
-            <p className="text-sm">{verse_key}</p>
+            <p className="text-xs font-medium text-cyan-800">{verse_key}</p>
         </div>
     );
 };

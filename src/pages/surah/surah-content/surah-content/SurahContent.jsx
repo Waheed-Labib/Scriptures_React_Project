@@ -27,7 +27,7 @@ const SurahContent = ({ arabicFont, page }) => {
         <div className="">
             <div ref={scrollComponentRef}>
                 <SurahStarting></SurahStarting>
-                <div className="rounded px-8 bg-slate-100">
+                <div className="rounded px-4 lg:px-8 bg-slate-100">
                     {
                         loading && <div className="flex flex-col gap-2">
                             {
