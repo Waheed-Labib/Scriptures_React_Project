@@ -5,12 +5,13 @@ import { useSurahId } from "../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLetter";
 import Links from "../links/Links";
+import SurahName from "./SurahName";
 
 const SuraInfo = ({ chapterNum, setChapterNum, setPage }) => {
 
     const surahId = useSurahId();
     const { loading, surahInfo, error } = useSurahInfo(surahId);
-    const { id, revelation_place, revelation_order, name_arabic, name_simple, verses_count } = surahInfo;
+    const { revelation_place, revelation_order, verses_count } = surahInfo;
 
     if (loading) return (
         <div className="flex flex-col gap-2">
@@ -25,10 +26,7 @@ const SuraInfo = ({ chapterNum, setChapterNum, setPage }) => {
 
     return (
         <div>
-            <h3 className="pl-2 text-sm font-semibold text-gray-500 mb-2">Chapter {id}</h3>
-            <h2 className="pl-2 text-xl my-1">{name_arabic}</h2>
-            <h1 className="pl-2 text-3xl font-bold text-cyan-600"> {name_simple}</h1>
-
+            <SurahName></SurahName>
             <div className="mt-4">
                 <Links
                     chapterNum={chapterNum}

@@ -24,9 +24,9 @@ export const SearchModal = ({ isSearchModalOpen, setIsSearchModalOpen }) => {
                     ></CommonSearchBox>
                 </div>
 
-                <div className="h-4/5 overflow-y-scroll">
+                <div className="h-4/5 overflow-y-auto">
                     {
-                        searchText ?
+                        searchText ? 
 
                             <SearchResults
                                 searchResults={searchResults}

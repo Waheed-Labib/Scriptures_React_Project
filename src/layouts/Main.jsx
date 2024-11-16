@@ -19,7 +19,7 @@ const Main = () => {
             <div className="px-4 md:px-0 md:mx-12 lg:mx-8 mt-2">
                 <Outlet></Outlet>
             </div>
-
+ 
             <Footer></Footer>
         </div>
     );

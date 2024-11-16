@@ -12,4 +12,4 @@ export const searchChapter = (setSearchResult, surahList, searchText) => {
         else if (surah.name_arabic.includes(searchText)) return setSearchResult(prevResult => [...prevResult, surah]);
     })
 
-}
+} 

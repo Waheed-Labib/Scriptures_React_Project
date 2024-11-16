@@ -21,7 +21,7 @@ export const NavbarComponent = () => {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
     return (
-        <Navbar style={{ fontFamily: '"Roboto", sans-serif' }} className='h-[10vh] px-4 md:px-0 flex justify-center items-center shadow-lg sticky top-0 z-10'>
+        <Navbar style={{ fontFamily: '"Roboto", sans-serif' }} className='h-[10vh] px-4 flex justify-center items-center shadow-lg sticky top-0 z-10'>
             <NavbarContainer className=''>
                 <NavbarBrand>
                     <div className='text-cyan-800 hover:text-slate-700 flex justify-center items-center gap-4'>
