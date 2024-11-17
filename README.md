@@ -1,6 +1,11 @@
-<h1>* Translate verses of Quran <br/> * Explore others' translations.</h1>
+<h1>What you can do with this app</h1>
 
-<h4>Uses Quran.com's API</h4>
+<ol>
+<li>Translate verses of Quran.</li>
+<li>Save it with your name. (working on authentication right now)</li>
+<li>Explore others' translations.</li>
+<li>Discussion thread on each verse. (In future)</li>
+</ol>
 
 <h2>Added features</h3>
 
@@ -12,15 +17,35 @@
 <li>Under each verse, an input field for the user to add his/her own translation</li>
 <li>Pagination for the verses.</li>
 <li>Responsive for all sized devices.</li>
-<li>Used react-helmet for Title and SEO</li>
 </ol>
 
 <h2>Working On</h2>
 
 <ol>
 <li>User Authentication, Authorization</li>
-<li>User's Translation Inputs</li>
 <li>Creating Database to store users' translations</li>
 <li>Creating necessary APIs</li>
 </ol>
+
+<h2>Tech Stack</h2>
+
+<ol>
+<li>React</li>
+<li>Tailwind css</li>
+<li>JWT (coming soon)</li>
+<li>MongoDB (coming soon)</li>
+</ol>
+
+<h2>Developing Explorations</h2>
+
+<ol>
+<li>Explored React's hooks like useReducer, useContext, useEffect, useState, etc.</li> 
+<li>Created a bunch of custom hooks.</li>
+<li>Used react-helmet for Title and SEO.</li>
+<li>Explored vite and folder structure.</li>
+<li>Explored react router dom, tailwind css, etc.</li>
+</ol>
+
+
+
 
