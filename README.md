@@ -36,9 +36,10 @@
 <li>MongoDB (coming soon)</li>
 </ol>
 
-<h2>Developing Explorations</h2>
+<h2>Developer Explorations</h2>
 
 <ol>
+<li>Explored (and used) public APIs of Quran.com</li>
 <li>Explored React's hooks like useReducer, useContext, useEffect, useState, etc.</li> 
 <li>Created a bunch of custom hooks.</li>
 <li>Used react-helmet for Title and SEO.</li>
