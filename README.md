@@ -32,6 +32,7 @@
 <ol>
 <li>React</li>
 <li>Tailwind css</li>
+<li>Firebase Auth (coming soon)</li>
 <li>JWT (coming soon)</li>
 <li>MongoDB (coming soon)</li>
 </ol>
