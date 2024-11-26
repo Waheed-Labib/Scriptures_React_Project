@@ -1,16 +1,14 @@
 /* eslint-disable react/prop-types */
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
-import { useSurahId } from "../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 import { capitalizeFirstLetter } from "../../../../utilities/capitalizeFirstLetter";
 import Links from "../links/Links";
 import SurahName from "./SurahName";
 
-const SuraInfo = ({ chapterNum, setChapterNum, setPage }) => {
+const SuraInfo = ({ chapterNum }) => {
 
-    const surahId = useSurahId();
-    const { loading, surahInfo, error } = useSurahInfo(surahId);
+    const { loading, surahInfo, error } = useSurahInfo(chapterNum);
     const { revelation_place, revelation_order, verses_count } = surahInfo;
 
     if (loading) return (
@@ -30,8 +28,6 @@ const SuraInfo = ({ chapterNum, setChapterNum, setPage }) => {
             <div className="mt-4">
                 <Links
                     chapterNum={chapterNum}
-                    setChapterNum={setChapterNum}
-                    setPage={setPage}
                 ></Links>
             </div>
 

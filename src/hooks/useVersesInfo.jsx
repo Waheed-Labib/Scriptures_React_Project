@@ -1,13 +1,13 @@
 import { useEffect, useReducer } from "react";
 import { initialVersesInfoState, VersesInfoReducer } from "../states/reducers/VersesInfoReducer";
-import { useSurahId } from "./useSurahId";
 import { FETCHING_VERSES_INFO_FAILED, FETCHING_VERSES_INFO_START, FETCHING_VERSES_INFO_SUCCESS } from "../states/action-types/ActionTypes";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export const useVersesInfo = (page) => {
     const [state, dispatch] = useReducer(VersesInfoReducer, initialVersesInfoState)
 
-    const surahId = useSurahId();
+    const { surahId } = useParams();
 
     useEffect(() => {
         dispatch({ type: FETCHING_VERSES_INFO_START })

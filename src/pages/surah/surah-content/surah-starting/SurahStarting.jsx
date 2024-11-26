@@ -1,11 +1,11 @@
+import { useParams } from "react-router-dom";
 import ErrorComponent from "../../../../components/error-component/ErrorComponent";
 import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleton";
-import { useSurahId } from "../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 
 const SurahStarting = () => {
 
-    const surahId = useSurahId();
+    const { surahId } = useParams();
     const { loading, surahInfo, error } = useSurahInfo(surahId);
 
     if (loading) return (

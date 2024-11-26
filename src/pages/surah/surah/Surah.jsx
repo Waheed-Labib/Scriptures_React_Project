@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useScrollToTop } from "../../../hooks/useScrollToTop";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import SurahContent from "../surah-content/surah-content/SurahContent";
 import SurahContentPagination from "../surah-content/surah-content-pagination/surah-content-pagination/SurahContentPagination";
-import { useSurahId } from "../../../hooks/useSurahId";
 import { usePageNumber } from "../../../hooks/usePageNumber";
 import { Helmet } from "react-helmet";
 import { useSurahInfo } from "../../../hooks/useSurahInfo";
 import SmallerDevicesHeading from "../smaller-devices-heading/SmallerDevicesHeading";
+import { useParams } from "react-router-dom";
 
 const Surah = () => {
 
@@ -16,11 +16,18 @@ const Surah = () => {
 
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
 
-    const [chapterNum, setChapterNum] = useState(useSurahId())
+    const { surahId } = useParams();
+
+    const [chapterNum, setChapterNum] = useState(surahId)
     const [page, setPage] = useState(usePageNumber())
 
     const { surahInfo } = useSurahInfo(chapterNum);
     const { name_arabic, name_simple } = surahInfo;
+
+    useEffect(() => {
+        setChapterNum(parseInt(surahId))
+        setPage(1)
+    }, [surahId])
 
     return (
         <div>
@@ -35,8 +42,6 @@ const Surah = () => {
             <div className="lg:hidden">
                 <SmallerDevicesHeading
                     chapterNum={chapterNum}
-                    setChapterNum={setChapterNum}
-                    setPage={setPage}
                 ></SmallerDevicesHeading>
             </div>
 
@@ -47,8 +52,6 @@ const Surah = () => {
                         arabicFont={arabicFont}
                         setArabicFont={setArabicFont}
                         chapterNum={chapterNum}
-                        setChapterNum={setChapterNum}
-                        setPage={setPage}
                     ></LeftSideBar>
                 </div>
 

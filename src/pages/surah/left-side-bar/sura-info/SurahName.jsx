@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useSurahId } from "../../../../hooks/useSurahId";
+import { useParams } from "react-router-dom";
 import { useSurahInfo } from "../../../../hooks/useSurahInfo";
 
 const SurahName = () => {
 
-    const surahId = useSurahId();
+    const { surahId } = useParams();
     const { surahInfo } = useSurahInfo(surahId);
     const { id, name_arabic, name_simple } = surahInfo;
 

@@ -4,24 +4,19 @@ import { SelectFont } from "../select-font/SelectFont";
 import SelectTranslation from "../select-translation/SelectTranslation";
 import SuraInfo from "../sura-info/SuraInfo";
 
-const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum, setChapterNum, setPage }) => {
+const LeftSideBar = ({ arabicFont, setArabicFont, chapterNum }) => {
 
     return (
         <div className="flex flex-col gap-4 mt-2">
             <SuraInfo
                 chapterNum={chapterNum}
-                setChapterNum={setChapterNum}
-                setPage={setPage}
             ></SuraInfo>
             <SelectFont
                 arabicFont={arabicFont}
                 setArabicFont={setArabicFont}
             ></SelectFont>
             <SelectTranslation></SelectTranslation>
-            <SelectChapter
-                setChapterNum={setChapterNum}
-                setPage={setPage}
-            ></SelectChapter>
+            <SelectChapter></SelectChapter>
         </div>
     );
 };

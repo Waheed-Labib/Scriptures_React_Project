@@ -1,10 +1,13 @@
 import { FaBars } from "react-icons/fa";
-import { useSurahId } from "../../../../../../hooks/useSurahId";
 import { useSurahInfo } from "../../../../../../hooks/useSurahInfo";
+import { useParams } from "react-router-dom";
 
 const ChaptersDropdownButtonText = () => {
 
-    const { loading: surahInfoLoading, surahInfo, error: surahInfoError } = useSurahInfo(useSurahId());
+    const { surahId } = useParams();
+
+    const { loading: surahInfoLoading, surahInfo, error: surahInfoError } = useSurahInfo(surahId);
+
     const { id, name_simple } = surahInfo;
 
     return (

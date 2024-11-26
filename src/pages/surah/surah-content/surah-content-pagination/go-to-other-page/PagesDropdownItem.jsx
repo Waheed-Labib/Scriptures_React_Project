@@ -1,6 +1,5 @@
 import { DropdownItem } from "keep-react";
-import { useNavigate } from "react-router-dom";
-import { useSurahId } from "../../../../../hooks/useSurahId";
+import { useNavigate, useParams } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const PagesDropdownItem = ({ pageItem, perPage, setPage }) => {
@@ -11,7 +10,7 @@ const PagesDropdownItem = ({ pageItem, perPage, setPage }) => {
     const verses = `verse (${firstVerseNumber}-${lastVerseNumber})`
 
     const navigate = useNavigate();
-    const surahId = useSurahId();
+    const { surahId } = useParams();
 
     const handlePageChange = () => {
         navigate(`/surah/${surahId}/page/${pageItem}`)
