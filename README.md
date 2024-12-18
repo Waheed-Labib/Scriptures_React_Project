@@ -40,10 +40,12 @@
 <h2>Developer Explorations</h2>
 
 <ol>
+<li>Used dangerouslySetInnerHTML for rendering the HTML from search result's string.</li>
+<li>Used DOMPurify for securing the risks of using dangerouslySetInnerHTML</li>
+<li>Used react-helmet for Title and SEO.</li>
 <li>Explored (and used) public APIs of Quran.com</li>
 <li>Explored React's hooks like useReducer, useContext, useEffect, useState, etc.</li> 
 <li>Created a bunch of custom hooks.</li>
-<li>Used react-helmet for Title and SEO.</li>
 <li>Explored vite and folder structure.</li>
 <li>Explored react router dom, tailwind css, etc.</li>
 </ol>

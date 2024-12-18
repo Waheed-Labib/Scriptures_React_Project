@@ -1,4 +1,5 @@
 import GoToChapterButton from "./GoToChapterButton";
+import DOMPurify from 'dompurify'
 
 /* eslint-disable react/prop-types */
 const VerseResults = ({ searchResult, setIsSearchModalOpen }) => {
@@ -31,7 +32,7 @@ const VerseResults = ({ searchResult, setIsSearchModalOpen }) => {
                                         <p
                                             className="mt-2 mb-1 font-semibold text-2xl text-cyan-700"
 
-                                            dangerouslySetInnerHTML={{ __html: translation.text.replace(/<em>/g, '<strong><em>').replace(/<\/em>/g, '</em></strong>') }}>
+                                            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(translation.text.replace(/<em>/g, '<strong><em>').replace(/<\/em>/g, '</em></strong>')) }}>
 
                                         </p>
 

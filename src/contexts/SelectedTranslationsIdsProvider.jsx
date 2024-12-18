@@ -1,11 +1,15 @@
 import { createContext, useState } from "react";
+import { Default_Translation_ID } from "../constants";
 
 export const SelectedTranslationsIdsContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 const SelectedTranslationsIdsProvider = ({ children }) => {
 
-    const [selectedTranslationsIds, setSelectedTranslationsIds] = useState(JSON.parse(localStorage.getItem('aqtp-selected-translations-ids')) || [131])
+    const Selected_Translations_Ids_From_Local_Storage = JSON.parse(localStorage.getItem('aqtp-selected-translations-ids'))
+
+
+    const [selectedTranslationsIds, setSelectedTranslationsIds] = useState(Selected_Translations_Ids_From_Local_Storage.length ? Selected_Translations_Ids_From_Local_Storage : [Default_Translation_ID])
 
     const value = {
         selectedTranslationsIds,
