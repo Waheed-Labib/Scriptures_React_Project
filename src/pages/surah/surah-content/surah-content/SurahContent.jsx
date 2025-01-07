@@ -5,19 +5,16 @@ import SimpleSkeleton from "../../../../components/simple-skeleton/SimpleSkeleto
 import { useVersesInfo } from "../../../../hooks/useVersesInfo";
 import SurahStarting from "../surah-starting/SurahStarting";
 import VerseComponent from "../verse-component/verse-component/VerseComponent";
+import { scrollComponent } from "../../../../utilities/scrollComponent";
 
 
-const SurahContent = ({ arabicFont, page }) => {
+const SurahContent = ({ arabicFont, page, chapterNum }) => {
 
-    const scrollComponentRef = useRef(null);
-
-    const scrollComponent = () => {
-        scrollComponentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const surahContentRef = useRef(null);
 
     useEffect(() => {
-        scrollComponent()
-    }, [])
+        scrollComponent(surahContentRef)
+    }, [chapterNum, page])
 
     const { state } = useVersesInfo(page);
     const { versesInfo, loading, error } = state;
@@ -25,7 +22,7 @@ const SurahContent = ({ arabicFont, page }) => {
 
     return (
         <div className="">
-            <div ref={scrollComponentRef}>
+            <div ref={surahContentRef}>
                 <SurahStarting></SurahStarting>
                 <div className="rounded px-4 lg:px-8 bg-slate-100">
                     {

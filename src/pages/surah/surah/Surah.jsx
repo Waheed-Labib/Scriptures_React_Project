@@ -61,6 +61,7 @@ const Surah = () => {
                             <SurahContent
                                 page={page}
                                 setPage={setPage}
+                                chapterNum={chapterNum}
                                 arabicFont={arabicFont}
                                 setArabicFont={setArabicFont}
                             ></SurahContent>

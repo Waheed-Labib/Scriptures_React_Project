@@ -39,6 +39,7 @@ const SurahListHome = () => {
                     <ErrorComponent errorType='Chapters Fetching Failed' errorText={error}></ErrorComponent>
                 </div>
             }
+
         </div>
     );
 };
