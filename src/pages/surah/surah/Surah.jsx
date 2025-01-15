@@ -4,7 +4,6 @@ import { useScrollToTop } from "../../../hooks/useScrollToTop";
 import LeftSideBar from "../left-side-bar/left-side-bar/LeftSideBar";
 import SurahContent from "../surah-content/surah-content/SurahContent";
 import SurahContentPagination from "../surah-content/surah-content-pagination/surah-content-pagination/SurahContentPagination";
-import { usePageNumber } from "../../../hooks/usePageNumber";
 import { Helmet } from "react-helmet";
 import { useSurahInfo } from "../../../hooks/useSurahInfo";
 import SmallerDevicesHeading from "../smaller-devices-heading/SmallerDevicesHeading";
@@ -16,10 +15,10 @@ const Surah = () => {
 
     const [arabicFont, setArabicFont] = useState(localStorage.getItem('aqtp-font') || 'uthmani');
 
-    const { surahId } = useParams();
+    const { surahId, pageNum } = useParams();
 
     const [chapterNum, setChapterNum] = useState(surahId)
-    const [page, setPage] = useState(usePageNumber())
+    const [page, setPage] = useState(pageNum)
 
     const { surahInfo } = useSurahInfo(chapterNum);
     const { name_arabic, name_simple } = surahInfo;
