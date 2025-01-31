@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/home/home/Home";
-import Surah from "../pages/surah/surah/Surah";
+// import Surah from "../pages/surah/surah/Surah";
 import ErrorComponent from "../components/error-component/ErrorComponent";
+import React, { Suspense } from "react";
+
+const SurahPage = React.lazy(() => import('../pages/surah/surah/Surah'))
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +23,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/surah/:surahId/page/:pageNum',
-                element: <Surah></Surah>
+                element: <Suspense fallback={<p>Loading ...</p>}>
+                    <SurahPage></SurahPage>
+                </Suspense>
             }
         ]
     }
