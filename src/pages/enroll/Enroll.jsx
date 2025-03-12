@@ -12,8 +12,14 @@ import {
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { server } from '../../constants';
+import { useState } from 'react';
+import SuccessAlert from '../../components/success-alert/SuccessAlert';
+import ErrorAlert from '../../components/error-alert/ErrorAlert';
 
 const Enroll = () => {
+
+    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
 
     const handleEnroll = (event) => {
         event.preventDefault();
@@ -28,13 +34,13 @@ const Enroll = () => {
             password
         })
             .then(function (response) {
-                console.log(response.data);
+                setSuccessMsg(`Welcome ${response.data.data.fullName}. Please check your email for verification.`)
             })
             .catch(function (error) {
                 const match = error.response.data.match(/<pre>Error: (.*?)<br>/);
                 const errorMessage = match ? match[1] : "Unknown error";
 
-                console.log(errorMessage)
+                setErrorMsg(`Failed! ${errorMessage}`)
             })
     }
 
@@ -80,6 +86,20 @@ const Enroll = () => {
                     <p className='text-center mt-8 text-xs'>Already have an account? <Link to='/login' className='text-sm text-cyan-600 font-medium hover:underline transition'>Login</Link></p>
                 </CardContent>
             </Card>
+
+            {
+                successMsg && <SuccessAlert
+                    success={successMsg}
+                    setSuccess={setSuccessMsg}>
+                </SuccessAlert>
+            }
+
+            {
+                errorMsg && <ErrorAlert
+                    error={errorMsg}
+                    setError={setErrorMsg}
+                ></ErrorAlert>
+            }
         </div>
     )
 }
