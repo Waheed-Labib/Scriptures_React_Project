@@ -18,11 +18,14 @@ import ErrorAlert from '../../components/error-alert/ErrorAlert';
 
 const Enroll = () => {
 
+    const [loading, setLoading] = useState(false);
+
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
 
     const handleEnroll = (event) => {
         event.preventDefault();
+        setLoading(true)
 
         const fullName = event.target.fullName.value;
         const email = event.target.email.value;
@@ -35,12 +38,16 @@ const Enroll = () => {
         })
             .then(function (response) {
                 setSuccessMsg(`Welcome ${response.data.data.fullName}. Please check your email for verification.`)
+                event.target.reset();
             })
             .catch(function (error) {
                 const match = error.response.data.match(/<pre>Error: (.*?)<br>/);
                 const errorMessage = match ? match[1] : "Unknown error";
 
                 setErrorMsg(`Failed! ${errorMessage}`)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
@@ -79,9 +86,16 @@ const Enroll = () => {
                                 </InputIcon>
                             </div>
                         </fieldset>
-                        <Button type="submit" className="!mt-3 block w-full bg-cyan-700 hover:bg-slate-700" >
-                            Enroll
-                        </Button>
+                        {
+                            loading ?
+                                <Button className="!mt-3 block w-full bg-cyan-700 hover:bg-slate-700" >
+                                    Loading ...
+                                </Button>
+                                :
+                                <Button type="submit" className="!mt-3 block w-full bg-cyan-700 hover:bg-slate-700" >
+                                    Enroll
+                                </Button>
+                        }
                     </form>
                     <p className='text-center mt-8 text-xs'>Already have an account? <Link to='/login' className='text-sm text-cyan-600 font-medium hover:underline transition'>Login</Link></p>
                 </CardContent>
