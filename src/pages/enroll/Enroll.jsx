@@ -10,8 +10,31 @@ import {
     Label,
 } from 'keep-react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { server } from '../../constants';
 
 const Enroll = () => {
+
+    const handleEnroll = (event) => {
+        event.preventDefault();
+
+        const fullName = event.target.fullName.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        axios.post(`${server}/users/register`, {
+            fullName,
+            email,
+            password
+        })
+            .then(function (response) {
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
     return (
         <div className='w-full'>
             <Card className="max-w-sm mx-auto my-12">
@@ -19,7 +42,7 @@ const Enroll = () => {
                     <CardHeader>
                         <CardTitle>Create an account</CardTitle>
                     </CardHeader>
-                    <form className="space-y-2">
+                    <form onSubmit={handleEnroll} className="space-y-2">
                         <fieldset className="space-y-1">
                             <Label htmlFor="fullName">Full Name*</Label>
                             <div className="relative">
