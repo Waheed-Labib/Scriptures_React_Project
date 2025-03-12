@@ -49,9 +49,14 @@ export const NavbarComponent = () => {
 
                     <NavbarItem className=''>Blog</NavbarItem>
 
-                    <NavbarItem>Login</NavbarItem>
+                    <Link to='/login'>
+                        <NavbarItem>Login</NavbarItem>
+                    </Link>
 
-                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
+                    <Link to='/enroll'>
+                        <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
+                    </Link>
+
                 </NavbarList>
                 <NavbarCollapseBtn />
                 <NavbarCollapse>
@@ -68,8 +73,15 @@ export const NavbarComponent = () => {
                     </NavbarItem>
 
                     <NavbarItem>Blog</NavbarItem>
-                    <NavbarItem>Login</NavbarItem>
-                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
+
+                    <Link to='/login'>
+                        <NavbarItem>Login</NavbarItem>
+                    </Link>
+
+                    <Link to='/enroll'>
+                        <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
+                    </Link>
+
                 </NavbarCollapse>
             </NavbarContainer>
 

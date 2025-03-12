@@ -4,8 +4,10 @@ import Home from "../pages/home/home/Home";
 // import Surah from "../pages/surah/surah/Surah";
 import ErrorComponent from "../components/error-component/ErrorComponent";
 import React, { Suspense } from "react";
+import Enroll from "../pages/enroll/Enroll.jsx";
+import Login from "../pages/login/Login.jsx";
 
-const SurahPage = React.lazy(() => import('../pages/surah/surah/Surah'))
+const SurahPage = React.lazy(() => import('../pages/surah/surah/Surah.jsx'))
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +28,14 @@ export const router = createBrowserRouter([
                 element: <Suspense fallback={<p>Loading ...</p>}>
                     <SurahPage></SurahPage>
                 </Suspense>
+            },
+            {
+                path: '/enroll',
+                element: <Enroll />
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     }
