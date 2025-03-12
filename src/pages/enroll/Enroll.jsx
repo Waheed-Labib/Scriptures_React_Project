@@ -31,8 +31,11 @@ const Enroll = () => {
                 console.log(response.data);
             })
             .catch(function (error) {
-                console.log(error);
-            });
+                const match = error.response.data.match(/<pre>Error: (.*?)<br>/);
+                const errorMessage = match ? match[1] : "Unknown error";
+
+                console.log(errorMessage)
+            })
     }
 
     return (
@@ -40,7 +43,7 @@ const Enroll = () => {
             <Card className="max-w-sm mx-auto my-12">
                 <CardContent className="space-y-3">
                     <CardHeader>
-                        <CardTitle>Create an account</CardTitle>
+                        <CardTitle className='text-gray-700'>Create an account</CardTitle>
                     </CardHeader>
                     <form onSubmit={handleEnroll} className="space-y-2">
                         <fieldset className="space-y-1">

@@ -17,7 +17,7 @@ const Login = () => {
             <Card className="max-w-sm mx-auto my-12">
                 <CardContent className="space-y-3">
                     <CardHeader>
-                        <CardTitle>Login</CardTitle>
+                        <CardTitle className='text-gray-700'>Login</CardTitle>
                     </CardHeader>
                     <form className="space-y-2">
                         <fieldset className="space-y-1">
