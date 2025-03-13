@@ -10,13 +10,16 @@ import {
     Label,
 } from 'keep-react'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { server } from '../../constants';
 import axios from 'axios';
 import SuccessAlert from '../../components/success-alert/SuccessAlert';
 import ErrorAlert from '../../components/error-alert/ErrorAlert';
+import { AuthContext } from '../../contexts/authProvider';
 
 const Login = () => {
+
+    const { setLoggedInUser } = useContext(AuthContext);
 
     const [loading, setLoading] = useState(false);
 
@@ -30,12 +33,26 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        axios.post(`${server}/users/login`, {
-            email,
-            password
-        })
+        axios.post(`${server}/users/login`,
+            {
+                email,
+                password
+            },
+            {
+                withCredentials: true
+            })
             .then(function (response) {
-                setSuccessMsg(`Welcome Back, ${response.data.data.user.fullName}!`)
+
+                console.log(response)
+
+                const user = response.data.data.user;
+
+                setLoggedInUser(user);
+
+                localStorage.setItem('user', JSON.stringify(user));
+
+                setSuccessMsg(`Welcome Back, ${response.data.data.user.fullName}!`);
+
                 event.target.reset();
             })
             .catch(function (error) {

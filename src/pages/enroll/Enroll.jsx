@@ -12,11 +12,14 @@ import {
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { server } from '../../constants';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import SuccessAlert from '../../components/success-alert/SuccessAlert';
 import ErrorAlert from '../../components/error-alert/ErrorAlert';
+import { AuthContext } from '../../contexts/authProvider';
 
 const Enroll = () => {
+
+    const { setLoggedInUser } = useContext(AuthContext);
 
     const [loading, setLoading] = useState(false);
 
@@ -31,13 +34,24 @@ const Enroll = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        axios.post(`${server}/users/register`, {
-            fullName,
-            email,
-            password
-        })
+        axios.post(`${server}/users/register`,
+            {
+                fullName,
+                email,
+                password
+            },
+            {
+                withCredentials: true
+            })
             .then(function (response) {
-                setSuccessMsg(`Welcome ${response.data.data.fullName}. Please check your email for verification.`)
+                const user = response.data.data;
+
+                setLoggedInUser(user);
+
+                localStorage.setItem('user', JSON.stringify(user))
+
+                setSuccessMsg(`Welcome ${user.fullName}. Please check your email for verification.`)
+
                 event.target.reset();
             })
             .catch(function (error) {
