@@ -11,7 +11,9 @@ createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <SurahListProvider>
         <SelectedTranslationsProvider>
+
           <App />
+
         </SelectedTranslationsProvider>
       </SurahListProvider>
     </AuthProvider>

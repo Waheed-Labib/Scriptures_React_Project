@@ -45,7 +45,7 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
                     </div>
 
                     <div className="mb-8">
-                        <TranslationInputBox></TranslationInputBox>
+                        <TranslationInputBox verse_key={verse_key}></TranslationInputBox>
                     </div>
 
                 </div>
