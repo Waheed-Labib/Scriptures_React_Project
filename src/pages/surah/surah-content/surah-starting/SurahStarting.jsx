@@ -24,12 +24,21 @@ const SurahStarting = () => {
     return (
         <div className="flex flex-col gap-2 items-center justify-center bg-slate-100 rounded px-8 pt-4">
 
-            {
-                surahInfo?.bismillah_pre && <div className="my-8 text-center">
-                    <p className="text-2xl mb-4 font-bold text-cyan-950">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
-                    <p className="text-sm">In the Name of Allah—the Most Compassionate, Most Merciful.</p>
-                </div>
-            }
+            <div className="my-8">
+                {
+                    surahInfo?.bismillah_pre && <div className="text-center">
+                        <p className="text-2xl mb-4 font-bold text-cyan-950">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+                        <p className="text-sm">In the Name of Allah—the Most Compassionate, Most Merciful.</p>
+                    </div>
+                }
+
+                <p className="text-xs font-medium text-center text-cyan-800 italic mt-4">
+                    You can select your favourite translation books
+                    <span className="hidden lg:inline">&nbsp;(Visit the sidebar)</span>
+                    <span className="inline lg:hidden">&nbsp;(From the bottom of this page)</span>
+                </p>
+            </div>
+
         </div>
     );
 };
