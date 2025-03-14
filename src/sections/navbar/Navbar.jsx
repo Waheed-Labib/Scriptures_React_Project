@@ -18,6 +18,8 @@ import { SearchModal } from '../../components/search-modal/SearchModal';
 import { AuthContext } from '../../contexts/authProvider';
 import axios from 'axios';
 import { server } from '../../constants.js';
+import SuccessAlert from '../../components/success-alert/SuccessAlert.jsx';
+import ErrorAlert from '../../components/error-alert/ErrorAlert.jsx';
 
 export const NavbarComponent = () => {
 
@@ -25,131 +27,119 @@ export const NavbarComponent = () => {
 
     const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
 
+    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+
     const handleLogOut = () => {
-        axios.post(`${server}/users/logout`
+        axios.post(`${server}/users/logout`, {}, {
+            withCredentials: true
+        }
         )
             .then(response => {
-                console.log(response)
+                setSuccessMsg(response.data.message);
+                setLoggedInUser(null);
+                localStorage.setItem('user', JSON.stringify(null));
             })
             .catch(error => {
-                console.log(error)
+                const match = error.response.data.match(/<pre>Error: (.*?)<br>/);
+                const errorMessage = match ? match[1] : "Unknown error";
+
+                setErrorMsg(`Failed! ${errorMessage}`)
             })
     }
 
-    return (
-        <Navbar style={{ fontFamily: '"Roboto", sans-serif' }} className='h-[10vh] px-4 flex justify-center items-center shadow-lg sticky top-0 z-10'>
-            <NavbarContainer className=''>
-                <NavbarBrand>
-                    <div className='text-cyan-800 hover:text-slate-700 flex justify-center items-center gap-4'>
-                        <div className='text-lg'>
-                            <FaBookOpenReader></FaBookOpenReader>
-                        </div>
+    const search = <NavbarItem className=''>
+        <div onClick={() => setIsSearchModalOpen(true)}>
+            <FaSearch></FaSearch>
+        </div>
+    </NavbarItem>
 
-                        <Link to='/home' className='tracking-wider text-xl'>Translate Quran</Link>
+    const home = <Link to='/home'>
+        <NavbarItem className='text-lg'>
+            <FaHome></FaHome>
+        </NavbarItem>
+    </Link>
+
+    const auth = <>
+        {
+            loggedInUser ?
+                <>
+                    <NavbarItem
+                        active
+                        onClick={handleLogOut}
+                        className='h-8 flex items-center font-medium bg-red-100 text-red-800 hover:bg-red-800 hover:text-red-50 mx-2'>Log out</NavbarItem>
+
+                    <div className='flex items-end gap-1 text-gray-700'>
+                        <FaRegUser />
+                        <p className='text-xs'>{loggedInUser?.fullName}</p>
                     </div>
 
-                </NavbarBrand>
-                <NavbarList>
-
-                    <NavbarItem className=''>
-                        <div onClick={() => setIsSearchModalOpen(true)}>
-                            <FaSearch></FaSearch>
-                        </div>
-                    </NavbarItem>
-
-                    <Link to='/home'>
-                        <NavbarItem className='text-lg'>
-                            <FaHome></FaHome>
-                        </NavbarItem>
+                </>
+                :
+                <>
+                    <Link to='/login'>
+                        <NavbarItem>Login</NavbarItem>
                     </Link>
 
-                    <NavbarItem className=''>Blog</NavbarItem>
+                    <Link to='/enroll'>
+                        <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
+                    </Link>
+                </>
+        }
+    </>
 
-                    {
-                        loggedInUser ?
-                            <>
-                                <NavbarItem
-                                    active
-                                    onClick={handleLogOut}
-                                    className='h-8 flex items-center font-medium bg-red-100 text-red-800 hover:bg-red-800 hover:text-red-50 mx-2'>Log out</NavbarItem>
+    const navbarList = <>
+        {search}
 
-                                <div className='flex items-end gap-1 text-gray-700'>
-                                    <FaRegUser />
-                                    <p className='text-xs'>{loggedInUser?.fullName}</p>
-                                </div>
+        {home}
 
-                            </>
-                            :
-                            <>
-                                <Link to='/login'>
-                                    <NavbarItem>Login</NavbarItem>
-                                </Link>
+        {auth}
+    </>
 
-                                <Link to='/enroll'>
-                                    <NavbarItem active className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>Enroll as Contributor</NavbarItem>
-                                </Link>
-                            </>
-                    }
+    return (
+        <>
+            <Navbar style={{ fontFamily: '"Roboto", sans-serif' }} className='h-[10vh] px-4 flex justify-center items-center shadow-lg sticky top-0 z-10'>
+                <NavbarContainer className=''>
+                    <NavbarBrand>
+                        <div className='text-cyan-800 hover:text-slate-700 flex justify-center items-center gap-4'>
+                            <div className='text-lg'>
+                                <FaBookOpenReader></FaBookOpenReader>
+                            </div>
 
-                </NavbarList>
-                <NavbarCollapseBtn />
-                <NavbarCollapse>
-                    <NavbarItem className='text-xl'>
-                        <div onClick={() => setIsSearchModalOpen(true)}>
-                            <FaSearch></FaSearch>
+                            <Link to='/home' className='tracking-wider text-xl'>Translate Quran</Link>
                         </div>
-                    </NavbarItem>
 
-                    <NavbarItem className='text-xl'>
-                        <Link to='/home'>
-                            <FaHome></FaHome>
-                        </Link>
-                    </NavbarItem>
+                    </NavbarBrand>
 
-                    <NavbarItem>Blog</NavbarItem>
+                    <NavbarList>
+                        {navbarList}
+                    </NavbarList>
 
-                    {
-                        loggedInUser ?
-                            <>
-                                <NavbarItem
-                                    active
-                                    onClick={handleLogOut}
-                                    className='h-8 flex items-center font-medium bg-red-100 text-red-800 hover:bg-red-800 hover:text-red-50 my-2'>
-                                    Log out
-                                </NavbarItem>
+                    <NavbarCollapseBtn />
+                    <NavbarCollapse>
+                        {navbarList}
+                    </NavbarCollapse>
+                </NavbarContainer>
 
-                                <div className='flex items-end gap-1 text-gray-700'>
-                                    <FaRegUser />
-                                    <p className='text-xs'>{loggedInUser?.fullName}</p>
-                                </div>
+                {
+                    isSearchModalOpen &&
+                    <SearchModal
+                        isSearchModalOpen={isSearchModalOpen}
+                        setIsSearchModalOpen={setIsSearchModalOpen}
+                    ></SearchModal>
+                }
+            </Navbar >
 
-                            </>
-                            :
-                            <>
-                                <Link to='/login'>
-                                    <NavbarItem>Login</NavbarItem>
-                                </Link>
+            <SuccessAlert
+                success={successMsg}
+                setSuccess={setSuccessMsg}
+            ></SuccessAlert>
 
-                                <Link to='/enroll'>
-                                    <NavbarItem
-                                        active
-                                        className='bg-cyan-700 hover:bg-slate-700 h-8 flex items-center font-medium'>
-                                        Enroll as Contributor
-                                    </NavbarItem>
-                                </Link>
-                            </>
-                    }
+            <ErrorAlert
+                error={errorMsg}
+                setError={setErrorMsg}
+            ></ErrorAlert>
+        </>
 
-                </NavbarCollapse>
-            </NavbarContainer>
-
-            {
-                isSearchModalOpen &&
-                <SearchModal
-                    isSearchModalOpen={isSearchModalOpen}
-                    setIsSearchModalOpen={setIsSearchModalOpen}
-                ></SearchModal>
-            }
-        </Navbar >
     )
 }
