@@ -1,4 +1,4 @@
-##Features
+<h2>Features</h2>
 
 <ol>
 <li>Read whole Quran in organized way.</li>
