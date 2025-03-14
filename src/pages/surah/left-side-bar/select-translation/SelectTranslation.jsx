@@ -1,12 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
 import { TranslationDropdownMenu } from "./translations-dropdown-menu/translations-dropdown-menu/TranslationDropdownMenu";
 
-const SelectTranslation = () => {
+const SelectTranslation = ({ inline }) => {
     return (
-        <div className="">
+        <div className={`${inline && 'flex items-center justify-center gap-4'}`}>
             <h3 className="pl-2 mb-2 font-semibold text-gray-500">Translations</h3>
-            <TranslationDropdownMenu></TranslationDropdownMenu>
+            <TranslationDropdownMenu inline={inline}></TranslationDropdownMenu>
         </div>
     );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Button, Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from 'keep-react'
 import TranslationSearchInput from '../translation-search/TranslationSearchInput';
@@ -6,14 +7,14 @@ import TranslationsDropdownButtonText from '../translations-dropdown-button/Tran
 import TranslationsList from '../translations-list/TranslationsList';
 import TranslationSearchOutput from '../translation-search/TranslationSearchOutput';
 
-export const TranslationDropdownMenu = () => {
+export const TranslationDropdownMenu = ({ inline }) => {
 
     const [searchText, setSearchText] = useState('');
 
     return (
-        <Dropdown>
+        <Dropdown className="flex items-center">
             <DropdownAction asChild>
-                <Button className='text-xs text-cyan-700 justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
+                <Button className={`text-xs text-cyan-700 justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8 ${inline && 'w-32 mb-2 bg-slate-200 hover:bg-slate-300'}`}>
                     <TranslationsDropdownButtonText></TranslationsDropdownButtonText>
                 </Button>
             </DropdownAction>
