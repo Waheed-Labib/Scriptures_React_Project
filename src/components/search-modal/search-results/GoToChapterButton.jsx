@@ -1,21 +1,22 @@
 /* eslint-disable react/prop-types */
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const GoToChapterButton = ({ verseKey, setIsSearchModalOpen }) => {
 
-    const navigate = useNavigate();
+    const [surahNumber, setSurahNumber] = useState(null);
+    const [pageNumber, setPageNumber] = useState(null);
 
-    const handleGoToChapter = () => {
+    useEffect(() => {
         const splittedVerseKey = verseKey.split(':');
-        const surahNumber = splittedVerseKey[0];
-        const pageNumber = Math.ceil((parseInt(splittedVerseKey[1])) / 10);
-        navigate(`/surah/${surahNumber}/page/${pageNumber}}`)
-        setIsSearchModalOpen(false)
-        window.location.reload()
-    }
+        setSurahNumber(splittedVerseKey[0]);
+        setPageNumber(Math.ceil((parseInt(splittedVerseKey[1])) / 10));
+    }, [setPageNumber, setSurahNumber, verseKey])
 
     return (
-        <button onClick={handleGoToChapter} className="bg-gray-300 h-8 px-2 rounded-md text-cyan-900 mt-2 w-48 hover:bg-gray-200 hover:font-medium">Go to Chapter</button>
+        <Link to={`/surah/${surahNumber}/page/${pageNumber}`}>
+            <button onClick={() => setIsSearchModalOpen(false)} className="bg-gray-300 h-8 px-2 rounded-md text-cyan-900 mt-2 w-48 hover:bg-gray-200 hover:font-medium">Go to Chapter</button>
+        </Link>
     );
 };
 

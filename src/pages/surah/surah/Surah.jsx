@@ -25,8 +25,8 @@ const Surah = () => {
 
     useEffect(() => {
         setChapterNum(parseInt(surahId))
-        setPage(1)
-    }, [surahId])
+        setPage(pageNum)
+    }, [surahId, pageNum])
 
     return (
         <div>
