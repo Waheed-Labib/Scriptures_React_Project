@@ -4,6 +4,7 @@ import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkel
 import VerseTranslations from "../verse-translations/VerseTranslations";
 import TranslationInputBox from "../translation-input-box/TranslationInputBox";
 import VerseComponentSideBar from "./VerseComponentSideBar";
+import UsersTranslations from "../users-translations/UsersTranslations";
 
 /* eslint-disable react/prop-types */
 const VerseComponent = ({ verseData, arabicFont, page }) => {
@@ -38,9 +39,15 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
                     <div className="text-start">
                         <VerseTranslations verse_key={verse_key}></VerseTranslations>
                     </div>
+
+                    <div className="">
+                        <UsersTranslations verse_key={verse_key}></UsersTranslations>
+                    </div>
+
                     <div className="mb-8">
                         <TranslationInputBox></TranslationInputBox>
                     </div>
+
                 </div>
             </div>
 
