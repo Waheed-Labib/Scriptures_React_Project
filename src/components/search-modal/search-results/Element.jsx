@@ -8,9 +8,13 @@ const Element = ({ element, setIsSearchModalOpen }) => {
     const { searchType, searchResult } = element;
 
     if (searchType === 'chapter')
-        return <ChapterResults
-            searchResult={searchResult}
-        ></ChapterResults>
+        return <div
+            onClick={() => setIsSearchModalOpen(false)}
+        >
+            <ChapterResults
+                searchResult={searchResult}
+            ></ChapterResults>
+        </div>
 
     if (searchType === 'verse key')
         return <VerseWithVerseKeyResults

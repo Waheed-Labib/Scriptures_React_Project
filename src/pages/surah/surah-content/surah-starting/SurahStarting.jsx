@@ -33,12 +33,6 @@ const SurahStarting = () => {
                     </div>
                 }
 
-                {/* <p className="text-xs font-medium text-center text-cyan-800 italic mt-4">
-                    You can select your favourite translation books
-                    <span className="hidden lg:inline">&nbsp;(Visit the sidebar)</span>
-                    <span className="inline lg:hidden">&nbsp;(From the bottom of this page)</span>
-                </p> */}
-
                 <div>
                     <SelectTranslation inline={true}></SelectTranslation>
                 </div>

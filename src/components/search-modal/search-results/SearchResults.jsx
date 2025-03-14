@@ -7,11 +7,13 @@ const SearchResults = ({ searchResults, setIsSearchModalOpen }) => {
     return (
         <div className="">
             {
-                searchResults.map((element, idx) => <Element
-                    key={idx}
-                    element={element}
-                    setIsSearchModalOpen={setIsSearchModalOpen}
-                ></Element>)
+                searchResults.map((element, idx) =>
+                    <Element
+                        key={idx}
+                        element={element}
+                        setIsSearchModalOpen={setIsSearchModalOpen}
+                    ></Element>
+                )
             }
         </div >
     );

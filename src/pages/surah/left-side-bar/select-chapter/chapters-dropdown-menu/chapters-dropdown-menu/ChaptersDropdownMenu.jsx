@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Button, Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from 'keep-react'
 import './ChapterDropdownItem'
@@ -14,7 +15,7 @@ const ChaptersDropdownMenu = () => {
     return (
         <Dropdown>
             <DropdownAction asChild>
-                <Button className='text-cyan-700 text-xs justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8'>
+                <Button className={`text-cyan-700 text-xs justify-between w-full bg-slate-100 hover:bg-slate-200 rounded h-8`}>
                     <ChaptersDropdownButtonText></ChaptersDropdownButtonText>
                 </Button>
             </DropdownAction>

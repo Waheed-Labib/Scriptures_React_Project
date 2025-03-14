@@ -48,6 +48,7 @@ export const NavbarComponent = () => {
             })
     }
 
+
     const search = <NavbarItem className=''>
         <div onClick={() => setIsSearchModalOpen(true)}>
             <FaSearch></FaSearch>
@@ -67,9 +68,9 @@ export const NavbarComponent = () => {
                     <NavbarItem
                         active
                         onClick={handleLogOut}
-                        className='h-8 flex items-center font-medium bg-red-100 text-red-800 hover:bg-red-800 hover:text-red-50 mx-2'>Log out</NavbarItem>
+                        className='h-8 flex items-center justify-center font-medium bg-red-100 text-red-800 hover:bg-red-800 hover:text-red-50 mx-4 lg:mx-2 mb-1 lg:mb-0 w-32'>Log out</NavbarItem>
 
-                    <div className='flex items-end gap-1 text-gray-700'>
+                    <div className='flex items-end gap-1 text-gray-700 mx-4 lg:mx-0'>
                         <FaRegUser />
                         <p className='text-xs'>{loggedInUser?.fullName}</p>
                     </div>
@@ -89,6 +90,7 @@ export const NavbarComponent = () => {
     </>
 
     const navbarList = <>
+
         {search}
 
         {home}
