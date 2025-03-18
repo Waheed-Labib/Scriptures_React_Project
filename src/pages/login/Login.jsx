@@ -13,9 +13,9 @@ import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { server } from '../../constants';
 import axios from 'axios';
-import SuccessAlert from '../../components/success-alert/SuccessAlert';
-import ErrorAlert from '../../components/error-alert/ErrorAlert';
 import { AuthContext } from '../../contexts/authProvider';
+import { getErrorMsg } from '../../utilities/getErrorMessage';
+import { MsgContext } from '../../contexts/MsgProvider';
 
 const Login = () => {
 
@@ -23,8 +23,7 @@ const Login = () => {
 
     const [loading, setLoading] = useState(false);
 
-    const [successMsg, setSuccessMsg] = useState('');
-    const [errorMsg, setErrorMsg] = useState('');
+    const { setSuccessMsg, setErrorMsg } = useContext(MsgContext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -56,9 +55,7 @@ const Login = () => {
                 event.target.reset();
             })
             .catch(function (error) {
-                const match = error.response.data.match(/<pre>Error: (.*?)<br>/);
-                const errorMessage = match ? match[1] : "Unknown error";
-
+                const errorMessage = getErrorMsg(error)
                 setErrorMsg(`Failed! ${errorMessage}`)
             })
             .finally(() => {
@@ -107,20 +104,6 @@ const Login = () => {
                     <p className='text-center mt-8 text-xs'>Don&apos;t have an account? <Link to='/enroll' className='text-sm text-cyan-600 font-medium hover:underline transition'>Enroll Now</Link></p>
                 </CardContent>
             </Card>
-
-            {
-                successMsg && <SuccessAlert
-                    success={successMsg}
-                    setSuccess={setSuccessMsg}
-                ></SuccessAlert>
-            }
-
-            {
-                errorMsg && <ErrorAlert
-                    error={errorMsg}
-                    setError={setErrorMsg}
-                ></ErrorAlert>
-            }
         </div>
     )
 }

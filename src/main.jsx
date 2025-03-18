@@ -5,15 +5,16 @@ import './index.css'
 import SurahListProvider from './contexts/SurahListProvider.jsx'
 import SelectedTranslationsProvider from './contexts/SelectedTranslationsIdsProvider.jsx'
 import AuthProvider from './contexts/authProvider.jsx'
+import MsgProvider from './contexts/MsgProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
       <SurahListProvider>
         <SelectedTranslationsProvider>
-
-          <App />
-
+          <MsgProvider>
+            <App />
+          </MsgProvider>
         </SelectedTranslationsProvider>
       </SurahListProvider>
     </AuthProvider>

@@ -38,7 +38,7 @@ export const NavbarComponent = () => {
             .then(response => {
                 setSuccessMsg(response.data.message);
                 setLoggedInUser(null);
-                localStorage.setItem('user', JSON.stringify(null));
+                localStorage.removeItem('user');
             })
             .catch(error => {
                 const match = error.response.data.match(/<pre>Error: (.*?)<br>/);

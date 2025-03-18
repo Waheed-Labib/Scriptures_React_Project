@@ -3,12 +3,16 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { server } from "../../../../../constants";
 import { AuthContext } from "../../../../../contexts/authProvider";
+import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
+import { MsgContext } from "../../../../../contexts/MsgProvider";
 
 const TranslationInputBox = ({ verse_key }) => {
 
     const { loggedInUser } = useContext(AuthContext);
 
     const [translation, setTranslation] = useState('');
+
+    const { setSuccessMsg, setErrorMsg } = useContext(MsgContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,6 +25,14 @@ const TranslationInputBox = ({ verse_key }) => {
         }, {
             withCredentials: true
         })
+            .then(response => {
+                setSuccessMsg(response.data.message)
+            })
+            .catch(error => {
+                const errorMessage = getErrorMsg(error)
+                setErrorMsg(`Failed! ${errorMessage}`)
+            })
+
     };
 
     const handleKeyDown = (e) => {
