@@ -26,7 +26,9 @@ const TranslationInputBox = ({ verse_key }) => {
             withCredentials: true
         })
             .then(response => {
-                setSuccessMsg(response.data.message)
+                setSuccessMsg(response.data.message);
+                e.target.value = "";
+
             })
             .catch(error => {
                 const errorMessage = getErrorMsg(error)
