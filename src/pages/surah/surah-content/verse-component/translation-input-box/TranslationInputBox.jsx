@@ -6,7 +6,7 @@ import { AuthContext } from "../../../../../contexts/authProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
 
-const TranslationInputBox = ({ verse_key }) => {
+const TranslationInputBox = ({ verse_key, setRefreshKey }) => {
 
     const { loggedInUser } = useContext(AuthContext);
 
@@ -28,6 +28,7 @@ const TranslationInputBox = ({ verse_key }) => {
             .then(response => {
                 setSuccessMsg(response.data.message);
                 e.target.value = "";
+                setRefreshKey(prev => prev + 1);
 
             })
             .catch(error => {

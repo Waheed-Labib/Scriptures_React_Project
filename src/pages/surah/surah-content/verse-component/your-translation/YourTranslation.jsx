@@ -5,9 +5,10 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
 import { AuthContext } from "../../../../../contexts/authProvider";
+import { Presentation } from "phosphor-react";
 
 /* eslint-disable react/prop-types */
-const YourTranslation = ({ translation }) => {
+const YourTranslation = ({ translation, setRefreshKey }) => {
 
     const { translatorId, translatorName, _id, verse_key, content } = translation;
 
@@ -27,7 +28,7 @@ const YourTranslation = ({ translation }) => {
 
     const { loggedInUser } = useContext(AuthContext);
 
-    const handleSubmit = (e) => {
+    const handleEdit = (e) => {
         e.preventDefault();
 
         axios.post(`${server}/translations/edit-translation`, {
@@ -41,12 +42,12 @@ const YourTranslation = ({ translation }) => {
         })
             .then(response => {
                 setSuccessMsg(response.data.message);
-                setIsEditing(false)
-
+                setIsEditing(false);
+                setRefreshKey(prev => prev + 1);
             })
             .catch(error => {
-                const errorMessage = getErrorMsg(error)
-                setErrorMsg(`Failed! ${errorMessage}`)
+                const errorMessage = getErrorMsg(error);
+                setErrorMsg(`Failed! ${errorMessage}`);
             })
 
     };
@@ -54,7 +55,7 @@ const YourTranslation = ({ translation }) => {
     const handleKeyDown = (e) => {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault(); // Prevents new line
-            handleSubmit(e);
+            handleEdit(e);
         }
     };
 
@@ -66,7 +67,8 @@ const YourTranslation = ({ translation }) => {
             withCredentials: true
         })
             .then(response => {
-                setSuccessMsg(response.data.message)
+                setSuccessMsg(response.data.message);
+                setRefreshKey(prev => prev + 1);
             })
             .catch(error => {
                 const errorMessage = getErrorMsg(error)

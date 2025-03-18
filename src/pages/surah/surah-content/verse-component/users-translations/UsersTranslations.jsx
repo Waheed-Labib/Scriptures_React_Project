@@ -5,7 +5,7 @@ import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkel
 import UsersTranslationAccordion from "./UsersTranslationAccordion";
 
 /* eslint-disable react/prop-types */
-const UsersTranslations = ({ verse_key }) => {
+const UsersTranslations = ({ verse_key, refreshKey }) => {
 
     const [translations, setTranslations] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -23,7 +23,7 @@ const UsersTranslations = ({ verse_key }) => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [verse_key])
+    }, [verse_key, refreshKey])
 
     if (loading) return (
         <SimpleSkeleton></SimpleSkeleton>

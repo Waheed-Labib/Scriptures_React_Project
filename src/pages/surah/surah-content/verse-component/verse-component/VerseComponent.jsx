@@ -26,13 +26,16 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
 
     const [yourTranslation, setYourTranslation] = useState('');
 
+    const [refreshKey, setRefreshKey] = useState(0);
+
+
     useEffect(() => {
         if (loggedInUser) {
             axios.get(`${server}/translations/get-translation?userId=${loggedInUser._id}&verse_key=${verse_key}`)
                 .then(response => setYourTranslation(response.data?.data))
                 .catch(error => console.log(error))
         }
-    }, [loggedInUser, verse_key])
+    }, [loggedInUser, verse_key, refreshKey])
 
     if (loadingVerses || loadingVerse) return (
         <SimpleSkeleton></SimpleSkeleton>
@@ -59,7 +62,10 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
                     </div>
 
                     <div className="">
-                        <UsersTranslations verse_key={verse_key}></UsersTranslations>
+                        <UsersTranslations
+                            verse_key={verse_key}
+                            refreshKey={refreshKey}
+                        ></UsersTranslations>
                     </div>
 
                     <div className="mb-8">
@@ -67,11 +73,15 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
                             yourTranslation ?
                                 <YourTranslation
                                     translation={yourTranslation}
+                                    setYourTranslation={setYourTranslation}
+                                    setRefreshKey={setRefreshKey}
                                 ></YourTranslation>
                                 :
 
-                                <TranslationInputBox verse_key={verse_key}></TranslationInputBox>
-
+                                <TranslationInputBox
+                                    verse_key={verse_key}
+                                    setRefreshKey={setRefreshKey}
+                                ></TranslationInputBox>
                         }
                     </div>
 
