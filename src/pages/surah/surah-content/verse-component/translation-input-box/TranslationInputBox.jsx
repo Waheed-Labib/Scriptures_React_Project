@@ -51,7 +51,7 @@ const TranslationInputBox = ({ verse_key }) => {
                     onChange={(e) => setTranslation(e.target.value)}
                     placeholder="Add Your Translation"
                     onKeyDown={handleKeyDown}
-                    className="w-full h-10 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4 pt-2">
+                    className="w-full h-10 rounded ring-1 ring-inset ring-gray-700 placeholder:text-gray-600 pl-4 pt-2">
                 </textarea>
 
             </form>

@@ -5,6 +5,11 @@ import VerseTranslations from "../verse-translations/VerseTranslations";
 import TranslationInputBox from "../translation-input-box/TranslationInputBox";
 import VerseComponentSideBar from "./VerseComponentSideBar";
 import UsersTranslations from "../users-translations/UsersTranslations";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../../../contexts/authProvider";
+import axios from "axios";
+import { server } from "../../../../../constants";
+import YourTranslation from "../your-translation/YourTranslation";
 
 /* eslint-disable react/prop-types */
 const VerseComponent = ({ verseData, arabicFont, page }) => {
@@ -15,6 +20,19 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
     const { verse_key } = verseData;
 
     const { arabicVerse, loading: loadingVerse, error } = useArabicVerse(verse_key, arabicFont)
+
+    const { loggedInUser } = useContext(AuthContext);
+    console.log(loggedInUser);
+
+    const [yourTranslation, setYourTranslation] = useState('');
+
+    useEffect(() => {
+        if (loggedInUser) {
+            axios.get(`${server}/translations/get-translation?userId=${loggedInUser._id}&verse_key=${verse_key}`)
+                .then(response => setYourTranslation(response.data?.data))
+                .catch(error => console.log(error))
+        }
+    }, [loggedInUser, verse_key])
 
     if (loadingVerses || loadingVerse) return (
         <SimpleSkeleton></SimpleSkeleton>
@@ -45,7 +63,16 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
                     </div>
 
                     <div className="mb-8">
-                        <TranslationInputBox verse_key={verse_key}></TranslationInputBox>
+                        {
+                            yourTranslation ?
+                                <YourTranslation
+                                    translation={yourTranslation}
+                                ></YourTranslation>
+                                :
+
+                                <TranslationInputBox verse_key={verse_key}></TranslationInputBox>
+
+                        }
                     </div>
 
                 </div>
