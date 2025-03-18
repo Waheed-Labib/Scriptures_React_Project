@@ -58,6 +58,22 @@ const YourTranslation = ({ translation }) => {
         }
     };
 
+    const handleDelete = () => {
+        axios.post(`${server}/translations/delete-translation`, {
+            translatorId,
+            translationId: _id
+        }, {
+            withCredentials: true
+        })
+            .then(response => {
+                setSuccessMsg(response.data.message)
+            })
+            .catch(error => {
+                const errorMessage = getErrorMsg(error)
+                setErrorMsg(`Failed! ${errorMessage}`)
+            })
+    }
+
     return (
         <div>
             <textarea
@@ -74,7 +90,7 @@ const YourTranslation = ({ translation }) => {
                 <p className="text-cyan-700 italic font-medium text-sm">Your Translation</p>
                 <div className="flex items-center gap-2">
                     <button onClick={() => setIsEditing(true)} className="rounded bg-gray-600 text-slate-50 hover:bg-gray-800 font-medium py-1 px-4">Edit</button>
-                    <button className="border rounded border-red-800 font-medium hover:bg-red-800 hover:text-slate-50 py-1 px-2">Delete</button>
+                    <button onClick={handleDelete} className="border rounded border-red-800 font-medium hover:bg-red-800 hover:text-slate-50 py-1 px-2">Delete</button>
                 </div>
             </div>
         </div>
