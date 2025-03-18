@@ -35,6 +35,10 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
                 .then(response => setYourTranslation(response.data?.data))
                 .catch(error => console.log(error))
         }
+
+        if (!loggedInUser) {
+            setYourTranslation('');
+        }
     }, [loggedInUser, verse_key, refreshKey])
 
     if (loadingVerses || loadingVerse) return (
@@ -87,7 +91,6 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
 
                 </div>
             </div>
-
             <hr></hr>
         </div>
     );
