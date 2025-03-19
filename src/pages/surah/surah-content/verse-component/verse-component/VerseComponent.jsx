@@ -8,7 +8,6 @@ import UsersTranslations from "../users-translations/UsersTranslations";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../../contexts/AuthProvider";
 import axios from "axios";
-import { server } from "../../../../../constants";
 import YourTranslation from "../your-translation/YourTranslation";
 
 /* eslint-disable react/prop-types */
@@ -28,6 +27,7 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
 
     const [refreshKey, setRefreshKey] = useState(0);
 
+    const server = import.meta.env.SERVER;
 
     useEffect(() => {
         if (loggedInUser) {
@@ -39,7 +39,7 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
         if (!loggedInUser) {
             setYourTranslation('');
         }
-    }, [loggedInUser, verse_key, refreshKey])
+    }, [loggedInUser, verse_key, refreshKey, server])
 
     if (loadingVerses || loadingVerse) return (
         <SimpleSkeleton></SimpleSkeleton>

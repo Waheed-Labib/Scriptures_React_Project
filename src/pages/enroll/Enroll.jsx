@@ -11,7 +11,6 @@ import {
 } from 'keep-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { server } from '../../constants';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { getErrorMsg } from '../../utilities/getErrorMessage';
@@ -38,6 +37,8 @@ const Enroll = () => {
         const fullName = event.target.fullName.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+
+        const server = import.meta.env.SERVER;
 
         axios.post(`${server}/users/register`,
             {

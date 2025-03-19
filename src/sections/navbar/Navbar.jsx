@@ -17,7 +17,6 @@ import { useContext, useState } from 'react';
 import { SearchModal } from '../../components/search-modal/SearchModal';
 import { AuthContext } from '../../contexts/AuthProvider';
 import axios from 'axios';
-import { server } from '../../constants.js';
 import SuccessAlert from '../../components/success-alert/SuccessAlert.jsx';
 import ErrorAlert from '../../components/error-alert/ErrorAlert.jsx';
 
@@ -29,6 +28,8 @@ export const NavbarComponent = () => {
 
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
+
+    const server = import.meta.env.SERVER;
 
     const handleLogOut = () => {
         axios.post(`${server}/users/logout`, {}, {

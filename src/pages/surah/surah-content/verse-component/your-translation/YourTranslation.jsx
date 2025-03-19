@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
-import { server } from "../../../../../constants";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
@@ -27,6 +26,8 @@ const YourTranslation = ({ translation, setRefreshKey }) => {
     }, [isEditing])
 
     const { loggedInUser } = useContext(AuthContext);
+
+    const server = import.meta.env.SERVER;
 
     const handleEdit = (e) => {
         e.preventDefault();

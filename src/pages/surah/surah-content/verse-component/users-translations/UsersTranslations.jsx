@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { server } from "../../../../../constants";
 import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkeleton";
 import UsersTranslationAccordion from "./UsersTranslationAccordion";
 
@@ -10,6 +9,8 @@ const UsersTranslations = ({ verse_key, refreshKey }) => {
     const [translations, setTranslations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+
+    const server = import.meta.env.SERVER;
 
     useEffect(() => {
         axios.get(`${server}/translations/get-translation?verse_key=${verse_key}`)

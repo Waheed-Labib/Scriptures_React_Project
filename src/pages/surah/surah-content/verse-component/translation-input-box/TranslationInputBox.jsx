@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
-import { server } from "../../../../../constants";
 import { AuthContext } from "../../../../../contexts/AuthProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
@@ -27,6 +26,7 @@ const TranslationInputBox = ({ verse_key, setRefreshKey }) => {
 
     const { setSuccessMsg, setErrorMsg } = useContext(MsgContext);
 
+    const server = import.meta.env.SERVER;
 
     const handleSubmit = (e) => {
         e.preventDefault();
