@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 export const LoginAlert = ({ isLoginAlertOpen, setIsLoginAlertOpen }) => {
+
+    const location = useLocation();
+
     return (
         <div className="w-72 mx-auto flex items-center justify-center">
             <div onClick={() => setIsLoginAlertOpen(false)} className={`fixed flex justify-center items-center z-[100] ${isLoginAlertOpen ? 'visible opacity-1' : 'invisible opacity-0'} inset-0 backdrop-blur-sm bg-black/20 duration-100`}>
@@ -11,15 +14,16 @@ export const LoginAlert = ({ isLoginAlertOpen, setIsLoginAlertOpen }) => {
                         <h6 className="font-semibold text-xl text-center text-slate-700 mb-1">You must login first</h6>
 
                         <div>
-                            <Link to='/login'>
+
+                            <Link to='/login' state={{ from: location }}>
                                 <button onClick={() => setIsLoginAlertOpen(false)} className="text-white bg-gray-800 px-4 py-2 text-sm rounded hover:bg-gray-900 mr-2">Login</button>
                             </Link>
 
-                            <Link to='/enroll'>
+                            <Link to='/enroll' state={{ from: location }}>
                                 <button onClick={() => setIsLoginAlertOpen(false)} className="text-white bg-cyan-800 px-4 py-2 text-sm rounded hover:bg-cyan-900">Enroll</button>
                             </Link>
-                        </div>
 
+                        </div>
 
                     </div>
                 </div>

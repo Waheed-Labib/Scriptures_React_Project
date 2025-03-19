@@ -9,7 +9,7 @@ import {
     InputIcon,
     Label,
 } from 'keep-react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { server } from '../../constants';
 import { useContext, useState } from 'react';
@@ -18,6 +18,12 @@ import { getErrorMsg } from '../../utilities/getErrorMessage';
 import { MsgContext } from '../../contexts/MsgProvider';
 
 const Enroll = () => {
+
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
+    const navigate = useNavigate();
 
     const { setLoggedInUser } = useContext(AuthContext);
 
@@ -52,6 +58,8 @@ const Enroll = () => {
                 setSuccessMsg(`Welcome ${user.fullName}. Please check your email for verification.`)
 
                 event.target.reset();
+
+                navigate(from, { replace: true });
             })
             .catch(function (error) {
                 const errorMessage = getErrorMsg(error)

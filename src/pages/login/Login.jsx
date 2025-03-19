@@ -9,7 +9,7 @@ import {
     InputIcon,
     Label,
 } from 'keep-react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { server } from '../../constants';
 import axios from 'axios';
@@ -18,6 +18,12 @@ import { getErrorMsg } from '../../utilities/getErrorMessage';
 import { MsgContext } from '../../contexts/MsgProvider';
 
 const Login = () => {
+
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
+    const navigate = useNavigate();
 
     const { setLoggedInUser } = useContext(AuthContext);
 
@@ -53,6 +59,8 @@ const Login = () => {
                 setSuccessMsg(`Welcome Back, ${response.data.data.user.fullName}!`);
 
                 event.target.reset();
+
+                navigate(from, { replace: true });
             })
             .catch(function (error) {
                 const errorMessage = getErrorMsg(error)
