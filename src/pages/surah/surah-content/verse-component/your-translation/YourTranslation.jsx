@@ -4,7 +4,7 @@ import { server } from "../../../../../constants";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
-import { AuthContext } from "../../../../../contexts/authProvider";
+import { AuthContext } from "../../../../../contexts/AuthProvider";
 import { Presentation } from "phosphor-react";
 
 /* eslint-disable react/prop-types */

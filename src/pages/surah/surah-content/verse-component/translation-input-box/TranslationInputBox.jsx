@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import { server } from "../../../../../constants";
-import { AuthContext } from "../../../../../contexts/authProvider";
+import { AuthContext } from "../../../../../contexts/AuthProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
 import LoginAlert from "../../../../../components/login-alert/LoginAlert";

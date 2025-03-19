@@ -15,7 +15,7 @@ import { FaHome } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { SearchModal } from '../../components/search-modal/SearchModal';
-import { AuthContext } from '../../contexts/authProvider';
+import { AuthContext } from '../../contexts/AuthProvider';
 import axios from 'axios';
 import { server } from '../../constants.js';
 import SuccessAlert from '../../components/success-alert/SuccessAlert.jsx';

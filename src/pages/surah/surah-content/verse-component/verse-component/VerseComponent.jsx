@@ -6,7 +6,7 @@ import TranslationInputBox from "../translation-input-box/TranslationInputBox";
 import VerseComponentSideBar from "./VerseComponentSideBar";
 import UsersTranslations from "../users-translations/UsersTranslations";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../../../contexts/authProvider";
+import { AuthContext } from "../../../../../contexts/AuthProvider";
 import axios from "axios";
 import { server } from "../../../../../constants";
 import YourTranslation from "../your-translation/YourTranslation";

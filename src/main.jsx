@@ -18,5 +18,5 @@ createRoot(document.getElementById('root')).render(
         </SelectedTranslationsProvider>
       </SurahListProvider>
     </AuthProvider>
-  </StrictMode>,
+  </StrictMode>
 )

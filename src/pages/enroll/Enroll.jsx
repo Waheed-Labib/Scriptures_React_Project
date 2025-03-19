@@ -13,7 +13,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { server } from '../../constants';
 import { useContext, useState } from 'react';
-import { AuthContext } from '../../contexts/authProvider';
+import { AuthContext } from '../../contexts/AuthProvider';
 import { getErrorMsg } from '../../utilities/getErrorMessage';
 import { MsgContext } from '../../contexts/MsgProvider';
 
