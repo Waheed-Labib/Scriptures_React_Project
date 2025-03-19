@@ -4,8 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import SurahListProvider from './contexts/SurahListProvider.jsx'
 import SelectedTranslationsProvider from './contexts/SelectedTranslationsIdsProvider.jsx'
-import AuthProvider from './contexts/authProvider.jsx'
 import MsgProvider from './contexts/MsgProvider.jsx'
+import AuthProvider from './contexts/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
