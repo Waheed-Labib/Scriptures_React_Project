@@ -19,6 +19,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import axios from 'axios';
 import SuccessAlert from '../../components/success-alert/SuccessAlert.jsx';
 import ErrorAlert from '../../components/error-alert/ErrorAlert.jsx';
+import { server } from '../../constants.js';
 
 export const NavbarComponent = () => {
 
@@ -28,8 +29,6 @@ export const NavbarComponent = () => {
 
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-
-    const server = import.meta.env.SERVER;
 
     const handleLogOut = () => {
         axios.post(`${server}/users/logout`, {}, {

@@ -5,6 +5,7 @@ import { MsgContext } from "../../../../../contexts/MsgProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
 import { AuthContext } from "../../../../../contexts/AuthProvider";
 import { Presentation } from "phosphor-react";
+import { server } from "../../../../../constants";
 
 /* eslint-disable react/prop-types */
 const YourTranslation = ({ translation, setRefreshKey }) => {
@@ -26,8 +27,6 @@ const YourTranslation = ({ translation, setRefreshKey }) => {
     }, [isEditing])
 
     const { loggedInUser } = useContext(AuthContext);
-
-    const server = import.meta.env.SERVER;
 
     const handleEdit = (e) => {
         e.preventDefault();
@@ -92,8 +91,8 @@ const YourTranslation = ({ translation, setRefreshKey }) => {
             <div className="w-full flex justify-between items-start">
                 <p className="text-cyan-700 italic font-medium text-sm">Your Translation</p>
                 <div className="flex items-center gap-2">
-                    <button onClick={() => setIsEditing(true)} className="rounded bg-gray-600 text-slate-50 hover:bg-gray-800 font-medium py-1 px-4">Edit</button>
-                    <button onClick={handleDelete} className="border rounded border-red-800 font-medium hover:bg-red-800 hover:text-slate-50 py-1 px-2">Delete</button>
+                    <button onClick={() => setIsEditing(true)} className="rounded bg-gray-600 text-slate-50 hover:bg-gray-800 transition font-medium py-1 px-4">Edit</button>
+                    <button onClick={handleDelete} className="border rounded border-red-800 font-medium hover:bg-red-800 hover:text-slate-50 transition py-1 px-2">Delete</button>
                 </div>
             </div>
         </div>

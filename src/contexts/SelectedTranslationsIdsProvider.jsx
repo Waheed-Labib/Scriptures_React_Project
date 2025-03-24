@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Default_Translation_ID } from "../constants";
+import { Default_Translation_IDs } from "../constants";
 
 export const SelectedTranslationsIdsContext = createContext();
 
@@ -9,7 +9,7 @@ const SelectedTranslationsIdsProvider = ({ children }) => {
     const Selected_Translations_Ids_From_Local_Storage = JSON.parse(localStorage.getItem('aqtp-selected-translations-ids'))
 
 
-    const [selectedTranslationsIds, setSelectedTranslationsIds] = useState(Selected_Translations_Ids_From_Local_Storage?.length ? Selected_Translations_Ids_From_Local_Storage : [Default_Translation_ID])
+    const [selectedTranslationsIds, setSelectedTranslationsIds] = useState(Selected_Translations_Ids_From_Local_Storage?.length ? Selected_Translations_Ids_From_Local_Storage : Default_Translation_IDs)
 
     const value = {
         selectedTranslationsIds,

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SimpleSkeleton from "../../../../../components/simple-skeleton/SimpleSkeleton";
 import UsersTranslationAccordion from "./UsersTranslationAccordion";
+import { server } from "../../../../../constants";
 
 /* eslint-disable react/prop-types */
 const UsersTranslations = ({ verse_key, refreshKey }) => {
@@ -9,8 +10,6 @@ const UsersTranslations = ({ verse_key, refreshKey }) => {
     const [translations, setTranslations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-
-    const server = import.meta.env.SERVER;
 
     useEffect(() => {
         axios.get(`${server}/translations/get-translation?verse_key=${verse_key}`)

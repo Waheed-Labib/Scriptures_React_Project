@@ -5,6 +5,7 @@ import { AuthContext } from "../../../../../contexts/AuthProvider";
 import { getErrorMsg } from "../../../../../utilities/getErrorMessage";
 import { MsgContext } from "../../../../../contexts/MsgProvider";
 import LoginAlert from "../../../../../components/login-alert/LoginAlert";
+import { server } from "../../../../../constants";
 
 const TranslationInputBox = ({ verse_key, setRefreshKey }) => {
 
@@ -25,8 +26,6 @@ const TranslationInputBox = ({ verse_key, setRefreshKey }) => {
     const [translation, setTranslation] = useState('');
 
     const { setSuccessMsg, setErrorMsg } = useContext(MsgContext);
-
-    const server = import.meta.env.SERVER;
 
     const handleSubmit = (e) => {
         e.preventDefault();

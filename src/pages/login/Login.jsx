@@ -15,6 +15,7 @@ import axios from 'axios';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { getErrorMsg } from '../../utilities/getErrorMessage';
 import { MsgContext } from '../../contexts/MsgProvider';
+import { server } from '../../constants';
 
 const Login = () => {
 
@@ -36,8 +37,6 @@ const Login = () => {
 
         const email = event.target.email.value;
         const password = event.target.password.value;
-
-        const server = import.meta.env.SERVER;
 
         axios.post(`${server}/users/login`,
             {
