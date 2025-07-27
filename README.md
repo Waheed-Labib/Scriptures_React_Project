@@ -3,12 +3,14 @@
 <ol>
 <li>Read whole Quran in organized way.</li>
 <li>Find hundreds of translations for each verse.</li>
+<li>Enroll and Login.</li>
 <li>Add your own translation for any verse.</li>
 </ol>
 
 <h2>Future Versions</h2>
 
 <ol>
+<li>Create Discussion Panel for Each Verse.</li>
 <li>Include more Books.</li>
 </ol>
 
