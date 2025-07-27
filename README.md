@@ -3,6 +3,7 @@
 <ol>
 <li>Read whole Quran in organized way.</li>
 <li>Find hundreds of translations for each verse.</li>
+<li>Choose whichever translation[s] you want to see.</li>
 <li>Enroll and Login.</li>
 <li>Add your own translation for any verse.</li>
 </ol>
