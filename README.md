@@ -1,7 +1,7 @@
 <h2>Features</h2>
 
 <ol>
-<li>Read whole Quran in organized way.</li>
+<li>Read whole book in organized way.</li>
 <li>Search and find any chapter or verse easily.</li>
 <li>Find hundreds of translations for each verse.</li>
 <li>Choose whichever translation[s] you want to see.</li>
