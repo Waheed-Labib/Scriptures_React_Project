@@ -9,6 +9,8 @@ export default function UsersTranslationAccordion({ translations }) {
     const data = [
         { title: "Users' Translation Available" },
     ];
+
+
     return (
         <div className="mb-4">
             {data?.map((data, idx) => (

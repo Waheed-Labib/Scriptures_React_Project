@@ -27,7 +27,7 @@ const VerseComponent = ({ verseData, arabicFont, page }) => {
 
     const [refreshKey, setRefreshKey] = useState(0);
 
-    const server = import.meta.env.SERVER;
+    const server = import.meta.env.VITE_SERVER;
 
     useEffect(() => {
         if (loggedInUser) {

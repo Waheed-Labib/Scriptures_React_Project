@@ -9,6 +9,8 @@ const SingleTranslation = ({ translationId, verse_key }) => {
     if (loading) return <SimpleSkeleton></SimpleSkeleton>
     if (error) return <p><span className="text-red-600">Error !</span> {error}</p>
 
+
+
     return (
         <div className="mb-8">
             <p className="">{translation.replace(/<sup[^>]*>.*?<\/sup>/g, "")}</p>

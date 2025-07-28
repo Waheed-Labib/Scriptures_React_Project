@@ -26,7 +26,7 @@ const TranslationInputBox = ({ verse_key, setRefreshKey }) => {
 
     const { setSuccessMsg, setErrorMsg } = useContext(MsgContext);
 
-    const server = import.meta.env.SERVER;
+    const server = import.meta.env.VITE_SERVER;
 
     const handleSubmit = (e) => {
         e.preventDefault();

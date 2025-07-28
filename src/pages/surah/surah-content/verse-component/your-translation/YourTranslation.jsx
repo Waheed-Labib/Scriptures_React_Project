@@ -27,7 +27,7 @@ const YourTranslation = ({ translation, setRefreshKey }) => {
 
     const { loggedInUser } = useContext(AuthContext);
 
-    const server = import.meta.env.SERVER;
+    const server = import.meta.env.VITE_SERVER;
 
     const handleEdit = (e) => {
         e.preventDefault();

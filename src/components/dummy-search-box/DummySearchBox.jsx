@@ -11,7 +11,7 @@ const DummySearchBox = ({ setIsSearchModalOpen }) => {
     return (
         <div>
             <div onClick={handleInputClick}>
-                <input readOnly placeholder="Search Quran" className="w-full h-10 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
+                <input readOnly placeholder="Search" className="w-full h-10 rounded ring-1 ring-inset ring-cyan-950 placeholder:text-gray-600 pl-4"></input>
             </div>
 
             <div className="pl-1 text-xs text-cyan-950 flex items-center gap-2 mt-2">

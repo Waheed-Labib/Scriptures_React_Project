@@ -31,7 +31,7 @@ const Surah = () => {
     return (
         <div>
             <Helmet>
-                <title>{`${chapterNum}. ${name_simple} - ${name_arabic} ~ Translate Quran`}</title>
+                <title>{`${chapterNum}. ${name_simple} - ${name_arabic} ~ Scriptures`}</title>
 
                 <meta name="description" content={`Chapter ${name_simple} with translation`} />
 

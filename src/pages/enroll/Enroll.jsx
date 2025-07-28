@@ -38,7 +38,7 @@ const Enroll = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        const server = import.meta.env.SERVER;
+        const server = import.meta.env.VITE_SERVER;
 
         axios.post(`${server}/users/register`,
             {

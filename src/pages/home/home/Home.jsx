@@ -11,9 +11,9 @@ const Home = () => {
         <div className="">
 
             <Helmet>
-                <title>Home ~ Translate Quran</title>
+                <title>Home ~ Scriptures</title>
 
-                <meta name="description" content="Al Quran Translation Project Home Page" />
+                <meta name="description" content="Scriptures Home Page" />
 
                 <meta name="keyword" content="quran, quran translation, quran chapter, surah" />
             </Helmet>

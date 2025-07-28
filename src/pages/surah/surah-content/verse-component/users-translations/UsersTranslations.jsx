@@ -10,21 +10,26 @@ const UsersTranslations = ({ verse_key, refreshKey }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const server = import.meta.env.SERVER;
+    const server = import.meta.env.VITE_SERVER;
 
     useEffect(() => {
+
         axios.get(`${server}/translations/get-translation?verse_key=${verse_key}`)
-            .then(response => setTranslations(response.data.data))
+            .then(response => {
+                console.log('response', response.data);
+                setTranslations(response.data.data)
+            })
             .catch(error => {
                 const match = error.response.data.match(/<pre>Error: (.*?)<br>/);
                 const errorMessage = match ? match[1] : "Unknown error";
 
                 setError(`Failed! ${errorMessage}`)
+
             })
             .finally(() => {
                 setLoading(false)
             })
-    }, [verse_key, refreshKey])
+    }, [verse_key, refreshKey, server])
 
     if (loading) return (
         <SimpleSkeleton></SimpleSkeleton>

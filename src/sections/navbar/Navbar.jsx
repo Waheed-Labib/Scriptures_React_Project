@@ -29,7 +29,7 @@ export const NavbarComponent = () => {
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
 
-    const server = import.meta.env.SERVER;
+    const server = import.meta.env.VITE_SERVER;
 
     const handleLogOut = () => {
         axios.post(`${server}/users/logout`, {}, {
