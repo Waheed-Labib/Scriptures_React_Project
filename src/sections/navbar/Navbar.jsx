@@ -108,7 +108,7 @@ export const NavbarComponent = () => {
                                 <FaBookOpenReader></FaBookOpenReader>
                             </div>
 
-                            <Link to='/home' className='tracking-wider text-xl'>Translate Quran</Link>
+                            <Link to='/home' className='tracking-wider text-xl'>Scriptures</Link>
                         </div>
 
                     </NavbarBrand>
