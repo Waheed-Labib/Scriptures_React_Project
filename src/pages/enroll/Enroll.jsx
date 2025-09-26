@@ -15,6 +15,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { getErrorMsg } from '../../utilities/getErrorMessage';
 import { MsgContext } from '../../contexts/MsgProvider';
+import { server } from '../../constants';
 
 const Enroll = () => {
 
@@ -37,8 +38,6 @@ const Enroll = () => {
         const fullName = event.target.fullName.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-
-        const server = import.meta.env.SERVER;
 
         axios.post(`${server}/users/register`,
             {
